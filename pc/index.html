@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>山西精准作业数据中心</title>
+<link rel="stylesheet" href="css/tong.css">
+<style>
+	body{background:url(img/dlzc_bg.jpg) no-repeat fixed;background-size:cover;}
+	
+	.center_ck{position:fixed;padding:50px;width:400px;height:430px;left:calc(50% - 250px);top:calc(55% - 265px);background-color:rgba(255,255,255,.6);border-radius:5px;}
+	
+	.center_ck>ul>li{width:100%;height:100%;color:#5c84fc;}
+	.center_ck>ul>li>ol>li{padding:10px 0;}
+	.center_ck>ul>li>ol>li:nth-of-type(1){text-align:center;font-size:24px;}
+	.center_ck>ul>li>ol>li:nth-of-type(2){height:2px;padding:0;margin:10px 0;
+		background-image: -moz-linear-gradient( 0deg, rgba(73,119,252,0) 0%, rgba(73,119,252,1) 50%, rgb(73,119,252) 50%, rgba(73,119,252,0) 100%);
+		background-image: -webkit-linear-gradient( 0deg, rgba(73,119,252,0) 0%, rgba(73,119,252,1) 50%, rgb(73,119,252) 50%, rgba(73,119,252,0) 100%);
+		background-image: -ms-linear-gradient( 0deg, rgba(73,119,252,0) 0%, rgba(73,119,252,1) 50%, rgb(73,119,252) 50%, rgba(73,119,252,0) 100%);
+	}
+	.center_ck>ul>li>ol>li:nth-of-type(3),
+	.center_ck>ul>li>ol>li:nth-of-type(4){position:relative;}
+	
+	.center_ck>ul>li>ol>li:nth-of-type(3) >input,
+	.center_ck>ul>li>ol>li:nth-of-type(4) >input{height:64px;line-height:64px;border:none;text-indent:75px;border-radius:5px;width:100%;background-color:#fff;}
+	
+	.center_ck>ul>li>ol>li:nth-of-type(3) >div{position:absolute;left:0;top:10px;background:url(img/zhanghaomima.png) no-repeat;width:60px;height:60px;}
+	.center_ck>ul>li>ol>li:nth-of-type(4) >div{
+		position:absolute;left:0;top:10px;background:url(img/zhanghaomima.png) no-repeat;width:60px;height:60px;background-position:100% 0;
+	}
+	
+	.center_ck>ul>li>ol>li:last-of-type p{text-align:right;cursor:pointer;}
+	
+	.yanzheng>div:nth-of-type(1){float:left;width:calc(100% - 120px);margin-right:20px;}
+	.yanzheng>div:nth-of-type(1)>input{height:64px;line-height:64px;border:none;text-indent:15px;border-radius:5px;width:100%;}
+	.yanzheng>div:nth-of-type(2){float:left;width:100px;height:64px;text-align:center;border-radius:5px;background-color:#fff;line-height:64px;}
+	
+	.dl_anniu>button,.zc_anniu>button{height:64px;line-height:64px;width:100%;text-align:center;border-radius:5px;color:#fff;border:none;background-color:#4977fc;font-size:20px;transition:.2s;}
+
+	/*-- 用户登录 --*/
+	.denglu_box{}
+	/*-- 用户登录 --*/
+	/*-- 用户注册 --*/
+	.zhuce_box{display:none;}
+	.zhuce_box input{text-indent:15px!important;}
+	/*-- 用户注册 --*/
+</style>
+</head>
+
+<body>
+	<div class="top"><img src="img/biaotou.png" alt=""></div>
+	<div class="center_ck">
+		<ul>
+			<!-- 用户登录 -->
+			<li class="denglu_box">
+				<ol>
+					<li>用户登录</li>
+					<li></li>
+					<li>
+						<div></div>
+						<input type="text">
+					</li>
+					<li>
+						<div></div>
+						<input type="text">
+					</li>
+					<li class="yanzheng">
+						<div><input type="text"></div>
+						<div>验证码</div>
+						<h6 class="clearfix"></h6>
+					</li>
+					<li class="dl_anniu"><button>登&emsp;录</button></li>
+					<li><p class="qu_zuce">快速注册</p></li>
+				</ol>
+			</li>
+			<!-- 用户登录 -->
+			<!-- 用户注册 -->
+			<li class="zhuce_box">
+				<ol>
+					<li>用户注册</li>
+					<li></li>
+					<li>
+						<input type="text" placeholder="请输入您的手机号">
+					</li>
+					<li>
+						<input type="text" placeholder="请输入密码">
+					</li>
+					<li class="yanzheng">
+						<div><input type="text" placeholder="请输入验证码"></div>
+						<div>获取验证码</div>
+						<h6 class="clearfix"></h6>
+					</li>
+					<li class="zc_anniu"><button>注&emsp;册</button></li>
+					<li><p class="fanhui_denglu">已有账号，立即登录</p></li>
+				</ol>
+			</li>
+			<!-- 用户注册 -->
+		</ul>
+	</div>
+</body>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script>
+	$(".qu_zuce").click(function(){
+		$(".zhuce_box").show();
+		$(".denglu_box").hide();
+	})
+	$(".fanhui_denglu").click(function(){
+		$(".denglu_box").show();
+		$(".zhuce_box").hide();
+	})
+</script>
+</html>

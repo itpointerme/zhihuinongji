@@ -1,0 +1,493 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>山西省智慧农机</title>
+<link rel="stylesheet" href="css/tong.css">
+<style>
+	/*-- 内容区 --*/
+	.content{position:fixed;left:0;top:5%;height:calc(95% - 60px);width:calc(100% - 60px);z-index:999;padding:30px;}
+	/*-- 内容区 --*/
+	/*-- 标头及图形限制 --*/
+	.title_box>p{line-height:40px;font-size:20px;color:#21fbfd;text-align:center;margin-bottom:10px;}
+	.title_box>div{height:calc(100% - 50px);}/*overflow:auto;*/
+	.title_box>select{position:absolute;top:50px;right:0;border:1px #04bdfd dashed;width:120px;line-height:30px;height:30px;background-color:rgba(3,188,253,.3);color:#fff;}
+	.title_box>select>option{height:30px;line-height:30px;padding:10px;}
+	/*-- 标头及图形限制 --*/
+	
+	.bian_k01{width:130px;height:24px;position:absolute;}
+	.bian_k02{width:24px;height:130px;position:absolute;}
+	.bian_k01>img,.bian_k02>img{width:100%;}
+	
+	/*-- 上部内容 --*/
+	.top_box{margin-bottom:10px;height:calc(70% - 10px);}
+		/*-- 上部内容-左 --*/
+	.top_box_left{float:left;height:100%;margin-right:10px;width:calc(25% - 20px / 3);}
+	.top_box_left>div{height:50%;position:relative;}
+	
+	.jgmj_bl .b1{right:0;top:calc(50% - 66px);}
+	.jgmj_bl{color:#00fcf7;}
+	.jgmj_bl>ul>li img{width:100%;}
+	.jgmj_bl>ul>li:nth-of-type(1){padding:20px 0;}
+	.jgmj_bl>ul>li:nth-of-type(1)>div:nth-of-type(1){float:left;width:calc(100% - 120px);}
+	.jgmj_bl>ul>li:nth-of-type(1)>div:nth-of-type(2){float:left;width:60px;margin:8px 60px 8px 0;}
+	
+	.jgmj_bl>ul>li:nth-of-type(2){padding:20px 0;}
+	.jgmj_bl>ul>li:nth-of-type(2)>div{width:35px;margin-right:15px;float:left;}
+	.jgmj_bl>ul>li:nth-of-type(2)>p{width:calc(100% - 50px);float:left;font-size:44px;line-height:48px;margin-top:12px;}
+	
+	.jgmj_bl>ul>li:nth-of-type(3){padding:20px 0;}
+		/*-- 上部内容-左 --*/
+		/*-- 上部内容-中 --*/
+	.top_box_center{float:left;height:calc(100% - 80px);margin:80px 10px 0 0;width:calc(50% - 20px / 3);}
+	.top_box_center>div{position:relative;}
+	
+	.yougge_shou{overflow:auto;height:30%;}/*有个手*/
+	.yougge_shou>div{padding:10px;}
+	.yougge_shou>div>ul{width:100%;height:100%;top:0;left:0;}
+	.yougge_shou>div>ul>li{position:relative;float:left;width:33.3333%;height:140px;}
+	.yougge_shou>div>ul>li>div{position:absolute;text-align:center;font-size:14px;}
+	.yougge_shou>div>ul>li>div>p{color:#94e8ff;}
+	.yougge_shou>div>ul>li>div>p>span{color:#ffe900;}
+	
+	.shh_fw{background:url(img/shou01.png) no-repeat;background-size:100% 200%;}/*社会化服务*/
+	.shh_fw>div{top:28%;left:36%;}/*社会化服务*/
+	.zbc_sj{background:url(img/shou02.png) no-repeat;background-size:100% 200%;}/*装备处数据*/
+	.zbc_sj>div{top:34%;left:44%;}/*装备处数据*/
+	.zuoye_sj{background:url(img/shou03.png) no-repeat;background-size:100% 200%;}/*作业数据*/
+	.zuoye_sj>div{top:32%;left:38%;}/*作业数据*/
+	
+	.glzynjsl_bht{height:70%;}
+	.glzynjsl_bht .b1{bottom:0;left:0;}
+	.glzynjsl_bht .b2{top:0;right:0;}
+	.glzynjsl_bht .bh_shaix>div:nth-of-type(1){float:left;width:200px;height:100%;color:#fff;text-align:center;position:relative;}
+	.glzynjsl_bht .bh_shaix>div:nth-of-type(2){float:left;width:calc(100% - 200px);height:100%;}
+	.glzynjsl_bht .bh_shaix>div select{border:1px #04bdfd dashed;width:140px;line-height:30px;height:30px;background-color:rgba(3,188,253,.3);color:#fff;margin:60px 30px 0;}
+	.bh_shaix .tuo_img{width:140px;margin:20px auto;}
+	.bh_shaix .tuo_img>img{width:100%;}
+		/*-- 上部内容-中 --*/
+		/*-- 上部内容-右 --*/
+	.top_box_right{float:left;height:100%;width:calc(25% - 20px / 3);} 
+	.top_box_right>div{height:50%;position:relative;}
+	
+	.zdxmtj_qk .b1{bottom:0;right:0;}
+	.zdxmtj_qk>div>div{width:calc(100% - 35px);margin:40px 5px;padding:10px;position:relative;}
+	.zdxmtj_qk>div>div>img{width:100%;}
+	.zdxmtj_qk>div>div>ul{position:absolute;width:100%;height:100%;}
+	.zdxmtj_qk>div>div>ul>li:nth-of-type(1){position:absolute;top:36px;left:50px;color:#fff601;}
+	.zdxmtj_qk>div>div>ul>li:nth-of-type(2){position:absolute;top:54px;left:38px;color:#01ffff;font-size:36px;}
+	.zdxmtj_qk>div>div>ul>li:nth-of-type(3){position:absolute;top:28px;left:158px;color:#fff;}
+		/*-- 上部内容-右 --*/
+	/*-- 上部内容 --*/
+	
+	/*-- 下部内容 --*/
+	.bottom_box{height:30%;}
+		/*-- 下部内容-左一 --*/
+	.bottom_box_left01{float:left;height:100%;margin-right:10px;width:calc(21% - 30px / 4);position:relative;}
+	
+	.bottom_box_left01 .b1{top:0;left:0;}
+	.bottom_box_left01 .b2{bottom:0;right:0;}
+	
+		/*-- 下部内容-左一 --*/
+		/*-- 下部内容-左二 --*/
+	.bottom_box_left02{float:left;height:100%;margin-right:10px;width:calc(23% - 30px / 4);position:relative;}
+		/*-- 下部内容-左二 --*/
+		/*-- 下部内容-右二 --*/
+	.bottom_box_right02{float:left;height:100%;margin-right:10px;width:calc(31% - 30px / 4);position:relative;}
+		/*-- 下部内容-右二 --*/
+		/*-- 下部内容-右一 --*/
+	.bottom_box_right01{float:left;height:100%;width:calc(25% - 30px / 4);position:relative;}
+	
+	.bottom_box_right01 .b1{bottom:0;left:0;}
+	.bottom_box_right01>select{bottom:0!important;top:inherit!important;}
+		/*-- 下部内容-右一 --*/
+	/*-- 下部内容 --*/
+
+	#arrange>ul{width: 100%;height: 100%;position: relative;}
+	#arrange>ul>li{
+			font-size: 14px;
+			color: #fff;
+			text-align: center;
+			position:absolute;
+			-webkit-transition:.3s ;
+			-moz-transition:.3s ;
+			-ms-transition:.3s ;
+			-o-transition: .3s;
+			transition:.3s ;
+			height: 0;
+			cursor: pointer;
+    }
+    .arrange_bg{
+    	color: #18294e !important;
+		font-size:16px !important;
+		border-top: 40px solid #ffea00 !important;
+    }
+	
+	#arrange>ul>li p{
+		width: 100%;
+		position: absolute;
+		top: -30px;
+		left:50%;
+		-webkit-transform:translateX(-50%) ;
+		-moz-transform: translateX(-50%);
+		-ms-transform:translateX(-50%) ;
+		-o-transform: translateX(-50%);
+		transform:translateX(-50%) ;
+    }
+	
+	
+	#arrange>ul>li{
+		border-top: 40px solid rgba(0,162,255,.7);
+		border-right: 24px solid transparent;
+		border-left: 24px solid transparent;
+		border-bottom: 0px solid transparent;
+		left: 50%;
+		-webkit-transform:translateX(-50%) ;
+		-moz-transform: translateX(-50%);
+		-ms-transform:translateX(-50%) ;
+		-o-transform: translateX(-50%);
+		transform:translateX(-50%) ;
+	}
+	#arrange>ul>li:nth-child(1){width:380px;top:0;}
+	#arrange>ul>li:nth-child(2){width:324px;top:48px;}
+	#arrange>ul>li:nth-child(3){width:270px;top:96px;}
+	#arrange>ul>li:nth-child(4){width:214px;top:144px;}
+	#arrange>ul>li:nth-child(5){width:158px;top:192px;}
+</style>
+</head>
+
+<body>
+	<div class="top"><img src="img/top_name.png" alt=""></div>
+	<div class="nav">
+		<ul class="nav_content">
+			<li>
+				<a href="index_07.html">
+					<div></div>
+					<p>社会化服务数据新首页</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="index_06.html">
+					<div class="nongji_jiankong"></div>
+					<p>农机监控</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="index_01.html">
+					<div class="zuoye_zhiliang"></div>
+					<p>作业质量分析</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="index_03.html">
+					<div class="xaingmu_fenxi"></div>
+					<p>项目分析</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="index_05.html">
+					<div class="zhuangbei_hezuose"></div>
+					<p>装备处合作社数据分析</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="index_04.html">
+					<div class="zhengli_fenxi"></div>
+					<p>整理分析</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="#">
+					<div class="fuwu_shuju"></div>
+					<p>服务数据分析</p>
+				</a>
+			</li>
+		</ul>
+		<div class="nav_right"><span></span></div>
+	</div>
+	<div class="content">
+		<!-- 上部内容 -->
+		<div class="top_box">
+			<!-- 上部内容-左 -->
+			<div class="top_box_left">
+				<!-- 机耕面积比率 -->
+				<div class="jgmj_bl title_box">
+<!--
+					<p>机耕面积比率</p>
+					<div id='jgmjbl'></div>
+					<select name="" id="">
+						<option value="">年份类型选择</option>
+					</select>
+					<span class="bian_k01 b1"><img src="img/biankuang01.png" alt=""></span>
+					<span class="bian_k01 b2"><img src="img/biankuang03.png" alt=""></span>
+-->
+					<ul>
+						<li>
+							<div>
+								<p style="font-size:24px;line-height:32px;">项目总补贴资金</p>
+								<p style="font-size:14px;line-height:20px">Total project subsidy funds</p>
+							</div>
+							<div><img src="img/xiangyou_dl.png" alt=""></div>
+							<h6 class="clearfix"></h6>
+						</li>
+						<li>
+							<div><img src="img/xiangshang_dl.png" alt=""></div>
+							<p>30,218,805元</p>
+							<h6 class="clearfix"></h6>
+						</li>
+						<li><img src="img/xiantiao_4.png" alt=""></li>
+					</ul>
+					<span class="bian_k02 b1" ><img src="img/biankuang04.png" alt=""></span>
+				</div>
+				<!-- 机耕面积比率 -->
+				<!-- 农机数据 -->
+				<div class="nj_shuju title_box">
+					<p>农机数据</p>
+					<div id='njsj'></div>
+					<select name="" id="">
+						<option value="">原值类型选择</option>
+					</select>
+				</div>
+				<!-- 农机数据 -->
+			</div>
+			<!-- 上部内容-左 -->
+			<!-- 上部内容-中 -->
+			<div class="top_box_center">
+				<!-- 有个手 -->
+				<div class="yougge_shou">
+					<div>
+						<ul>
+							<li class="shh_fw">
+								<div>
+									<p>社会化服务</p>
+									<p>设备数：<span>159663</span>台</p>
+								</div>
+								<img src="" alt="">
+							</li>
+							<li class="zbc_sj">
+								<div>
+									<p>项目进度</p>
+									<p>设备数：<span>159663</span>台</p>
+								</div>
+								<img src="" alt="">
+							</li>
+							<li class="zuoye_sj">
+								<div>
+									<p>作业数据</p>
+									<p>设备数：<span>159663</span>台</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- 有个手 -->
+				<!-- 各类主要农机数量/增长率三年变化图 -->
+				<div class="glzynjsl_bht title_box">
+					<p>各类主要农机数量/增长率三年变化图</p>
+					<div class="bh_shaix">
+						<div>
+							<ul style="position:relative;left:18px;">
+								<li>
+									<select name="" id="">
+										<option value="">农机类型选择</option>
+									</select>
+								</li>
+								<li>
+									<div class="tuo_img"><img src="img/tuolaji.png" alt=""></div>
+								</li>
+								<li>大中型配套农机具</li>
+							</ul>
+						</div>
+						<div id="glzynjsl"></div>
+						<h6 class="clearfix"></h6>
+					</div>
+					<span class="bian_k02 b1" ><img src="img/biankuang05.png" alt=""></span>
+					<span class="bian_k02 b2" ><img src="img/biankuang04.png" alt=""></span>
+				</div>
+				<!-- 各类主要农机数量/增长率三年变化图 -->
+			</div>
+			<!-- 上部内容-中 -->
+			<!-- 上部内容-右 -->
+			<div class="top_box_right">
+				<!-- 收获面积 -->
+				<div class="shouhuo_mianji title_box">
+					<p>收获面积</p>
+					<div id="shmjt"></div>
+					<select name="" id="">
+						<option value="">面值类型选择</option>
+					</select>
+				</div>
+				<!-- 收获面积 -->
+				<!-- 重大项目推进情况 -->
+				<div class="zdxmtj_qk title_box">
+					<p>重大项目推进情况</p>
+					<div>
+						<div>
+							<ul>
+								<li>进行中</li>
+								<li>90%</li>
+								<li>大同市春耕项目</li>
+							</ul>
+							<img src="img/lanse.gif" alt="">
+						</div>
+					</div>
+					<select name="" id="">
+						<option value="">重大项目选择</option>
+					</select>
+					<span class="bian_k02 b1"><img src="img/biankuang02.png" alt=""></span>
+				</div>
+				<!-- 重大项目推进情况 -->
+			</div>
+			<!-- 上部内容-右 -->
+			<h6 class="clearfix"></h6>
+		</div>
+		<!-- 上部内容 -->
+		<!-- 下部内容 -->
+		<div class="bottom_box">
+			<!-- 下部内容-左一 -->
+			<div class="bottom_box_left01 title_box">
+				<p>机耕面积比率</p>
+				<div id='jgmjbl'></div>
+				<select name="" id="">
+					<option value="">年份类型选择</option>
+				</select>
+				<span class="bian_k01 b1"><img src="img/biankuang01.png" alt=""></span>
+				<span class="bian_k01 b2"><img src="img/biankuang03.png" alt=""></span>
+				
+<!--
+				<ul>
+					<li>
+						<div>
+							<p style="font-size:24px;line-height:32px;">项目总补贴资金</p>
+							<p style="font-size:14px;line-height:20px">Total project subsidy funds</p>
+						</div>
+						<div><img src="img/xiangyou_dl.png" alt=""></div>
+						<h6 class="clearfix"></h6>
+					</li>
+					<li>
+						<div><img src="img/xiangshang_dl.png" alt=""></div>
+						<p>30,218,805元</p>
+						<h6 class="clearfix"></h6>
+					</li>
+					<li><img src="img/xiantiao_4.png" alt=""></li>
+				</ul>
+				<span class="bian_k02 b1" ><img src="img/biankuang04.png" alt=""></span>
+-->
+			</div>
+			<!-- 下部内容-左一 -->
+			
+			<!-- 下部内容-右二 -->
+			<div class="bottom_box_right02 title_box">
+				<p>作业面积统计图</p>
+				<div id='zymjtjt07'></div>
+			</div>
+			<!-- 下部内容-右二 -->
+			<!-- 下部内容-左二 -->
+			<div class="bottom_box_left02 title_box">
+				<p style="padding-right:20%;">终端综合分析图</p>
+				<div id="zdfx"></div>
+			</div>
+			<!-- 下部内容-左二 -->
+			<!-- 下部内容-右一 -->
+			<div class="bottom_box_right01 title_box">
+				<p>终端安排排行榜</p>
+				<!-- <div id="zdap_phb"></div> -->
+				<div id='arrange'>
+					<ul>
+						<li class='arrange_bg'><p>NO.1 &nbsp;&nbsp;&nbsp;河&nbsp;&nbsp;&nbsp;北&nbsp;&nbsp;&nbsp;信&nbsp;&nbsp;&nbsp;翔</p></li>
+						<li><p>NO.2 &nbsp;&nbsp;江&nbsp;&nbsp;苏&nbsp;&nbsp;北&nbsp;&nbsp;斗</p></li>
+						<li><p>NO.3 &nbsp;世&nbsp;纪&nbsp;赢&nbsp;联</p></li>
+						<li><p>NO.4 黑龙江北斗</p></li>
+						<li><p>NO.5 天辰北斗</p></li>
+					</ul>
+				</div>
+				<select name="" id="">
+					<option value="">排行版选择</option>
+					<option value="">排行版选择</option>
+					<option value="">排行版选择</option>
+					<option value="">排行版选择</option>
+					<option value="">排行版选择</option>
+					<option value="">排行版选择</option>
+					<option value="">排行版选择</option>
+				</select>
+				<span class="bian_k02 b1"><img src="img/biankuang05.png" alt=""></span>
+			</div>
+			<!-- 下部内容-右一 -->
+			<h6 class="clearfix"></h6>
+		</div>
+		<!-- 下部内容 -->
+	</div>
+</body>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/nav_an.js"></script>
+
+<script src="js/echarts.js"></script>
+
+<script src="js/echarts.js"></script>
+
+<!-- 终端综合分析图-->
+<script src="js/07/zdfx.js"></script>
+<!-- 作业面积统计图-->
+<script src="js/07/zymjtjt07.js"></script>
+<!-- 收获面积-->
+<script src="js/07/shmjt.js"></script>
+<!-- 终端安装排行榜-->
+<script src="js/07/suibian.js"></script>
+<!-- 机耕面积比率-->
+<script src='js/07/jgmjbl.js'></script>
+<!-- 农机数据-->
+<script src='js/07/njsj.js'></script>
+
+<script>
+	setInterval(function(){
+		var a = $(".shh_fw")
+			b = $(".zbc_sj")
+			c = $(".zuoye_sj");
+		a.css("backgroundPositionY");
+		if(a.css("backgroundPositionY") === "0%"){
+			a.animate({"backgroundPositionY":"100%"});
+			b.animate({"backgroundPositionY":"100%"});
+			c.animate({"backgroundPositionY":"100%"});
+		}else if(a.css("backgroundPositionY") === "100%"){
+			a.animate({"backgroundPositionY":"0%"});
+			b.animate({"backgroundPositionY":"0%"});
+			c.animate({"backgroundPositionY":"0%"});
+		}
+	},5000);
+</script>
+
+
+<script>
+$(document).ready(function(){
+	clearInterval(t);
+	var _time = 1;
+	var t = setInterval(function(){times()},1000)
+	function times(){
+		var p = $('#arrange ul').find('li');
+		p.removeClass('arrange_bg');
+		p.eq(_time).addClass('arrange_bg');
+		_time++;
+		if(_time == 5){
+			_time = 0;
+		}
+	}
+
+	$('#arrange ul li').mouseenter(function(){
+		$('#arrange ul').find('li').removeClass('arrange_bg');
+		$(this).addClass('arrange_bg');
+		
+		clearInterval(t);
+	})
+	$('#arrange ul li').mouseleave(function(){
+		t = setInterval(function(){times()},1000)
+		console.log('离开');
+	})
+})
+</script>
+</html>

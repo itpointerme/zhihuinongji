@@ -1,0 +1,66 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0;padding:0;list-style:none;text-decoration:none;font-family:"微软雅黑";}
+.clearfix{clear:both;}
+html,body{height:100%;}
+body{background:url(../img/tong_bgimg.jpg) no-repeat fixed;background-size:cover;}
+img{display:block;}
+
+/*-- 顶部文字 --*/
+.top>img{width:100%;max-width:1600px;margin:0 auto;}
+/*-- 顶部文字 --*/
+/*-- 导航区 --*/
+.nav{position:fixed;z-index:9999;width:250px;top:0;left:-250px;height:100%;background-color:rgba(2,22,43,.98);transition:.2s;}
+.nav_sha{box-shadow:0 0 10px 0 rgba(255,255,255,.6)!important;}
+
+.nav_content{width:100%;height:calc(100% - 40px);text-align:center;overflow:auto;margin:20px 0;}
+.nav_content>li>a{margin:25px 0;display:block;}
+.nav_content>li>a>div{background:url(../img/nav_tubiao.png) no-repeat;width:80px;height:80px;margin:5px auto;}
+.nav_content>li>a>p{color:#8ef277;font-size:18px;line-height:40px;}
+.nav_content>li:nth-of-type(2n){height:4px;width:60%;margin:0 20%;background-color:rgba(255,255,255,.1);}
+.nav_content>li:first-of-type>a>p{color:#2a93ea!important;}
+.nav_content>li:nth-of-type(3n+3)>a>p{color:#78e06b;}
+.nav_content>li:nth-of-type(3n+4)>a>p{color:#fb5493;}
+.nav_content>li:nth-of-type(3n+5)>a>p{color:#20bbc9;}
+
+.nongji_jiankong{background-position:-80px 0!important;}/*农机监控*/
+.zuoye_zhiliang{background-position:-240px -80px!important;}/*作业质量分析*/
+.xaingmu_fenxi{background-position:-240px 0!important;}/*项目分析*/
+.zhuangbei_hezuose{background-position:-160px 0!important;}/*装备处合作社数据分析*/
+.zhengli_fenxi{background-position:-80px -80px!important;}/*整理分析*/
+.fuwu_shuju{background-position:-160px -80px!important;}/*服务数据分析*/
+
+.nav_right{
+	background-image: -moz-linear-gradient( 0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 100%);
+	background-image: -webkit-linear-gradient( 0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 100%);
+	background-image: -ms-linear-gradient( 0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 100%);
+	position:absolute;width:10px;height:100%;left:250px;top:0;transition:.2s;
+}
+.nav_right:hover{
+	background-image: -moz-linear-gradient( 0deg, rgba(255,255,255,.2) 0%, rgba(255,255,255,0) 100%);
+	background-image: -webkit-linear-gradient( 0deg, rgba(255,255,255,.2) 0%, rgba(255,255,255,0) 100%);
+	background-image: -ms-linear-gradient( 0deg, rgba(255,255,255,.2) 0%, rgba(255,255,255,0) 100%);
+}
+
+/*-- 导航区 --*/
+
+/*滚动条样式*/
+::-webkit-scrollbar {/*滚动条整体样式*/
+	width: 0px!important;    /*高宽分别对应横竖滚动条的尺寸*/
+	height: 6px!important;
+	background: #ffffff!important;
+	cursor: pointer!important;
+}
+::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+	border-radius: 5px!important;
+	-webkit-box-shadow: inset 0 0 5px rgba(240,240,240,.5)!important;
+	background: #ccc!important;
+	cursor: pointer!important;
+}
+::-webkit-scrollbar-track {/*滚动条里面轨道*/
+	-webkit-box-shadow: inset 0 0 5px rgba(240,240,240,.5)!important;
+	border-radius: 0!important;
+	background: rgba(240,240,240,0.5)!important;
+	cursor: pointer!important;
+}
+/*滚动条样式*/

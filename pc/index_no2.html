@@ -1,0 +1,258 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>项目分析</title>
+<link rel="stylesheet" href="css/tong.css">
+<style>	
+	.content{margin:30px;background-color:#fff;box-shadow:0 0 10px 0 rgba(0,0,0,.2);border-radius:30px;padding:30px;}
+	
+	.biao_tou>p{line-height:30px;margin-bottom:30px;}
+	.biao_tou>p>span{float:right;}
+	.biao_tou>div{height:calc(100% - 60px);}
+	
+	/*二级框样式*/.er_box{border:1px solid #d8e2f0;border-radius:5px;padding:10px;height:100%; box-shadow: 0px 12px 36px 0px rgba(211, 215, 221, 0.4);}
+	/*.er_box>p{color:#404040;font-size:18px;line-height:24px;margin-bottom:20px;}*/
+	/*.er_box>div{height:calc(100% - 44px);}*/
+	/*-- 第一行图表 --*/
+	.xm_numb_01{margin-bottom:30px;}
+	
+	.zdxmtj_qk{border-bottom:1px solid #d8e2f0;padding:10px 10px 20px 10px;line-height:30px;}/*重大项目推进情况*/
+	.zdxmtj_qk>p{float:left;width:calc(100% - 130px);}
+	.zdxmtj_qk>div{float:left;width:130px;height:30px;background-color:#4c79fc;color:#fff;text-align:center;border-radius:5px;}
+	
+	.juti_xm>li{width:calc(20% - 21px);border-right:1px solid #d8e2f0;float:left;padding:10px;text-align:center;}/*具体项目*/
+	.juti_xm>li:last-of-type{width:calc(20% - 20px);border:none;}
+	.juti_xm>li>ol>li{line-height:30px;}
+	.juti_xm>li>ol>li:nth-of-type(1){font-size:18px;}
+	.juti_xm>li>ol>li:nth-of-type(2){font-size:14px;}
+	.juti_xm>li>ol>li:nth-of-type(3){height:200px;background-color:rgba(0,0,0,.6);}
+	
+	.xiangmu_mc{padding:20px;line-height:40px;color:#4977fc;}/*项目名称*/
+	.xiangmu_mc>p{width:160px;float:left;}
+	.xiangmu_mc>.jiantou_left{float:left;width:30px;text-align:center;}/*左箭头*/
+	.xiangmu_mc>.jiantou_right{float:left;width:30px;text-align:center;}/*右箭头*/
+	.xiangmu_mc>.xiangm_nav{float:left;width:calc(100% - 220px);overflow:auto;}
+	
+	.xiangm_nav>ul{width:calc(202px * 6);}
+	.xiangm_nav>ul>li{float:left;border:#cecece solid 1px;border-radius:5px;margin:0 20px;width:160px;text-align:center;cursor:pointer;}
+	.xiangm_nav>ul>li:hover{background-color:#5782fc;color:#fff;border-color:#5782fc;}
+	
+		/*什么玩意*/
+	.shenme_wy>.shenme_wy-left{float:left;width:calc(100% - 300px);line-height:50px;}
+	.shenme_wy>.shenme_wy-left>ul{padding-left:50px;}
+	.shenme_wy>.shenme_wy-left>ul>li{float:left;margin-right:50px;}
+	.shenme_wy>.shenme_wy-right{float:left;width:300px;position:relative;}
+	.shenme_wy>.shenme_wy-right>img{width:100%;}
+	.shenme_wy>.shenme_wy-right>ul{position:absolute;text-align:center;top:26px;left:23px;}
+	.shenme_wy>.shenme_wy-right>ul>li:nth-of-type(1){font-size:12px;color:#fd8400;}
+	.shenme_wy>.shenme_wy-right>ul>li:nth-of-type(2){font-size:30px;line-height:36px;color:#fddb24;}
+		/*什么玩意*/
+	/*-- 第一行图表 --*/
+	/*-- 第二行图表 --*/
+	.xm_numb_02{}
+	
+	.xmfb_dt{width:calc(30% - 52px);float:left;margin-right:30px;height:1000px;}/*项目分布地图*/
+	.you_lia{width:70%;float:left;}/*右俩*/
+	
+	.dqxmwc_sl{height:498px;margin-bottom:30px;}
+	.ydxm_jdt{height:450px;}
+	/*-- 第二行图表 --*/
+	
+	
+	#region{background:none;}
+</style>
+</head>
+
+<body>
+	<div class="top"><img src="img/biaotou.png" alt=""></div>
+	<div class="nav">
+		<ul>
+			<li>
+				<a href="index_no1.html">
+					<div class="nav_shhfw"></div>
+					<p>社会化服务</p>
+				</a>
+			</li>
+			<li>
+				<a href="index_no6.html">
+					<div class="nav_fwfx"></div>
+					<p>服务分析</p>
+				</a>
+			</li>
+			<li>
+				<a href="index_no5.html">
+					<div class="nav_sjcs"></div>
+					<p>数据传输</p>
+				</a>
+			</li>
+			<li>
+				<a href="index_no4.html">
+					<div class="nav_zyfx"></div>
+					<p>作业分析</p>
+				</a>
+			</li>
+			<li class="jinguo_bg">
+				<a href="index_no2.html">
+					<div class="nav_xmfx"></div>
+					<p>项目分析</p>
+				</a>
+			</li>
+			<li>
+				<a href="index_no3.html">
+					<div class="nav_zbhzs"></div>
+					<p>装备合作社</p>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<div class="nav_jlfx"></div>
+					<p>监理分析</p>
+				</a>
+			</li>
+			<h6 class="clearfix"></h6>
+		</ul>
+	</div>
+	<div class="content">
+		<!-- 第一行图表 -->
+		<div class="xm_numb_01">
+			<div class="er_box">
+				<!-- 重大项目推进情况 -->
+				<div class="zdxmtj_qk">
+					<p>重大项目推进情况</p>
+					<div>+新建项目</div>
+					<h6 class="clearfix"></h6>
+				</div>
+				<!-- 重大项目推进情况 -->
+				<!-- 具体项目 -->
+				<ul class="juti_xm">
+					<li>
+						<ol>
+							<li>2018年晋城市秋季作业项目</li>
+							<li>开始时间：2018.09.12 作业进度：70%</li>
+							<li id='boost0'></li>
+						</ol>
+					</li>
+					<li>
+						<ol>
+							<li>2018年晋城市秋季作业项目</li>
+							<li>开始时间：2018.09.12 作业进度：70%</li>
+							<li id='boost1'></li>
+						</ol>
+					</li>
+					<li>
+						<ol>
+							<li>2018年晋城市秋季作业项目</li>
+							<li>开始时间：2018.09.12 作业进度：70%</li>
+							<li id='boost2'></li>
+						</ol>
+					</li>
+					<li>
+						<ol>
+							<li>2018年晋城市秋季作业项目</li>
+							<li>开始时间：2018.09.12 作业进度：70%</li>
+							<li id='boost3'></li>
+						</ol>
+					</li>
+					<li>
+						<ol>
+							<li>2018年晋城市秋季作业项目</li>
+							<li>开始时间：2018.09.12 作业进度：70%</li>
+							<li id='boost4'></li>
+						</ol>
+					</li>
+					<h6 class="clearfix"></h6>
+				</ul>
+			</div>
+			<!-- 具体项目 -->
+			<!-- 项目名称 -->
+			<div class="xiangmu_mc">
+				<p>项目名称</p>
+				<div class="jiantou_left">&lang;&lang;</div>
+				<div class="xiangm_nav">
+					<ul>
+						<li>深松</li>
+						<li>小麦播种</li>
+						<li>小麦收割</li>
+						<li>秸秆还田</li>
+						<li>玉米播种</li>
+						<li>玉米收割</li>
+						<h6 class="clearfix"></h6>
+					</ul>
+				</div>
+				
+				<div class="jiantou_right">&rang;&rang;</div>
+				<h6 class="clearfix"></h6>
+			</div>
+			<!-- 项目名称 -->
+			<!-- 什么玩意 -->
+			<div class="shenme_wy er_box">
+				<div class="shenme_wy-left">
+					<ul>
+						<li>项目名称：深松</li>
+						<li>时间：2018.11.01</li>
+						<li>负责部门：农业局</li>
+						<li>负责人：张三</li>
+						<li>联系方式：13645644563</li>
+						<li>资金总量：200000</li>
+						<li>地点：太原市、大同市、忻州市、晋中市、晋城市、运城市</li>
+						<h6 class="clearfix"></h6>
+					</ul>
+				</div>
+				<div class="shenme_wy-right">
+					<ul>
+						<li>进行中</li>
+						<li>90%</li>
+					</ul>
+					<img src="img/huangse.gif" alt="">
+				</div>
+				<h6 class="clearfix"></h6>
+			</div>
+			<!-- 什么玩意 -->
+		</div>
+		<!-- 第一行图表 -->
+		<!-- 第二行图表 -->
+		<div class="xm_numb_02">
+			<!-- 项目分布地图 -->
+			<div class="xmfb_dt er_box biao_tou">
+				<p>项目分布地图<span>单位：亩</span></p>
+				<div id="programFb"></div>
+			</div>
+			<!-- 项目分布地图 -->
+			<!-- 右俩 -->
+			<div class="you_lia">
+				<!-- 地区项目完成数量 -->
+				<div class="dqxmwc_sl er_box biao_tou">
+					<p>地区项目完成数量</p>
+					<div id='region'></div>
+				</div>
+				<!-- 地区项目完成数量 -->
+				<!-- 月度项目进度图 -->
+				<div class="ydxm_jdt er_box biao_tou">
+					<p>月度项目进度图</p>
+					<div id="ydxm"></div>
+				</div>
+				<!-- 月度项目进度图 -->
+			</div>
+			<!-- 右俩 -->
+			<h6 class="clearfix"></h6>
+		</div>
+		<!-- 第二行图表 -->
+	</div>
+	
+	<script src='../js/jquery-3.3.1.min.js'></script>
+	<script src='../js/echarts.js'></script>
+	
+	<!-- 重大项目推进情况 -->
+	<script src='../js/no2/boost.js'></script>
+
+	
+	<!-- 地区项目完成数量 -->
+	<script src="../js/no2/region.js"></script>
+
+	<!-- 项目分布图 -->
+	<script src="../js/web/programFb.js"></script>
+	<!-- 月度项目进度表-->
+	<script src="../js/web/ydxm.js"></script>
+</body>
+</html>

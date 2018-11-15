@@ -1,0 +1,61 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0;padding:0;list-style:none;text-decoration:none;font-family:"微软雅黑";}
+.clearfix{clear:both;}
+html,body{height:100%;}
+body{background:url(../img/bg_tupian.jpg) no-repeat fixed #eaeff3;background-size:cover;}
+img{display:block;}
+
+.top{max-width:1000px;margin:0 auto;padding:100px 0 0;}
+.top>img{width:100%;}
+
+/*-- 导航 --*/
+.nav{margin:50px auto;max-width:1120px;overflow:auto;}
+.nav>ul{width:1120px;}
+.nav>ul>li{width:120px;height:120px;border-radius:20px;margin:0 20px;float:left;transition:.2s;
+	background-image: -moz-radial-gradient( 50% 50%, circle closest-side, rgba(255,255,255,0) 0%, rgba(255,255,255,0.50196) 100%);
+	background-image: -webkit-radial-gradient( 50% 50%, circle closest-side, rgba(255,255,255,0) 0%, rgba(255,255,255,0.50196) 100%);
+	background-image: -ms-radial-gradient( 50% 50%, circle closest-side, rgba(255,255,255,0) 0%, rgba(255,255,255,0.50196) 100%);
+}
+.nav>ul>li>a{display:block;width:100%;height:calc(100% - 6px);padding-top:6px;}
+.nav>ul>li>a>div{background:url(../img/nav-tubiao.png) no-repeat;width:80px;height:80px;margin:0 auto;transition:.2s;}
+.nav>ul>li>a>p{text-align:center;color:#fff;transition:.2s;}
+.jinguo_bg,.nav>ul>li:hover{
+	background-image: -moz-radial-gradient( 70px 70px, circle closest-side, #eee 100%, #fff 100%)!important;
+	background-image: -webkit-radial-gradient( 70px 70px, circle closest-side, #eee 100%, #fff 100%)!important;
+	background-image: -ms-radial-gradient( 70px 70px, circle closest-side, #eee 100%, #fff 100%)!important;
+}
+.jinguo_bg>a>div{background-position-y:-80px!important;}
+.jinguo_bg>a>p{color:#4977fc!important;}
+
+.nav_shhfw{background-position:-480px 0!important;}/*社会化服务*/
+.nav_fwfx{background-position:-160px 0!important;}/*服务分析*/
+.nav_sjcs{background-position:-80px 0!important;}/*数据传输*/
+.nav_zyfx{background-position:-320px 0!important;}/*作业分析*/
+.nav_xmfx{background-position:-240px 0!important;}/*项目分析*/
+.nav_zbhzs{background-position:-400px 0!important;}/*装备合作社*/
+.nav_jlfx{}/*监理分析*/
+.nav>ul>li:hover >a>div{background-position-y:-80px!important;}
+.nav>ul>li:hover >a>p{color:#4977fc;}
+/*-- 导航 --*/
+
+/*滚动条样式*/
+::-webkit-scrollbar {/*滚动条整体样式*/
+	width: 0px!important;    /*高宽分别对应横竖滚动条的尺寸*/
+	height: 6px!important;
+	background: #ffffff!important;
+	cursor: pointer!important;
+}
+::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+	border-radius: 5px!important;
+	-webkit-box-shadow: inset 0 0 5px rgba(240,240,240,.5)!important;
+	background: #ccc!important;
+	cursor: pointer!important;
+}
+::-webkit-scrollbar-track {/*滚动条里面轨道*/
+	-webkit-box-shadow: inset 0 0 5px rgba(240,240,240,.5)!important;
+	border-radius: 0!important;
+	background: rgba(240,240,240,0.5)!important;
+	cursor: pointer!important;
+}
+/*滚动条样式*/

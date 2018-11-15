@@ -1,0 +1,294 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>装备处合作社数据</title>
+<link rel="stylesheet" href="css/tong.css">
+<style>	
+	.content{margin:30px;background-color:#fff;box-shadow:0 0 10px 0 rgba(0,0,0,.2);border-radius:30px;padding:30px;}
+	
+	.biao_tou{line-height:30px;margin:10px 0 25px;}
+	.biao_tou>p{float:left;width:calc(100% - 180px);color:#3f3f3f;}
+	.biao_tou>ul{width:180px;float:left;}
+	.biao_tou>ul>li{
+		width:78px;border:1px solid #eee;border-radius:5px;text-align:center;line-height:28px;
+		color:#517cfc;margin-right:20px;float:left;cursor:pointer;font-size:14px;
+		background-image: -moz-linear-gradient( 90deg, rgb(255,255,255) 0%, rgb(240,240,240) 100%);
+		background-image: -webkit-linear-gradient( 90deg, rgb(255,255,255) 0%, rgb(240,240,240) 100%);
+		background-image: -ms-linear-gradient( 90deg, rgb(255,255,255) 0%, rgb(240,240,240) 100%);
+	}
+	.biao_tou>ul>li:last-of-type{margin:0;}
+	.biao_jingguo,.biao_tou>ul>li:hover{
+		color:#fff!important;
+		background-image: -moz-linear-gradient( 90deg, #007aff 0%, #517cfc 100%)!important;
+		background-image: -webkit-linear-gradient( 90deg, #007aff 0%, #517cfc 100%)!important;
+		background-image: -ms-linear-gradient( 90deg, #007aff 0%, #517cfc 100%)!important;
+	}
+
+	
+	/*二级框样式*/.er_box{border:1px solid #d8e2f0;border-radius:5px;padding:10px;height:100%; box-shadow: 0px 12px 36px 0px rgba(211, 215, 221, 0.4);}
+	/*.er_box>p{color:#404040;font-size:18px;line-height:24px;margin-bottom:20px;}*/
+	/*.er_box>div{height:calc(100% - 44px);}*/
+	/*-- 第一行图表 --*/
+	.no_01_box{margin-bottom:30px;}
+	
+	.no01_left{float:left;width:calc(65% - 30px);margin-right:30px;}
+	
+	.gdqgmzj_bt_phb{margin-bottom:30px;height:500px;}/*各地区购买总价/补贴排行榜*/
+	.phb_tab{height:calc(100% - 65px);overflow:auto;}
+	.phb_tab>table{
+		float:left;width:50%;color:#404040;text-align:center;font-size:14px;line-height:50px;margin-bottom:10px;
+		border-collapse:collapse;
+	}
+	.phb_tab>table tr{border-bottom:1px solid #bbebff;border-top:1px solid #bbebff;}
+	.phb_tab>table tr:nth-of-type(2n+1){background-color:#edf4fc;}
+	.phb_tab>table tr img{width:30px;margin:0 auto;}
+	
+	.gdqgmzj_bt_zzt{height:448px;}/*各地区购买总价/补贴柱状图*/
+	
+	.no01_right{float:left;width:calc(35% - 22px);height:1000px;}
+	/*-- 第一行图表 --*/
+	/*-- 第二行图表 --*/
+	.no_02_box{}
+	
+	.gdqhzs_tjt{float:left;width:calc(65% - 52px);height:500px;margin-right:30px;}/*各地区合作社统计图*/
+	.bdgmzj_btbpbzt{float:left;width:calc(35% - 22px);height:500px;}/*本地购买总价/补贴比例饼状图*/
+	.gdqhzs_tjt>p,.bdgmzj_btbpbzt>p{line-height:30px;margin:10px 0 25px;}
+	.gdqhzs_tjt>div,.bdgmzj_btbpbzt>div{height:calc(100% - 65px);}
+	/*-- 第二行图表 --*/
+	
+	#region{background: none;}
+</style>
+</head>
+
+<body>
+	<div class="top"><img src="img/biaotou.png" alt=""></div>
+	<div class="nav">
+		<ul>
+			<li>
+				<a href="index_no1.html">
+					<div class="nav_shhfw"></div>
+					<p>社会化服务</p>
+				</a>
+			</li>
+			<li>
+				<a href="index_no6.html">
+					<div class="nav_fwfx"></div>
+					<p>服务分析</p>
+				</a>
+			</li>
+			<li>
+				<a href="index_no5.html">
+					<div class="nav_sjcs"></div>
+					<p>数据传输</p>
+				</a>
+			</li>
+			<li>
+				<a href="index_no4.html">
+					<div class="nav_zyfx"></div>
+					<p>作业分析</p>
+				</a>
+			</li>
+			<li>
+				<a href="index_no2.html">
+					<div class="nav_xmfx"></div>
+					<p>项目分析</p>
+				</a>
+			</li>
+			<li class="jinguo_bg">
+				<a href="index_no3.html">
+					<div class="nav_zbhzs"></div>
+					<p>装备合作社</p>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<div class="nav_jlfx"></div>
+					<p>监理分析</p>
+				</a>
+			</li>
+			<h6 class="clearfix"></h6>
+		</ul>
+	</div>
+	<div class="content">
+		<!-- 第一行图表 -->
+		<div class="no_01_box">
+			<div class="no01_left">
+				<!-- 各地区购买总价/补贴排行榜 -->
+				<div class="gdqgmzj_bt_phb er_box">
+					<div class="biao_tou">
+						<p>各地区购买总价/补贴排行榜</p>
+						<ul>
+							<li class="biao_jingguo">总价</li>
+							<li>补贴</li>
+							<h6 class="clearfix"></h6>
+						</ul>
+						<h6 class="clearfix"></h6>
+					</div>
+					<div class="phb_tab">
+						<table>
+							<tr>
+								<th>排行</th>
+								<th>地区</th>
+								<th>作业面积</th>
+								<th>达标作业</th>
+								<th>达标率</th>
+							</tr>
+							<tr>
+								<td><img src="img/no_01.png" alt=""></td>
+								<td>太原</td>
+								<td>8952.6亩</td>
+								<td>8902.8亩</td>
+								<td>98.54%</td>
+							</tr>
+							<tr>
+								<td><img src="img/no_03.png" alt=""></td>
+								<td>晋中</td>
+								<td>6896.60亩</td>
+								<td>6689.84亩</td>
+								<td>97.56%</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>临汾</td>
+								<td>3956.06亩</td>
+								<td>3989.61亩</td>
+								<td>98.65%</td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td>阳泉</td>
+								<td>7000.61亩</td>
+								<td>7858.83亩</td>
+								<td>98.78%</td>
+							</tr>
+							<tr>
+								<td>9</td>
+								<td>忻州</td>
+								<td>5698.62亩</td>
+								<td>5562.82亩</td>
+								<td>96.88%</td>
+							</tr>
+							<tr>
+								<td>11</td>
+								<td>大同</td>
+								<td>3956.06亩</td>
+								<td>3896.81亩</td>
+								<td>98.65%</td>
+							</tr>
+						</table>
+						<table>
+							<tr>
+								<th>排行</th>
+								<th>地区</th>
+								<th>作业面积</th>
+								<th>达标作业</th>
+								<th>达标率</th>
+							</tr>
+							<tr>
+								<td><img src="img/no_02.png" alt=""></td>
+								<td>吕梁</td>
+								<td>7000.61亩</td>
+								<td>7858.83亩</td>
+								<td>98.78%</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>长治</td>
+								<td>5698.62亩</td>
+								<td>5562.82亩</td>
+								<td>96.88%</td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td>运城</td>
+								<td>8952.6亩</td>
+								<td>8902.8亩</td>
+								<td>98.54%</td>
+							</tr>
+							<tr>
+								<td>8</td>
+								<td>朔州</td>
+								<td>6896.6亩</td>
+								<td>6689.84亩</td>
+								<td>97.56%</td>
+							</tr>
+							<tr>
+								<td>10</td>
+								<td>晋城</td>
+								<td>3956.06亩</td>
+								<td>3896.81亩</td>
+								<td>98.65%</td>
+							</tr>
+						</table>
+						<h6 class="clearfix"></h6>
+					</div>
+				</div>
+				<!-- 各地区购买总价/补贴排行榜 -->
+				<!-- 各地区购买总价/补贴柱状图 -->
+				<div class="gdqgmzj_bt_zzt er_box">
+					<div class="biao_tou">
+						<p>各地区购买总价/补贴柱状图</p>
+						<ul>
+							<li class="biao_jingguo">总价</li>
+							<li>补贴</li>
+							<h6 class="clearfix"></h6>
+						</ul>
+						<h6 class="clearfix"></h6>
+					</div>
+
+					<div style="height:calc(100% - 65px);" id='region'></div>
+
+					<!--<div style="height:calc(100% - 65px);background-color:rgba(0,0,0,.6);"></div>-->
+
+					<!--<div style="height:calc(100% - 65px);"></div>-->
+
+				</div>
+				<!-- 各地区购买总价/补贴柱状图 -->
+			</div>
+			<div class="no01_right er_box">
+				<!-- 各地区购买总价/补贴热力图 -->
+				<div class="gdqgmzj_bt_rlt biao_tou">
+					<p>各地区购买总价/补贴热力图</p>
+					<ul>
+						<li class="biao_jingguo">总价</li>
+						<li>补贴</li>
+						<h6 class="clearfix"></h6>
+					</ul>
+					<h6 class="clearfix"></h6>
+				</div>
+				<div style="height:calc(100% - 65px);" id="programFb"></div>
+				<!-- 各地区购买总价/补贴热力图 -->
+			</div>
+			<h6 class="clearfix"></h6>
+		</div>
+		<!-- 第一行图表 -->
+		<!-- 第二行图表 -->
+		<div class="no_02_box">
+			<!-- 各地区合作社统计图 -->
+			<div class="gdqhzs_tjt er_box">
+				<p>各地区合作社统计图</p>
+				<div id="box3"></div>
+			</div>
+			<!-- 各地区合作社统计图 -->
+			<!-- 本地购买总价/补贴比例饼状图 -->
+			<div class="bdgmzj_btbpbzt er_box">
+				<p>本地购买总价/补贴比例饼状图</p>
+				<div id='bdgmzj_btbpbzt'></div>
+			</div>
+			<!-- 本地购买总价/补贴比例饼状图 -->
+			<h6 class="clearfix"></h6>
+		</div>
+		<!-- 第二行图表 -->
+	</div>
+	
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script src="../js/echarts.js"></script>
+	<!-- 各地区购买总价/补贴柱状图 -->
+	<script src='../js/no3/region.js'></script>
+	<script src="../js/web/programFb03.js"></script>
+	<script src="../js/web/bdgmzj_btbpbzt.js"></script>
+	<script src="../js/web/gdqhzs_tjt.js"></script>
+
+</body>
+</html>

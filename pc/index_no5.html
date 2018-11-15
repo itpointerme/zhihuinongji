@@ -1,0 +1,443 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>终端数据分析</title>
+<link rel="stylesheet" href="css/tong.css">
+<style>	
+	.content{margin:30px;background-color:#fff;box-shadow:0 0 10px 0 rgba(0,0,0,.2);border-radius:30px;padding:30px;}
+	
+	.biao_tou{line-height:30px;margin:10px 0 25px;}
+	.biao_tou>p{float:left;width:calc(100% - 180px);color:#3f3f3f;}
+	
+	/*二级框样式*/.er_box{border:1px solid #d8e2f0;border-radius:5px;padding:10px;height:100%; box-shadow: 0px 12px 36px 0px rgba(211, 215, 221, 0.4);}
+	.er_box>p{color:#404040;font-size:18px;line-height:30px;margin:10px 0 25px;}
+	.er_box>div{height:calc(100% - 65px);}
+	
+	/*-- 第一行图表 --*/
+	.no_box01{margin-bottom:30px;}
+	
+	.zdaz_phb{float:left;height:500px;width:calc(45% - 52px);margin-right:30px;}/*终端安装排行榜*/
+	.qszdzl_hzt{float:left;height:500px;width:calc(55% - 22px);}/*全省终端总量汇总图*/
+	/*-- 第一行图表 --*/
+	/*-- 筛选 --*/
+	.shaixuan_box{color:#4977fc;line-height:50px;margin:30px;}
+	.shaixuan_box>p{font-size:20px;width:200px;float:left;}
+	.shaixuan_box>ul{width:calc(100% - 200px);float:left;}
+	.shaixuan_box>ul>li{float:left;width:calc(33.3333%);}
+	.shaixuan_box>ul>li>p{float:left;width:30%;text-align:center;}
+	.shaixuan_box>ul>li>select{float:left;width:70%;border-radius:5px;height:40px;margin:5px 0;text-align:center;
+		background-image: -moz-linear-gradient( 90deg, rgb(238,238,238) 0%, rgb(255,255,255) 100%);
+		background-image: -webkit-linear-gradient( 90deg, rgb(238,238,238) 0%, rgb(255,255,255) 100%);
+		background-image: -ms-linear-gradient( 90deg, rgb(238,238,238) 0%, rgb(255,255,255) 100%);
+	}
+	.shaixuan_box>ul>li>input{border:#5f97ff 1px solid;border-radius:5px;height:38px;margin:5px 0 5px 30px;text-indent:30px;width:calc(100% - 32px);}
+	.sousuo_an{width:40px;height:40px;position:absolute;right:0;top:6px;background:url(img/sousuo_anniu.png) no-repeat;cursor:pointer;}
+	/*-- 筛选 --*/
+	/*-- 第二行图表 --*/
+		/*左部分*/
+	.no_box02_left{float:left;width:calc(65% - 30px);margin-right:30px;}
+	
+	.no_box02_left-top{margin-bottom:30px;height:500px;}
+	.yfaz_qst{float:left;width:calc(60% - 52px);height:calc(100% - 22px);margin-right:30px;}/*月份安装趋势图*/
+	.ndaz_qst{float:left;width:calc(40% - 22px);height:calc(100% - 22px);}/*年度安装趋势图*/
+	.no_box02_left-bottom{height:492px;}
+	.sjcs_fxt{float:left;width:calc(60% - 52px);height:calc(100% - 22px);margin-right:30px;}/*数据传输分析表*/
+	.zdzh_fxt{float:left;width:calc(40% - 22px);height:calc(100% - 22px);}/*终端综合分析图*/
+		/*左部分*/
+	.zdfb_rlt{float:left;width:calc(35% - 22px);height:1000px;}/*终端分布热力图*/
+	/*-- 第二行图表 --*/
+
+	#insert{background: none;}
+	#year{background: none;}
+</style>
+</head>
+
+<body>
+	<div class="top"><img src="img/biaotou.png" alt=""></div>
+	<div class="nav">
+		<ul>
+			<li>
+				<a href="index_no1.html">
+					<div class="nav_shhfw"></div>
+					<p>社会化服务</p>
+				</a>
+			</li>
+			<li>
+				<a href="index_no6.html">
+					<div class="nav_fwfx"></div>
+					<p>服务分析</p>
+				</a>
+			</li>
+			<li class="jinguo_bg">
+				<a href="index_no5.html">
+					<div class="nav_sjcs"></div>
+					<p>数据传输</p>
+				</a>
+			</li>
+			<li>
+				<a href="index_no4.html">
+					<div class="nav_zyfx"></div>
+					<p>作业分析</p>
+				</a>
+			</li>
+			<li>
+				<a href="index_no2.html">
+					<div class="nav_xmfx"></div>
+					<p>项目分析</p>
+				</a>
+			</li>
+			<li>
+				<a href="index_no3.html">
+					<div class="nav_zbhzs"></div>
+					<p>装备合作社</p>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<div class="nav_jlfx"></div>
+					<p>监理分析</p>
+				</a>
+			</li>
+			<h6 class="clearfix"></h6>
+		</ul>
+	</div>
+	<div class="content">
+		<!-- 第一行图表 -->
+		<div class="no_box01">
+			<!-- 终端安装排行榜 -->
+			<div class="zdaz_phb er_box">
+				<p>终端安装排行榜</p>
+				<div id='insert'></div>
+			</div>
+			<!-- 终端安装排行榜 -->
+			<!-- 全省终端总量汇总图 -->
+			<div class="qszdzl_hzt er_box">
+				<p>全省终端总量汇总图</p>
+				<div id="box2"></div>
+			</div>
+			<!-- 作业类型调度柱状图 -->
+			<h6 class="clearfix"></h6>
+		</div>
+		<!-- 第一行图表 -->
+		<!-- 筛选 -->
+		<div class="shaixuan_box">
+			<p>当前页面：河北信翔</p>
+			<ul>
+				<li>
+					<p>品牌分类</p>
+					<select name="" id="">
+						<option value="">河北信翔</option>
+					</select>
+					<h6 class="clearfix"></h6>
+				</li>
+				<li>
+					<p>作业类别</p>
+					<select name="" id="">
+						<option value="">深松</option>
+						<option value="">小麦播种</option>
+						<option value="">玉米播种</option>
+					</select>
+					<h6 class="clearfix"></h6>
+				</li>
+				<li style="position:relative;">
+					<div class="sousuo_an"></div>
+					<input type="text">
+					<h6 class="clearfix"></h6>
+				</li>
+				<h6 class="clearfix"></h6>
+			</ul>
+			<h6 class="clearfix"></h6>
+		</div>
+		<!-- 筛选 -->
+		<!-- 第二行图表 -->
+		<div class="no_box02">
+			<!-- 左部分 -->
+			<div class="no_box02_left">
+				<div class="no_box02_left-top">
+					<!-- 月份安装趋势图 -->
+					<div class="yfaz_qst er_box">
+						<p>月份安装趋势图</p>
+						<div id="box3"></div>
+					</div>
+					<!-- 月份安装趋势图 -->
+					<!-- 年度安装趋势图 -->
+					<div class="ndaz_qst er_box">
+						<p>年度安装趋势图</p>
+						<div id="year"></div>
+					</div>
+					<!-- 年度安装趋势图 -->
+					<h6 class="clearfix"></h6>
+				</div>
+				<div class="no_box02_left-bottom">
+					<!-- 数据传输分析表 -->
+					<div class="sjcs_fxt er_box">
+						<p>数据传输分析表</p>
+						<div id="box4"></div>
+					</div>
+					<!-- 数据传输分析表 -->
+					<!-- 终端综合分析图 -->
+					<div class="zdzh_fxt er_box">
+						<p>终端综合分析图</p>
+						<div id="analyze"></div>
+					</div>
+					<!-- 终端综合分析图 -->
+					<h6 class="clearfix"></h6>
+				</div>
+			</div>
+			<!-- 左部分 -->
+			<!-- 终端分布热力图 -->
+			<div class="zdfb_rlt er_box">
+				<p>终端分布热力图</p>
+				<div id="zdfbrlt"></div>
+			</div>
+			<!-- 终端分布热力图 -->
+			<h6 class="clearfix"></h6>
+		</div>
+		<!-- 第二行图表 -->
+	</div>
+	
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script src='../js/echarts.js'></script>
+	
+	<!-- 终端安装排行榜 -->
+	<script src="../js/no5/insert.js"></script>
+	
+	<!-- 年度安装趋势图  -->
+	<script src="../js/no5/year.js"></script>
+
+	<!-- 终端分布热力图 -->
+	<script src="../js/no5/zdfbrlt.js"></script>
+
+	<!-- 终端综合分析图 -->
+	<script src='../js/no5/analyze.js'></script>
+
+	<!-- 全省终端总量汇总图 -->
+	<script src="../js/web/qszd_hzt.js"></script>
+	<!-- 月份安装趋势图 -->
+	<script src="../js/web/yfaz_qst.js"></script>
+	
+	<script>
+
+	var myChart4 = echarts.init(document.getElementById('box4'));
+
+	var xData = ['大同市','晋中市','太原市','临汾市','长治市','朔州市','忻州市','运城市','阳泉市','吕梁市','晋城市'];
+
+	myChart4.setOption({
+  
+    "tooltip": {
+        "trigger": "axis",
+        "axisPointer": {
+            "type": "shadow",
+            textStyle: {
+                color: "#fff"
+            }
+
+        },
+    },
+    "grid": {
+        "borderWidth": 0,
+        "top": 110,
+        "bottom": 95,
+        textStyle: {
+            color: "#fff"
+        }
+    },
+    "legend": {
+        x: '4%',
+        top: '11%',
+        textStyle: {
+            color: '#90979c',
+        },
+        "data": ['老用户', '新用户']
+    },
+     
+
+    "calculable": true,
+    "xAxis": [{
+        "type": "category",
+        "axisLine": {
+            lineStyle: {
+                color: '#565656'
+            }
+        },
+        "splitLine": {
+            "show": false
+        },
+        "axisTick": {
+            "show": false
+        },
+        "splitArea": {
+            "show": false
+        },
+        "axisLabel": {
+            "interval": 0,
+            "textStyle":{
+            	"color":"#272822",
+            }
+
+        },
+        "data": xData,
+        "label":{}
+    }],
+    "yAxis": [{
+        "type": "value",
+        "splitLine": {
+            "show": false
+        },
+        "axisLine": {
+            lineStyle: {
+                color: '#565656'
+            }
+        },
+        "axisTick": {
+            "show": false
+        },
+        "axisLabel": {
+            "interval": 0,
+             "textStyle":{
+            	"color":"#272822",
+            }
+
+        },
+        "splitArea": {
+            "show": false
+        },
+
+    }],
+    "dataZoom": [{
+        "show": true,
+        "height": 30,
+        "xAxisIndex": [
+            0
+        ],
+        bottom: 30,
+        "start": 10,
+        "end": 80,
+        handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
+        handleSize: '110%',
+        handleStyle:{
+            color:"#d3dee5",
+            
+        },
+           textStyle:{
+            color:"#fff"},
+           borderColor:"#90979c"
+        
+        
+    }, {
+        "type": "inside",
+        "show": true,
+        "height": 15,
+        "start": 1,
+        "end": 35
+    }],
+    "series": [{
+            "name": "老用户",
+            "type": "bar",
+            "stack": "总量",
+            "barMaxWidth": 35,
+            "barGap": "10%",
+            "itemStyle": {
+                "normal": {
+                    "color": "#5E97FE",
+                    "label": {
+                        "show": true,
+                        "textStyle": {
+                            "color": "#fff"
+                        },
+                        "position": "insideTop",
+                        formatter: function(p) {
+                            return p.value > 0 ? (p.value) : '';
+                        }
+                    }
+                }
+            },
+            "data": [
+                198.66,
+                330.81,
+                151.95,
+                160.12,
+                222.56,
+                229.05,
+                128.53,
+                250.91,
+                224.47,
+                473.99,
+                126.85,
+                260.50
+            ],
+        },
+
+        {
+            "name": "新用户",
+            "type": "bar",
+            "stack": "总量",
+            "itemStyle": {
+                "normal": {
+                    "color": "#9CBEFD",
+                    "barBorderRadius": 0,
+                    "label": {
+                        "show": true,
+                        "position": "top",
+                        formatter: function(p) {
+                            return p.value > 0 ? (p.value) : '';
+                        }
+                    }
+                }
+            },
+            "data": [
+                82.89,
+                67.54,
+                62.07,
+                59.43,
+                67.02,
+                67.09,
+                35.66,
+                71.78,
+                81.61,
+                78.85,
+                79.12,
+                72.30
+            ]
+        }, {
+            "name": "总",
+            "type": "line",
+            // "stack": "总量",
+            symbolSize:5,
+            symbol:'circle',
+            "itemStyle": {
+                "normal": {
+                    "color": "#2572FF",
+                    "barBorderRadius": 0,
+                    // "label": {
+                    //     "show": true,
+                    //     // "position": "top",
+                    //     formatter: function(p) {
+                    //         return p.value > 0 ? (p.value) : '';
+                    //     }
+                    // }
+                }
+            },
+           "data": [
+                198.66,
+                330.81,
+                151.95,
+                160.12,
+                222.56,
+                229.05,
+                128.53,
+                250.91,
+                224.47,
+                473.99,
+                126.85,
+                260.50
+            ],
+        },
+    ]
+});
+		
+	</script>
+
+</body>
+</html>

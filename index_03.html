@@ -1,0 +1,339 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>山西省智慧农机</title>
+<link rel="stylesheet" href="css/tong.css">
+<style>
+	/*-- 内容区 --*/
+	.content{position:fixed;left:0;top:5%;height:calc(95% - 60px);width:calc(100% - 60px);z-index:999;padding:30px;}
+	/*-- 内容区 --*/
+	/*-- 标头及图形限制 --*/
+	.title_and_box>p{line-height:50px;font-size:24px;color:#21fbfd;margin-bottom:20px;text-align:center;}
+	.title_and_box>div{height:calc(100% - 70px);}/*overflow:auto;*/
+	/*-- 标头及图形限制 --*/
+	
+	/*-- 左侧第一列 --*/
+	.left_no_01{float:left;width:calc(25% - 10px);margin-right:10px;height:100%;}
+	.left_no_01>p{text-align:center;color:#21fbfd;line-height:50px;font-size:24px;}
+	.left_no_01>.left_select{margin:20px auto;font-size:24px;text-align:center;width:150px;}
+	.left_no_01>.left_select>select{
+		border:1px #02fffd dashed;color:#fff;padding:10px;font-size:20px;line-height:20px;text-align:center;width:100%;background-color:rgba(0,100,250,.2);
+	}
+	
+	.left_no_01>select{
+		border:1px #02fffd dashed;color:#fff;padding:10px;font-size:20px;text-align:center;background-color:rgba(0,100,250,.2);
+		width:200px;height:50px;margin:25px auto;display:block;
+	}
+	.biao_gif{height:calc(100% - 140px);overflow:auto;}
+	.biao_gif>li{height:calc(20% - 10px);position:relative;width:80%;margin:10px auto;}
+	.biao_gif>li>img{width:100%;}
+	.biao_gif>li>ul{position:absolute;top:0;left:0;width:100%;height:100%;}
+	.biao_gif>li>ul>li:nth-of-type(1){position:absolute;font-size:12px;top:22%;left:13%;}
+	.biao_gif>li>ul>li:nth-of-type(2){position:absolute;font-size:32px;top:32%;left:9%;}
+	.biao_gif>li>ul>li:nth-of-type(3){position:absolute;color:#fff;font-size:16px;top:14%;left:38%;}
+	.hui{color:#9a9a9a;}
+	.huang{color:#fedb1d;}
+	.cheng{color:#ff8400;}
+	.lan{color:#01ffff;}
+	/*-- 左侧第一列 --*/
+	/*-- 左侧第二列 --*/
+	.left_no_02{float:left;width:calc(25% - 10px);margin:80px 10px 0 0;height:calc(100% - 80px);}
+	
+	.xm_fbt{height:100%;}/*项目分布图*/
+	/*-- 左侧第二列 --*/
+	/*-- 右侧第二列 --*/
+	.right_no_02{float:left;width:calc(35% - 10px);margin:80px 10px 0 0;height:calc(100% - 80px);}
+	
+	.ydxm_jdb{height:calc(50% - 30px);margin-bottom:30px;}/*月度项目进度图*/
+	
+	.dqxmwcqk_tjt{height:50%;position:relative;}/*地区项目完成情况统计图*/
+	.dqxmwcqk_tjt>select{position:absolute;border:1px #02fffd dashed;color:#fff;padding:5px;font-size:18px;text-align:center;width:140px;background-color:rgba(0,100,250,.2);top:70px;right:30px;}
+	/*-- 右侧第二列 --*/
+	/*-- 右侧第一列 --*/
+	.right_no_01{float:left;width:15%;height:100%;}
+	
+	.xm_mingcheng>li{margin-bottom:15px;}/*项目名称*/
+	.xm_mingcheng>li>p{border:1px #02fffd dashed;color:#fff;padding:10px;font-size:24px;text-align:center;background-color:rgba(0,100,250,.2);width:80%;}
+	.xm_mingcheng>li>select{border:1px #02fffd dashed;color:#fff;padding:10px;font-size:24px;text-align:center;width:calc(80% + 22px);background-color:rgba(0,100,250,.2);}
+	.xm_mingcheng>li:hover p{background-color:rgba(0,100,250,.6);cursor:pointer;}
+	
+	.xm_mx{background-color:rgba(0,100,250,.1);position:relative;margin-top:40px;padding:10px;height:calc(100% - 591px);overflow:hidden;}
+	.xm_mx>ul{line-height:30px;color:#fff;font-size:20px;padding-top:20px;}
+	.xm_mx>ul span{color:#01ffff;}
+	.biankuang01{position:absolute;top:0;left:0;}
+	.biankuang02{position:absolute;bottom:0;right:0;}
+	/*-- 右侧第一列 --*/
+	
+	/*-- 左侧点击后弹窗 --*/
+	.gif_jiguo_tc{position:fixed;width:100%;height:100%;left:0;top:0;z-index:1000;display:none;}/*进度弹窗*/
+	.gif_jiguo_tc>div{position:absolute;width:800px;height:150px;padding:20px;border-radius:10px;background-color:rgba(0,0,0,.8);color:#fff;line-height:50px;left:calc(50% - 420px);top:calc(50% - 95px);}
+	.gif_jiguo_tc>div>div:nth-of-type(1){width:40%;float:left;}
+	.gif_jiguo_tc>div>div:nth-of-type(2){width:60%;float:left;}
+	
+	.gif_jg_left>ul>li{height:50px;}
+	.gif_jg_left>ul>li>p:nth-of-type(1){float:left;width:calc(100% - 120px);}
+	.gif_jg_left>ul>li>p:nth-of-type(2){float:left;width:100px;margin-right:20px;text-align:right;}
+	
+	.gif_jg_right>ul>li{height:50px;}
+	.gif_jg_right>ul>li>p:nth-of-type(1){float:left;width:160px;}
+	.gif_jg_right>ul>li>p:nth-of-type(2){float:left;width:calc(100% - 160px);height:50px;overflow:auto;}
+	
+	/*进度条*/
+	.jindutiao>div{height:8px;width:298px;border:1px #01ffff solid;background-color:#072c50;border-radius:3px;position:relative;margin:20px 0 20px}
+	.jindutiao>div>div{position:absolute;left:-1px;top:-1px;overflow:hidden;border-radius:3px;width:60%;}
+	.jindutiao>div>div>span{display:block;height:10px;width:300px;}
+	.jindutiao>div>div>span>img{width:100%;}
+	/*进度条*/
+	/*-- 左侧点击后弹窗 --*/
+</style>
+</head>
+
+<body>
+	<div class="top"><img src="img/top_name.png" alt=""></div>
+	<div class="nav">
+		<ul class="nav_content">
+			<li>
+				<a href="index_07.html">
+					<div></div>
+					<p>社会化服务数据新首页</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="index_06.html">
+					<div class="nongji_jiankong"></div>
+					<p>农机监控</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="index_01.html">
+					<div class="zuoye_zhiliang"></div>
+					<p>作业质量分析</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="index_03.html">
+					<div class="xaingmu_fenxi"></div>
+					<p>项目分析</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="index_05.html">
+					<div class="zhuangbei_hezuose"></div>
+					<p>装备处合作社数据分析</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="index_04.html">
+					<div class="zhengli_fenxi"></div>
+					<p>整理分析</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="#">
+					<div class="fuwu_shuju"></div>
+					<p>服务数据分析</p>
+				</a>
+			</li>
+		</ul>
+		<div class="nav_right"><span></span></div>
+	</div>
+	<div class="content">
+		<div class="left_no_01">
+			<!-- 重大项目推进情况 -->
+			<p>重大项目推进情况</p>
+			<select name="" id="">
+				<option value="">其他项目</option>
+			</select>
+			<ul class="biao_gif">
+				<li>
+					<ul>
+						<li class="cheng">进行中</li>
+						<li class="lan">90%</li>
+						<li>晋城市秋季作业项目</li>
+					</ul>
+					<img src="img/lanse.gif" alt="">
+				</li>
+				<li>
+					<ul>
+						<li class="cheng">进行中</li>
+						<li class="lan">90%</li>
+						<li>大同市春耕项目</li>
+					</ul>
+					<img src="img/lanse.gif" alt="">
+				</li>
+				<li>
+					<ul>
+						<li class="lan">已完成</li>
+						<li class="lan">90%</li>
+						<li>晋城市秋季作业项目</li>
+					</ul>
+					<img src="img/lanse.gif" alt="">
+				</li>
+				<li>
+					<ul>
+						<li class="lan">已完成</li>
+						<li class="lan">90%</li>
+						<li>运城市春耕项目</li>
+					</ul>
+					<img src="img/lanse.gif" alt="">
+				</li>
+				<li>
+					<ul>
+						<li class="hui">已过期</li>
+						<li class="lan">90%</li>
+						<li>太原市春耕项目</li>
+					</ul>
+					<img src="img/lanse.gif" alt="">
+				</li>
+			</ul>
+			<!-- 重大项目推进情况 -->
+		</div>
+		<div class="left_no_02">
+			<!-- 项目分部图 -->
+			<div class="xm_fbt title_and_box">
+				<p>项目分部图</p>
+				<div id='programFb'></div>
+			</div>
+			<!-- 项目分部图 -->
+		</div>
+		<div class="right_no_02">
+			<!-- 月度项目进度图 -->
+			<div class="ydxm_jdb title_and_box">
+				<p>月度项目进度图</p>
+				<div id='item'></div>
+			</div>
+			<!-- 月度项目进度图 -->
+			<!-- 地区项目完成情况统计图 -->
+			<div class="dqxmwcqk_tjt title_and_box">
+				<p>地区项目完成情况统计图</p>
+				<div id='region'></div>
+				<select name="" id="">
+					<option value="">其他城市</option>
+				</select>
+			</div>
+			<!-- 地区项目完成情况统计图 -->
+		</div>
+		<div class="right_no_01">
+			<!-- 项目名称 -->
+			<ul class="xm_mingcheng">
+				<li>
+					<p>项目名称</p>
+				</li>
+				<li>
+					<p>深&emsp;&emsp;松</p>
+				</li>
+				<li>
+					<p>小麦播种</p>
+				</li>
+				<li>
+					<p>小麦收割</p>
+				</li>
+				<li>
+					<p>秸秆还田</p>
+				</li>
+				<li>
+					<p>玉米播种</p>
+				</li>
+				<li>
+					<p>玉米收割</p>
+				</li>
+				<li>
+					<select name="" id="">
+						<option value="">其他类别</option>
+					</select>
+				</li>
+			</ul>
+			<!-- 项目名称 -->
+			<div class="xm_mx">
+				<ul>
+					<li>作业类型：<span>深松</span></li>
+					<li>资金总量：<span>200000</span></li>
+					<li>时间：<span>2018.11.01</span></li>
+					<li>地点：<span>太原市、大同市、忻州市、晋中市、晋城市、运城市</span></li>
+				</ul>
+				<div class="biankuang01"><img src="img/biankuang01.png" alt=""></div>
+				<div class="biankuang02"><img src="img/biankuang02.png" alt=""></div>
+			</div>
+		</div>
+		<h6 class="clearfix"></h6>
+	</div>
+	<div class="gif_jiguo_tc">
+		<div>
+			<div class="gif_jg_left">
+				<ul>
+					<li>
+						<p>2018晋城市秋季作业项目</p>
+						<p style="color:#ff8500;">进行中</p>
+						<h6 class="clearfix"></h6>
+					</li>
+					<li>
+						<p>开始时间：<span>2018.09.12</span></p>
+						<p>进度：<span>60%</span></p>
+						<h6 class="clearfix"></h6>
+					</li>
+					<li class="jindutiao">
+						<div>
+							<div>
+								<span><img src="img/jiazaizhong02.gif" alt=""></span>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="gif_jg_right">
+				<ul>
+					<li>
+						<p>负责人：<span>李维嘉</span></p>
+						<p>更新时间：<span>2018年09月12日12:00:00</span></p>
+					</li>
+					<li>
+						<p>作业类别：<span>深耕播种</span></p>
+						<p>开始时间：<span>2018年08月08日08:00:00</span></p>
+					</li>
+					<li>
+						<p>规定期限：<span>30天</span></p>
+						<p>参与人：<span>卿秋雨、李文静、金克木、黄历</span></p>
+					</li>
+				</ul>
+			</div>
+			<h6 class="clearfix"></h6>
+		</div>
+	</div>
+</body>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/nav_an.js"></script>
+<script type="text/javascript" src="js/echarts.js"></script>
+<!-- 地区项目完成统计图 -->
+<script src='js/03/region.js'></script>
+<!-- 项目分布图 -->
+<script src='js/03/programFb.js'></script>
+<!-- 月度项目进度图 -->
+<script src="js/03/item.js"></script>
+<script>
+	
+	$(".biao_gif>li").click(function(){
+		$(this).find("img").attr("src","img/huangse.gif");
+		$(this).find("ul>li").eq(1).removeClass("lan").addClass("huang");
+		$(".gif_jiguo_tc").show();
+	})
+	$(".biao_gif>li").mouseenter(function(){
+		$(this).find("img").attr("src","img/huangse.gif");
+		$(this).find("ul>li").eq(1).removeClass("lan").addClass("huang");
+	})
+	$(".biao_gif>li").mouseleave(function(){
+		$(this).find("img").attr("src","img/lanse.gif");
+		$(this).find("ul>li").eq(1).removeClass("huang").addClass("lan");
+	})
+	$(".gif_jiguo_tc").click(function(){
+		$(this).hide();
+	})
+	
+</script>
+</html>

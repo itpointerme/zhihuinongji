@@ -1,0 +1,317 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>山西省智慧农机</title>
+<link rel="stylesheet" href="css/tong.css">
+<style>
+	/*-- 内容区 --*/
+	.content{position:fixed;left:0;top:5%;height:calc(95% - 60px);width:calc(100% - 60px);z-index:999;padding:30px;}
+	/*-- 内容区 --*/
+	/*-- 标头及图形限制 --*/
+	.title_and_box>p{line-height:50px;font-size:24px;color:#21fbfd;margin-bottom:50px;text-align:center;}
+	.title_and_box>div{height:calc(100% - 100px);}/*overflow:auto;*/
+	/*-- 标头及图形限制 --*/
+	
+	/*-- 左侧 --*/
+	.left_box{float:left;width:calc(25% - 10px);margin:80px 10px 0 0;height:calc(100% - 80px);}
+	
+	.zdaz_phb{height:calc(60% - 10px);margin-bottom:10px;}/*终端安装排行榜*/
+	.qszdzl_hzt{height:40%;}/*全省终端总量汇总图*/
+	/*-- 左侧 --*/
+	/*-- 右侧 --*/
+	.right_box{float:left;width:75%;height:100%;}
+	.right_box>p{line-height:50px;font-size:24px;color:#21fbfd;margin-bottom:40px;text-align:right;}
+	
+	.zdzh_fxt{
+		height:calc(100% - 121px);padding:30px 0 0 30px;
+		border-top:1px solid;
+		border-left:1px solid;
+		border-image: -webkit-linear-gradient(145deg,rgba(3,187,251,1) 15%, rgba(3,187,251,0) 48%) 30 30;
+		border-image: -moz-linear-gradient(145deg,rgba(3,187,251,1) 15%, rgba(3,187,251,0) 48%) 30 30;
+		border-image: linear-gradient(145deg,rgba(3,187,251,1) 15%, rgba(3,187,251,0) 48%) 30 30;
+	}/*终端综合分析图*/
+	
+		/*当前页/河北信翔*/
+	.dqy_hbxx{float:left;width:calc(25%);height:100%;}/*当前页/河北信翔*/
+	.dqy_hbxx>p{color:#21fbfd;line-height:30px;margin-bottom:30px;font-size:20px;}
+	.dqy_hbxx_select{margin-bottom:30px;}
+	.dqy_hbxx_select>select{float:left;margin-right:20px;width:calc(50% - 10px);line-height:40px;border:1px #05b1f1 dashed;background-color:rgba(0,100,250,.2);color:#fff;font-size:18px;height:40px;}
+	.dqy_hbxx_select>select:last-of-type{margin-right:0;}
+	.sxzd_rlt{height:calc(100% - 130px);}/*山西终端热力图*/
+		/*当前页/河北信翔*/
+		/*数据传输/月份安装趋势*/
+	.sjcs_yfazqs{height:100%;float:left;margin-left:10px;width:calc(45% - 10px);}
+	.sjcs_fxb{height:calc(55% - 30px);margin-bottom:30px;}/*数据传输分析表*/
+	.yfaz_qst{height:45%;}/*月份安装趋势图*/
+		/*数据传输/月份安装趋势*/
+		/*什么/年度安装趋势*/
+	.senme_ndazqs{float:left;width:calc(30% - 10px);margin-left:10px;height:100%;}
+	
+	.shenme_dd{height:calc(40% - 10px);margin-bottom:10px;}/*什么东东*/
+	.ndaz_qst{height:60%;}/*年度安装趋势图*/
+		/*什么/年度安装趋势*/
+	/*-- 右侧 --*/
+
+	#collect,#arrange{width: 100%;height: calc(100% - 110px);background: none;}
+	#install{width: 100%;height: calc(100% - 110px);background: none;}
+	#months{width: 100%;height: calc(100% - 110px);background: none;}
+	
+	/*-- 终端安装排行榜 --*/
+	#arrange>ul{width:100%;height:100%;position: relative;}
+    #arrange>ul>li{
+		font-size: 14px;
+		color: #fff;
+		text-align: center;
+		position:absolute;
+		-webkit-transition:.3s ;
+		-moz-transition:.3s ;
+		-ms-transition:.3s ;
+		-o-transition: .3s;
+		transition:.3s ;
+		height: 0;
+		cursor: pointer;
+    }
+	
+	#ar_no1{border-top-color:#ff595b!important;color:#000!important;font-weight:bold;}
+	#ar_no2{border-top-color:#ff9600!important;color:#000!important;font-weight:bold;}
+	#ar_no3{border-top-color:#ffef03!important;color:#000!important;font-weight:bold;}
+	
+	#arrange>ul>li>p{
+        width:25%;
+        position:relative;
+        top:-36px;
+		float:left;
+		transition:.2s;
+    }
+	
+	#arrange>ul>li:hover >p{color:#000!important;}
+    
+	#arrange>ul>li{
+		border-top: 50px solid rgba(0,162,255,.7);
+		border-right: 15px solid transparent;
+		border-left: 15px solid transparent;
+		border-bottom: 0px solid transparent;
+		transition:1s;
+		transform-origin:50% 50%;
+	}
+    #arrange>ul>li:nth-child(1){width:400px;top:0;font-size:18px;left:calc(50% - 200px - 16px);}
+    #arrange>ul>li:nth-child(2){width:364px;top:58px;font-size:16px;left:calc(50% - 182px - 16px);}
+    #arrange>ul>li:nth-child(3){width:328px;top:116px;font-size:16px;left:calc(50% - 164px - 16px);}
+    #arrange>ul>li:nth-child(4){width:292px;top:174px;font-size:14px;left:calc(50% - 146px - 16px);}
+    #arrange>ul>li:nth-child(5){width:256px;top:232px;font-size:14px;left:calc(50% - 128px - 16px);}
+	#arrange>ul>li:nth-child(6){width:220px;top:290px;font-size:12px;left:calc(50% - 110px - 16px);}
+	#arrange>ul>li:hover{
+		animation:abc 1s;
+	}
+	@keyframes abc{
+		0%{transform:perspective(400px) rotateX(0deg);}
+		100%{transform:perspective(400px) rotateX(360deg);}
+	}
+
+</style>
+</head>
+
+<body>
+	<div class="top"><img src="img/top_name.png" alt=""></div>
+	<div class="nav">
+		<ul class="nav_content">
+			<li>
+				<a href="index_07.html">
+					<div></div>
+					<p>社会化服务数据新首页</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="index_06.html">
+					<div class="nongji_jiankong"></div>
+					<p>农机监控</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="index_01.html">
+					<div class="zuoye_zhiliang"></div>
+					<p>作业质量分析</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="index_03.html">
+					<div class="xaingmu_fenxi"></div>
+					<p>项目分析</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="index_05.html">
+					<div class="zhuangbei_hezuose"></div>
+					<p>装备处合作社数据分析</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="index_04.html">
+					<div class="zhengli_fenxi"></div>
+					<p>整理分析</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="#">
+					<div class="fuwu_shuju"></div>
+					<p>服务数据分析</p>
+				</a>
+			</li>
+		</ul>
+		<div class="nav_right"><span></span></div>
+	</div>
+	<div class="content">
+		<div class="left_box">
+			<!-- 终端安装排行榜 -->
+			<div class="zdaz_phb title_and_box">
+				<p>终端安装排行榜</p>
+				<div id='arrange'>
+                    <ul>
+                        <li>
+                        	<p>排行</p>
+                        	<p>地区</p>
+                        	<p>达标作业</p>
+                        	<p>达标率</p>
+                        	<h6 class="clearfix"></h6>
+                        </li>
+                        <li id="ar_no1">
+                        	<p>1</p>
+                        	<p>太原</p>
+                        	<p>8902.6亩</p>
+                        	<p>98.54%</p>
+                        	<h6 class="clearfix"></h6>
+                        </li>
+                        <li id="ar_no2">
+                        	<p>2</p>
+                        	<p>大同</p>
+                        	<p>7902.6亩</p>
+                        	<p>96.54%</p>
+                        	<h6 class="clearfix"></h6>
+						</li>
+                        <li id="ar_no3">
+                        	<p>3</p>
+                        	<p>运城</p>
+                        	<p>6902.6亩</p>
+                        	<p>94.54%</p>
+                        	<h6 class="clearfix"></h6>
+                        </li>
+                        <li>
+                        	<p>4</p>
+                        	<p>阳泉</p>
+                        	<p>6902.6亩</p>
+                        	<p>93.54%</p>
+                        	<h6 class="clearfix"></h6>
+                        </li>
+                        <li>
+                        	<p>5</p>
+                        	<p>忻州</p>
+                        	<p>6902.6亩</p>
+                        	<p>92.98%</p>
+                        	<h6 class="clearfix"></h6>
+                        </li>
+                    </ul>
+                </div>
+				
+			</div>
+			<!-- 终端安装排行榜 -->
+			<!-- 全省终端总量汇总图 -->
+			<div class="qszdzl_hzt title_and_box">
+				<p>全省终端总量汇总图</p>
+				<div id='collect'></div>
+			</div>
+			<!-- 全省终端总量汇总图 -->
+		</div>
+		<div class="right_box">
+			<p>终端综合分析图</p>
+			<!-- 终端综合分析图 -->
+			<div class="zdzh_fxt">
+				<!-- 当前页/河北信翔 -->
+				<div class="dqy_hbxx">
+					<p>当前页/河北信翔</p>
+					<div class="dqy_hbxx_select">
+						<select name="" id="">
+							<option value="">品牌选择</option>
+						</select>
+						<select name="" id="">
+							<option value="">作业类型选择</option>
+						</select>
+						<h6 class="clearfix"></h6>
+					</div>
+					<div class="sxzd_rlt title_and_box">
+						<p>山西终端热力图</p>
+						<div id='sxhot'></div>
+					</div>
+				</div>
+				<!-- 当前页/河北信翔 -->
+				<!-- 数据传输/月份安装趋势 -->
+				<div class="sjcs_yfazqs">
+					<div class="sjcs_fxb title_and_box">
+						<p>数据传输分析表</p>
+						<div id='areaStatistics'></div>
+					</div>
+					<div class="yfaz_qst title_and_box">
+						<p>月份安装趋势图</p>
+						<div id='months'></div>
+					</div>
+				</div>
+				<!-- 数据传输/月份安装趋势 -->
+				<!-- 什么/年度安装趋势 -->
+				<div class="senme_ndazqs">
+					<!-- 什么东东 -->
+					<div class="shenme_dd" id="shenme_dd">
+						
+					</div>
+					<!-- 什么东东 -->
+					<!-- 年度安装趋势图 -->
+					<div class="ndaz_qst title_and_box">
+						<p>年度安装趋势图</p>
+						<div id='install'></div>
+					</div>
+					<!-- 年度安装趋势图 -->
+				</div>
+				<!-- 什么/年度安装趋势 -->
+				<h6 class="clearfix"></h6>
+			</div>
+			<!-- 终端综合分析图 -->
+		</div>
+		<h6 class="clearfix"></h6>
+	</div>
+</body>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/nav_an.js"></script>
+<script type="text/javascript" src="js/echarts.js"></script>
+<!-- 终端安排排行榜 -->
+<!--<script src='js/04/arrange.js'></script>-->
+
+<!-- 全省终端总量汇总图 -->
+<script src="js/04/collect.js"></script>
+
+<!-- 月份安装趋势图 -->
+<script src='js/04/month.js'></script>
+
+<!-- 年度安装趋势图 -->
+<script src='js/04/install.js'></script>
+
+<!-- 山西终端热力图 -->
+<script src='js/04/sxhot.js'></script>
+<!-- 山西雷达图 -->
+<script src="js/04/shenme_dd.js"></script>
+<!-- 数据传输分析表 -->
+<script src="js/04/areaStatistics.js"></script>
+
+
+<script>
+ 	$(document).ready(function(){
+		for(var a = 1;a < 4;a++){
+			$("#ar_no" + a + "").find("p").eq(0).html("<img style='width:30px;heght:30px;margin:0 auto' src='img/no_0" + a + ".png' />")
+		}
+    })
+</script>
+</html>

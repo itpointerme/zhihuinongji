@@ -1,0 +1,318 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>作业质量分析</title>
+<link rel="stylesheet" href="css/tong.css">
+<style>	
+	.content{margin:30px;background-color:#fff;box-shadow:0 0 10px 0 rgba(0,0,0,.2);border-radius:30px;padding:30px;}
+	
+	.biao_tou{line-height:30px;margin:10px 0 25px;}
+	.biao_tou>p{float:left;width:calc(100% - 180px);color:#3f3f3f;}
+	
+	/*二级框样式*/.er_box{border:1px solid #d8e2f0;border-radius:5px;padding:10px;height:100%; box-shadow: 0px 12px 36px 0px rgba(211, 215, 221, 0.4);}
+	.er_box>p{color:#404040;font-size:18px;line-height:30px;margin:10px 0 25px;}
+	.er_box>div{height:calc(100% - 65px);}
+	
+	/*-- 筛选 --*/
+	.shaixuan_box{color:#4977fc;line-height:50px;margin-bottom:30px;}
+	.shaixuan_box>p{font-size:20px;width:200px;float:left;}
+	.shaixuan_box>ul{width:calc(100% - 200px);float:left;}
+	.shaixuan_box>ul>li{float:left;width:calc(33.3333%);}
+	.shaixuan_box>ul>li>p{float:left;width:30%;text-align:center;}
+	.shaixuan_box>ul>li>select{float:left;width:70%;border-radius:5px;height:40px;margin:5px 0;text-align:center;
+		background-image: -moz-linear-gradient( 90deg, rgb(238,238,238) 0%, rgb(255,255,255) 100%);
+		background-image: -webkit-linear-gradient( 90deg, rgb(238,238,238) 0%, rgb(255,255,255) 100%);
+		background-image: -ms-linear-gradient( 90deg, rgb(238,238,238) 0%, rgb(255,255,255) 100%);
+	}
+	
+	/*-- 筛选 --*/
+	/*-- 第一行图表 --*/
+	.number_01{margin-bottom:30px;}
+	
+	.dqnjpj_zylfxt{width:calc(60% - 52px);margin-right:30px;float:left;height:500px;}/*地区农机平均作业量分析图*/
+	.dqrwwc_qkfxt{float:left;width:calc(40% - 22px);height:500px;}/*地区任务完成情况分析图*/
+	/*-- 第一行图表 --*/
+	/*-- 第二行图表 --*/
+	.number_02{margin-bottom:30px;height:500px;}
+	/*-- 第二行图表 --*/
+	/*-- 第三行图表 --*/
+		/*左侧*/
+	.nub03_left{float:left;width:calc(65% - 30px);margin-right:30px;}
+		/*左侧*/
+	.zydbl_phb{height:480px;margin-bottom:30px;}/*作业达标率排行榜*/
+	.zydbl_phb>div{overflow:auto;}
+	.zydbl_phb>div>table{
+		float:left;width:50%;color:#404040;text-align:center;font-size:14px;line-height:50px;margin-bottom:10px;
+		border-collapse:collapse;
+	}
+	.zydbl_phb>div>table tr{border-bottom:1px solid #bbebff;border-top:1px solid #bbebff;}
+	.zydbl_phb>div>table tr:nth-of-type(2n+1){background-color:#edf4fc;}
+	.zydbl_phb>div>table tr img{width:30px;margin:0 auto;}
+		/*下半部分*/
+	.nub03_bottom{height:468px;}
+	
+	.dbl_tjt{float:left;width:calc(45% - 52px);margin-right:30px;height:100%;}/*达标率统计图*/
+	.yxmj_tjt{float:left;width:calc(55% - 22px);height:100%;}/*有效面积统计图*/
+		/*下半部分*/
+		/*右侧*/
+	.nub03_right{float:left;width:calc(35% - 22px);height:1000px;}
+		/*右侧*/
+	/*-- 第三行图表 --*/
+	
+	#region{background: none;}
+</style>
+</head>
+
+<body>
+	<div class="top"><img src="img/biaotou.png" alt=""></div>
+	<div class="nav">
+		<ul>
+			<li>
+				<a href="index_no1.html">
+					<div class="nav_shhfw"></div>
+					<p>社会化服务</p>
+				</a>
+			</li>
+			<li>
+				<a href="index_no6.html">
+					<div class="nav_fwfx"></div>
+					<p>服务分析</p>
+				</a>
+			</li>
+			<li>
+				<a href="index_no5.html">
+					<div class="nav_sjcs"></div>
+					<p>数据传输</p>
+				</a>
+			</li>
+			<li class="jinguo_bg">
+				<a href="index_no4.html">
+					<div class="nav_zyfx"></div>
+					<p>作业分析</p>
+				</a>
+			</li>
+			<li>
+				<a href="index_no2.html">
+					<div class="nav_xmfx"></div>
+					<p>项目分析</p>
+				</a>
+			</li>
+			<li>
+				<a href="index_no3.html">
+					<div class="nav_zbhzs"></div>
+					<p>装备合作社</p>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<div class="nav_jlfx"></div>
+					<p>监理分析</p>
+				</a>
+			</li>
+			<h6 class="clearfix"></h6>
+		</ul>
+	</div>
+	<div class="content">
+		<!-- 筛选 -->
+		<div class="shaixuan_box">
+			<p>当前页面：河北信翔</p>
+			<ul>
+				<li>
+					<p>农机类型</p>
+					<select name="" id="">
+						<option value="">拖拉机</option>
+					</select>
+					<h6 class="clearfix"></h6>
+				</li>
+				<li>
+					<p>作业类别</p>
+					<select name="" id="">
+						<option value="">深松</option>
+					</select>
+					<h6 class="clearfix"></h6>
+				</li>
+				<li>
+					<p>作物类别</p>
+					<select name="" id="">
+						<option value="">小麦</option>
+					</select>
+					<h6 class="clearfix"></h6>
+				</li>
+				<h6 class="clearfix"></h6>
+			</ul>
+			<h6 class="clearfix"></h6>
+		</div>
+		<!-- 筛选 -->
+		<!-- 第一行图表 -->
+		<div class="number_01">
+			<!-- 地区农机平均作业量分析图 -->
+			<div class="dqnjpj_zylfxt er_box">
+				<p>地区农机平均作业量分析图</p>
+				<div id='region'></div>
+			</div>
+			<!-- 地区农机平均作业量分析图 -->
+			<!-- 地区任务完成情况分析图 -->
+			<div class="dqrwwc_qkfxt er_box">
+				<p>地区任务完成情况分析图</p>
+				<div id="task" style="background: none;"></div>
+			</div>
+			<!-- 地区任务完成情况分析图 -->
+			<h6 class="clearfix"></h6>
+		</div>
+		<!-- 第一行图表 -->
+		<!-- 第二行图表 -->
+		<div class="number_02 er_box">
+			<p>作业面积折线统计图</p>
+			<div id="zymjzxtjt"></div>
+		</div>
+		<!-- 第二行图表 -->
+		<!-- 第三行图表 -->
+		<div class="number_03">
+			<div class="nub03_left">
+				<!-- 作业达标率排行榜 -->
+				<div class="zydbl_phb er_box">
+					<p>作业达标率排行榜</p>
+					<div style="background: none;">
+						<table>
+							<tr>
+								<th>排行</th>
+								<th>地区</th>
+								<th>作业面积</th>
+								<th>达标作业</th>
+								<th>达标率</th>
+							</tr>
+							<tr>
+								<td><img src="img/no_01.png" alt=""></td>
+								<td>太原</td>
+								<td>8952.6亩</td>
+								<td>8902.8亩</td>
+								<td>98.54%</td>
+							</tr>
+							<tr>
+								<td><img src="img/no_03.png" alt=""></td>
+								<td>晋中</td>
+								<td>6896.6亩</td>
+								<td>6689.84亩</td>
+								<td>97.56%</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>临汾</td>
+								<td>3956.06亩</td>
+								<td>3896.81亩</td>
+								<td>98.65%</td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td>阳泉</td>
+								<td>7000.61亩</td>
+								<td>7853.83亩</td>
+								<td>98.78%</td>
+							</tr>
+							<tr>
+								<td>9</td>
+								<td>忻州</td>
+								<td>5689.62亩</td>
+								<td>5562.82亩</td>
+								<td>96.88%</td>
+							</tr>
+							<tr>
+								<td>11</td>
+								<td>大同</td>
+								<td>3956.06亩</td>
+								<td>3896.81亩</td>
+								<td>98.65%</td>
+							</tr>
+						</table>
+						<table>
+							<tr>
+								<th>排行</th>
+								<th>地区</th>
+								<th>作业面积</th>
+								<th>达标作业</th>
+								<th>达标率</th>
+							</tr>
+							<tr>
+								<td><img src="img/no_02.png" alt=""></td>
+								<td>吕梁</td>
+								<td>7000.61亩</td>
+								<td>7858.83亩</td>
+								<td>98.78%</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>长治</td>
+								<td>5698.62亩</td>
+								<td>5562.82亩</td>
+								<td>96.88%</td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td>运城</td>
+								<td>8952.6亩</td>
+								<td>8902.8亩</td>
+								<td>98.54%</td>
+							</tr>
+							<tr>
+								<td>8</td>
+								<td>朔州</td>
+								<td>6896.6亩</td>
+								<td>6689.84亩</td>
+								<td>97.56%</td>
+							</tr>
+							<tr>
+								<td>10</td>
+								<td>晋城</td>
+								<td>3956.6亩</td>
+								<td>3896.81亩</td>
+								<td>98.56%</td>
+							</tr>
+						</table>
+						<h6 class="clearfix"></h6>
+					</div>
+				</div>
+				<!-- 作业达标率排行榜 -->
+				<!-- 下半部分 -->
+				<div class="nub03_bottom">
+					<!-- 达标率统计图 -->
+					<div class="dbl_tjt er_box">
+						<p>达标率统计图</p>
+						<div id="dbtjt"></div>
+					</div>
+					<!-- 达标率统计图 -->
+					<!-- 有效面积统计图 -->
+					<div class="yxmj_tjt er_box">
+						<p>有效面积统计图</p>
+						<div id='yxmjtjt'></div>
+					</div>
+					<!-- 有效面积统计图 -->
+					<h6 class="clearfix"></h6>
+				</div>
+				<!-- 下半部分 -->
+			</div>
+			<div class="nub03_right er_box">
+				<p>作业效率热力图</p>
+				<div id='zyxlrlt'></div>
+			</div>
+			<h6 class="clearfix"></h6>
+		</div>
+		<!-- 第三行图表 -->
+	</div>
+	
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script src='../js/echarts.js'></script>
+	<!-- 地区农机平均作业量分析图 -->
+	<script src='../js/no4/region.js'></script>
+	<!-- 地区任务完成情况分析图 -->
+	<script src='../js/no4/task.js'></script>
+	<!-- 地图 -->
+	<script src="../js/web/programFb04.js"></script>
+	<!-- 作业面积折线统计图-->
+	<script src="../js/web/zymjzxtjt.js"></script>
+	<!-- 达标统计图-->
+	<script src="../js/web/dbtjt.js"></script>
+	<!-- 有效面积统计图-->
+	<script src="../js/web/yxmjtjt.js"></script>
+</body>
+</html>

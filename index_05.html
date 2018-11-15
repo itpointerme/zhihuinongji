@@ -1,0 +1,615 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>山西省智慧农机</title>
+<link rel="stylesheet" href="css/tong.css">
+<style>
+	/*-- 内容区 --*/
+	.content{position:fixed;left:0;top:10%;height:calc(90% - 60px);width:calc(100% - 60px);z-index:999;padding:30px;}
+	/*-- 内容区 --*/
+	/*-- 标头及图形限制 --*/
+	.title_and_box>p{line-height:50px;font-size:24px;color:#21fbfd;margin-bottom:20px;}
+	.title_and_box>div{height:calc(100% - 70px);}/*overflow:auto;*/
+	.title_and_box>span{display:block;}
+	.title_and_box>span>p{line-height:50px;font-size:24px;color:#21fbfd;}
+	.title_and_box>span>ul{margin-bottom:20px;}
+	.title_and_box>span>ul>li{float:left;width:68px;height:28px;line-height:28px;text-align:center;border:1px #02fffd dashed;background-color:rgba(0,100,250,.2);color:#fff;margin-right:20px;font-size:14px;transition:.2s;}
+	.title_and_box>span>ul>li:hover{background-color:rgba(0,100,250,.6);cursor:pointer;}
+	/*-- 标头及图形限制 --*/
+	
+	/*-- 左侧第一列 --*/
+	.left_num_01{float:left;width:calc(25% - 10px);margin:50px 10px 0 0;height:calc(100% - 50px);}
+	
+	.dqgmzj_btphb{height:50%;}/*地区购买总价/补贴排行榜*/
+	.gdq_fxt{height:calc(50% - 30px);margin-top:30px;}/*各地区分析图*/
+	/*-- 左侧第一列 --*/
+	/*-- 左侧第二列 --*/
+	.left_num_02{float:left;width:calc(20% - 10px);margin:50px 10px 0 0;height:calc(100% - 50px);}
+	
+	.ddlx_zb{height:100%;}/*调度类型占比*/
+	.ddlx_zb>ul{height:calc(100% - 70px);}
+	.ddlx_zb>ul>li{padding:20px;height:calc(33.3333% - 40px);}
+	/*-- 左侧第二列 --*/
+	/*-- 右侧第二列 --*/
+	.right_num_02{float:left;width:calc(25% - 10px);margin:50px 10px 0 0;height:calc(100% - 50px);}
+	
+	.dqgmzj_btrlt{height:100%;}/*地区购买总价/补贴热力图*/
+	/*-- 右侧第二列 --*/
+	/*-- 右侧第一列 --*/
+	.right_num_01{float:left;width:calc(30%);height:100%;margin-top:50px;height:calc(100% - 50px);}
+	
+	.gdqgmzj_btjfx{height:calc(55% - 30px);margin-bottom:30px;}/*各地区购买总价/补贴价分析*/
+	.gdqgmzj_btjfx>span{margin-bottom:20px;}
+	.gdqgmzj_btjfx>span>p{float:left;width:calc(100% - 160px);}
+	.gdqgmzj_btjfx>span>ul{float:left;width:160px;padding:10px 0;margin:0;}
+	.gdqgmzj_btjfx>span>ul>li:last-of-type{margin:0;}
+	.gdqhzs_zb{height:45%;}/*各地区合作社占比*/
+	/*-- 右侧第一列 --*/
+    #box3>div:nth-of-type(1){
+        margin-left: 30px!important;
+        padding-left: 30px!important;
+    }
+     #box4>div:nth-of-type(1){
+        margin-left: 30px!important;
+        padding-left: 30px!important;
+    }
+     #box5>div:nth-of-type(1){
+        margin-left: 30px!important;
+        padding-left: 30px!important;
+    }
+
+
+
+
+    #arrange>ul{width: 100%;height: 100%;position: relative;}
+    #arrange>ul>li{
+            font-size: 14px;
+            color: #fff;
+            text-align: center;
+            position:absolute;
+            -webkit-transition:.3s ;
+            -moz-transition:.3s ;
+            -ms-transition:.3s ;
+            -o-transition: .3s;
+            transition:.3s ;
+            height: 0;
+            cursor: pointer;
+    }
+    .arrange_bg{
+        color: #18294e !important;
+        font-size:16px !important;
+        border-top: 40px solid #ffea00 !important;
+    }
+    
+    #arrange>ul>li p{
+        width: 100%;
+        position: absolute;
+        top: -30px;
+        left:50%;
+        -webkit-transform:translateX(-50%) ;
+        -moz-transform: translateX(-50%);
+        -ms-transform:translateX(-50%) ;
+        -o-transform: translateX(-50%);
+        transform:translateX(-50%) ;
+    }
+    
+    #arrange>ul>li{
+        border-top: 40px solid rgba(0,162,255,.7);
+        border-right: 10px solid transparent;
+        border-left: 10px solid transparent;
+        border-bottom: 0px solid transparent;
+        left: 50%;
+        -webkit-transform:translateX(-50%) ;
+        -moz-transform: translateX(-50%);
+        -ms-transform:translateX(-50%) ;
+        -o-transform: translateX(-50%);
+        transform:translateX(-50%) ;
+    }
+    #arrange>ul>li:nth-child(1){width:380px;top:0;}
+    #arrange>ul>li:nth-child(2){width:356px;top:48px;}
+    #arrange>ul>li:nth-child(3){width:330px;top:96px;}
+    #arrange>ul>li:nth-child(4){width:306px;top:144px;}
+    #arrange>ul>li:nth-child(5){width:280px;top:192px;}
+</style>
+</head>
+
+<body>
+	<div class="top"><img src="img/top_name.png" alt=""></div>
+	<div class="nav">
+		<ul class="nav_content">
+			<li>
+				<a href="index_07.html">
+					<div></div>
+					<p>社会化服务数据新首页</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="index_06.html">
+					<div class="nongji_jiankong"></div>
+					<p>农机监控</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="index_01.html">
+					<div class="zuoye_zhiliang"></div>
+					<p>作业质量分析</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="index_03.html">
+					<div class="xaingmu_fenxi"></div>
+					<p>项目分析</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="index_05.html">
+					<div class="zhuangbei_hezuose"></div>
+					<p>装备处合作社数据分析</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="index_04.html">
+					<div class="zhengli_fenxi"></div>
+					<p>整理分析</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="#">
+					<div class="fuwu_shuju"></div>
+					<p>服务数据分析</p>
+				</a>
+			</li>
+		</ul>
+		<div class="nav_right"><span></span></div>
+	</div>
+	<div class="content">
+		<div class="left_num_01">
+			<!-- 地区购买总价/补贴排行榜 -->
+			<div class="dqgmzj_btphb title_and_box">
+				<span>
+					<p>地区购买总价/补贴排行榜</p>
+					<ul>
+						<li>总价</li>
+						<li>补贴</li>
+						<h6 class="clearfix"></h6>
+					</ul>
+				</span>
+				<!-- <div id="box1" style="width:100%;height:100%;overflow:hidden;"></div> -->
+                <div id='arrange'>
+                    <ul>
+                        <li class='arrange_bg'><p>NO.1 河北信翔</p></li>
+                        <li><p>NO.2 江苏北斗</p></li>
+                        <li><p>NO.3 世纪赢联</p></li>
+                        <li><p>NO.4 黑龙江北斗</p></li>
+                        <li><p>NO.5 天辰北斗</p></li>
+                    </ul>
+                </div>
+			</div>
+			<!-- 地区购买总价/补贴排行榜 -->
+			<!-- 各地区分析图 -->
+			<div class="gdq_fxt title_and_box">
+				<p>各地区分析图</p>
+				<div id="box2" style="width:100%;height:100%;"></div>
+			</div>
+			<!-- 各地区分析图 -->
+		</div>
+		<div class="left_num_02">
+			<!-- 调度类型占比 -->
+			<div class="ddlx_zb title_and_box">
+				<p style="text-align:center;">调度类型占比</p>
+				<ul>
+					<li id="box3" style="width:100%;"></li>
+					<li id="box4" style="width:100%;"></li>
+					<li id="box5" style="width:100%;"></li>
+				</ul>
+			</div>
+			<!-- 调度类型占比 -->
+		</div>
+		<div class="right_num_02">
+			<!-- 地区购买总价/补贴热力图 -->
+			<div class="dqgmzj_btrlt title_and_box">
+				<span>
+					<p>地区购买总价/补贴热力图<span style="float:right;color:#fff;font-size:12px;">单位/亩</span></p>
+					<ul>
+						<li>总价</li>
+						<li>补贴</li>
+						<h6 class="clearfix"></h6>
+					</ul>
+				</span>
+				<div style="height:calc(100% - 100px)" id="box6" style="width:100%;height:100%;"></div>
+			</div>
+			<!-- 地区购买总价/补贴热力图 -->
+		</div>
+		<div class="right_num_01">
+			<!-- 各地区购买总价/补贴价分析 -->
+			<div class="gdqgmzj_btjfx title_and_box">
+				<span>
+					<p>各地区购买总价/补贴价分析</p>
+					<ul>
+						<li>总价</li>
+						<li>补贴</li>
+						<h6 class="clearfix"></h6>
+					</ul>
+					<h6 class="clearfix"></h6>
+				</span>
+				<div id="box7" style="width:100%;height:100%;"></div>
+			</div>
+			<!-- 各地区购买总价/补贴价分析 -->
+			<!-- 各地区合作社占比 -->
+			<div class="gdqhzs_zb title_and_box">
+				<p>各地区合作社占比</p>
+				<div id="box8" style="width:100%;height:100%;"></div>
+			</div>
+			<!-- 各地区合作社占比 -->
+		</div>
+		<h6 class="clearfix"></h6>
+	</div>
+</body>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/echarts.js"></script>
+<script src="js/echarts-liquidfill.js"></script>
+<script src="js/nav_an.js"></script>
+<script src="js/05/cityhot.js"></script>
+<script src="js/05/box8.js"></script>
+<script>
+	
+	function createObj (str){
+		return echarts.init( document.getElementById(str) );
+	}
+
+	/*地区购买总价/补贴排行榜  */
+	// var myChart1 = createObj('box1'); 
+	/*各地区分析图 */
+	var myChart2 = createObj('box2'); 
+	/*调度类型占比 */
+	var myChart3 = createObj('box3');
+	var myChart4 = createObj('box4');
+	var myChart5 = createObj('box5');
+	/*地区购买总价/补贴热力图*/
+	var myChart6 = createObj('box6');
+
+	/*各地区合作社占比*/
+	var myChart8 = createObj('box8');
+
+	
+
+
+	/*地区购买总价/补贴排行榜  */
+// 	myChart1.setOption({
+//     grid:{
+//         top:0,
+//         bottom:200,
+//         containLabel:true,
+//     },
+//     tooltip: {
+//         trigger: 'item',
+//         formatter: "{a} <br/>{b} : {c}%"
+//     },
+//     color:['#00A2FF', '#FF595B', '#FF9600', '#FFEF03','#00A2FF','#00A2FF'],
+//     calculable: true,
+//     series: [
+//         {
+//             name:'漏斗图',
+//             type:'funnel',
+//             left: '10%',
+//             top: 10,
+//             //x2: 80,
+//             bottom: 80,
+//             width: '80%',
+//             // height: {totalHeight} - y - y2,
+//             min: 0,
+//             max: 120,
+//             minSize: '50%',
+//             maxSize: '120%',
+//             width: '80%',
+//             sort: 'descending',
+//             gap: 2,
+//             label: {
+//                 normal: {
+//                     show: true,
+//                     position: 'inside',
+//                     fontSize: 12
+//                 },
+//                 emphasis: {
+//                     textStyle: {
+//                         fontSize: 14,
+// 						color:'#000'
+//                     }
+//                 }
+//             },
+//             labelLine: {
+//                 normal: {
+//                     length: 10,
+//                     lineStyle: {
+//                         width: 1,
+//                         type: 'solid'
+//                     }
+//                 }
+//             },
+//             itemStyle: {
+//                 normal: {
+//                     borderColor: '#fff',
+//                     borderWidth: 1
+//                 }
+//             },
+//             data: [
+//             	 {
+//                 	value: 120, 
+//                 	name: '排行         坐标         达标作业         达标率',
+//                 	label:{
+//                 		fontSize:15,
+//                 		fontWeight:'bold',
+//                 	},
+//                 },
+//                 {value: 100, name: 'No.1     太原     89023.32亩     98.54%',},
+//                 {value: 80, name: 'No.2    大同    7902.65亩    96.54%',},
+//                 {value: 60, name: 'No.3   运城   6902.60亩   94.54%'},
+//                 {value: 40, name: 'No.4  运城  6902.60亩  93.54%'},
+//                 {value: 20, name: 'No.5 忻州 6902.60亩 92.98%'},    
+//             ]
+//         }
+//     ]
+// }); 
+
+	/*各地区分析图 */
+
+	var data = { //标准参数
+    id: 'multipleThree',
+    title: '双柱子',
+    legend: ['正面', '负面'],
+    barWidth:13,
+    yAxis: ['太原市', '大同市', '朔州市', '忻州市', '阳泉市', '吕梁市'],
+    xAxis: [
+        [30, 50, 80, 90, 40, 70],
+        [150, 220, 165, 230, 180, 200, ]
+    ],
+    
+}
+	myChart2.setOption({
+  
+    color: data.color,
+    grid: {
+        x: 5,
+        x2: 5,
+        y: 15,
+        y2: 30,
+        top: 0,
+        containLabel: true
+    },
+    xAxis: {
+        show: false
+    },
+    yAxis: [{
+        type: 'category',
+        axisLine: {
+            show: false
+        },
+        axisTick: {
+            show: false
+        },
+        axisLabel: {
+            show: true,
+            interval: '0',
+            textStyle: {
+                fontSize: 12,
+                color: '#1EF7FF',
+            },
+        },
+        data: data.yAxis
+    }],
+    series: [{
+            name: data.legend[0],
+            type: 'bar',
+            barWidth: data.barWidth||12,
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    // position: 'left',
+                    color: '#687284',
+                    fontSize: '10',
+                    formatter: function(params) {
+                        return params.data;
+                    }
+                },
+
+            },
+            data: data.xAxis[0],
+            itemStyle: {
+	            normal: {
+	                color: new echarts.graphic.LinearGradient(
+                    	 1, 0, 0, 0,
+                    	 [ 
+	                    	 {offset: 0, color: '#ff8d00'}, 
+	                    	 {offset: 1, color: '#ffe400'}
+	                     ]
+                    ),
+	            }
+	        },
+        },
+        {
+            name: data.legend[1],
+            type: 'bar',
+            barWidth: data.barWidth||12,
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'right',
+                    color: '#FFF',
+                    fontSize: '10',
+                }
+            },
+            itemStyle: {
+	            normal: {
+	                color: '#00FCFF',
+	            }
+	        },
+            data: data.xAxis[1],
+        },
+    ]
+}); 
+
+	/*调度类型占比 */
+		// 1
+	myChart3.setOption({
+		series: [{
+        type: 'liquidFill',
+        //data: [0.6, 0.5, 0.4, 0.3],
+        data: [0.5, 0.4, 0.3, 0.1],
+        radius: '90%',
+        // 水球颜色
+        color: ['#00fcff', '#24bdbf', '#1d9496'],
+        center: ['35%', '50%'],
+        // outline  外边
+        outline: {
+            // show: false
+            borderDistance: 5,
+            itemStyle: {
+                borderWidth: 2,
+                borderColor: '#13FDCE',
+            },
+        },
+        label: {
+            normal: {
+                // textStyle: {
+                    color: '#FFF',
+                    insideColor: '#fff',
+                    fontSize: 30,
+                    fontWeight: 2,
+                // }
+            }
+        },
+        // 内图 背景色 边
+        backgroundStyle: {
+            color: 'rgba(4,24,74,0.8)',
+            // borderWidth: 5,
+            // borderColor: 'red',
+        }
+    }]
+});
+		//2
+	myChart4.setOption({
+		grid: {
+	       top:0,
+	       heigh:'100%',
+
+	    },
+		series: [{
+        type: 'liquidFill',
+        //data: [0.6, 0.5, 0.4, 0.3],
+        data: [0.8, 0.7, 0.6, 0.5],
+        radius: '90%',
+        // 水球颜色
+        
+        color: ['#FFBF11', '#F4B30E', '#EACE36'],
+        center: ['35%', '50%'],
+        // outline  外边
+        outline: {
+            // show: false
+            borderDistance: 5,
+            itemStyle: {
+                borderWidth: 2,
+                borderColor: '#13FDCE',
+            },
+        },
+        label: {
+            normal: {
+                // textStyle: {
+                    color: '#FFF',
+                    insideColor: '#fff',
+                    fontSize: 30,
+                    fontWeight:2 ,
+                // }
+            }
+        },
+        // 内图 背景色 边
+        backgroundStyle: {
+            color: 'rgba(4,24,74,0.8)',
+            // borderWidth: 5,
+            // borderColor: 'red',
+        }
+    }]
+});
+		//3
+	myChart5.setOption({
+		series: [{
+        type: 'liquidFill',
+        //data: [0.6, 0.5, 0.4, 0.3],
+        data: [0.6, 0.5, 0.4, 0.3],
+        radius: '90%',
+        // 水球颜色
+        color: ['#49d088', '#38b470', '#2aaf66'],
+        center: ['35%', '50%'],
+        // outline  外边
+        outline: {
+            // show: false
+            borderDistance: 5,
+            itemStyle: {
+                borderWidth: 2,
+                borderColor: '#13FDCE',
+            },
+        },
+        label: {
+            normal: {
+                // textStyle: {
+                    color: '#FFF',
+                    insideColor: '#fff',
+                    fontSize: 30,
+                    fontWeight: 2,
+                // }
+            }
+        },
+        // 内图 背景色 边
+        backgroundStyle: {
+            color: 'rgba(4,24,74,0.8)',
+            // borderWidth: 5,
+            // borderColor: 'red',
+        }
+    }]
+});
+
+
+</script>
+
+<!-- 各地区购买总价/补贴价分析 -->
+<script src="js/05/region.js"></script>
+
+
+<script>
+    $(document).ready(function(){
+        clearInterval(t);
+        var _time = 1;
+        var t = setInterval(function(){times()},1000)
+        function times(){
+            var p = $('#arrange ul').find('li');
+            p.removeClass('arrange_bg');
+            p.eq(_time).addClass('arrange_bg');
+            _time++;
+            if(_time == 5){
+                _time = 0;
+            }
+        }
+
+        $('#arrange ul li').mouseenter(function(){
+            $('#arrange ul').find('li').removeClass('arrange_bg');
+            $(this).addClass('arrange_bg');
+            
+            clearInterval(t);
+        })
+        $('#arrange ul li').mouseleave(function(){
+            t = setInterval(function(){times()},1000)
+            console.log('离开');
+        })
+    })
+</script>
+
+
+</html>

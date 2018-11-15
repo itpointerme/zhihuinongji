@@ -1,0 +1,1158 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>山西省智慧农机</title>
+<link rel="stylesheet" href="css/tong.css">
+<style>
+	/*-- 内容区 --*/
+	.content{position:fixed;left:0;top:5%;height:calc(95% - 60px);width:calc(100% - 60px);z-index:999;padding:30px;}
+	/*-- 内容区 --*/
+	/*-- 标头及图形限制 --*/
+	.title_and_box>p{line-height:50px;font-size:24px;color:#21fbfd;margin-bottom:20px;text-align:center;}
+	.title_and_box>div{height:calc(100% - 90px);margin-bottom:20px;}/*overflow:auto;*/
+	/*-- 标头及图形限制 --*/
+	
+	
+	/*-- 左侧第一列 --*/
+	.left_01{padding:70px 10px 0 0;float:left;width:calc(28% - 10px);height:calc(100% - 70px);}
+	
+	.zydbl_phb{height:60%;}/*作业达标率排行榜*/
+	
+	.dqnjpjzyl_fxt{height:40%;}/*地区农机平均作业量分析图*/
+	/*-- 左侧第一列 --*/
+	/*-- 中间最宽列 --*/
+	.center_con{padding:70px 10px 0 0;float:left;width:calc(33% - 10px);height:calc(100% - 70px);}
+	
+	.renwu_fxt{height:60%;}/*任务完成分析图*/
+	
+	.zymj_tjt{height:40%;}/*作业面积统计图*/
+	/*-- 中间最宽列 --*/
+	/*-- 右侧第二列 --*/
+	.right_bin{padding:70px 10px 0 0;float:left;width:calc(12% - 10px);height:calc(100% - 70px);}
+	
+	.youxiao_tjt{height:50%;}/*有效面积统计图*/
+	.youxiao_tjt>div{width:250%!important;}
+	
+	.dbl_tjt{height:50%;}/*达标率统计图*/
+	/*-- 右侧第二列 --*/
+	/*-- 左侧第一列 --*/
+	.right_ditu{float:left;width:calc(27%);height:100%;}
+	
+	.right_ditu>select{background-color:rgba(3,188,253,.25);border:#03bcfd 1px dashed;color:#fff;height:60px;line-height:60px;width:80%;margin:0 10% 60px;text-indent:10px;font-size:22px;}
+	
+	.zyxl_rlt{height:calc(100% - 120px);}/*作业效率热力图*/
+	/*-- 左侧第一列 --*/
+    .enableStatistics_w{width: 120% !important;}
+
+
+
+
+
+    #arrange>ul{width: 100%;height: 100%;position: relative;}
+    #arrange>ul>li{
+            font-size: 14px;
+            color: #fff;
+            text-align: center;
+            position:absolute;
+            -webkit-transition:.3s ;
+            -moz-transition:.3s ;
+            -ms-transition:.3s ;
+            -o-transition: .3s;
+            transition:.3s ;
+            height: 0;
+            cursor: pointer;
+    }
+/*
+    .arrange_bg{
+        color: #18294e !important;
+        font-size:16px !important;
+        border-top: 50px solid #ffea00 !important;
+    }
+*/
+	#ar_no1{border-top-color:#ff595b!important;color:#000!important;font-weight:bold;}
+	#ar_no2{border-top-color:#ff9600!important;color:#000!important;font-weight:bold;}
+	#ar_no3{border-top-color:#ffef03!important;color:#000!important;font-weight:bold;}
+    
+    #arrange>ul>li>p{
+        width:25%;
+        position:relative;
+        top:-36px;
+		float:left;
+		transition:.2s;
+    }
+
+	#arrange>ul>li:hover >p{color:#000!important;}
+    
+	#arrange>ul>li{
+		border-top: 50px solid rgba(0,162,255,.7);
+		border-right: 15px solid transparent;
+		border-left: 15px solid transparent;
+		border-bottom: 0px solid transparent;
+		transition:1s;
+		transform-origin:50% 50%;
+	}
+    #arrange>ul>li:nth-child(1){width:400px;top:0;font-size:18px;left:calc(50% - 200px);}
+    #arrange>ul>li:nth-child(2){width:364px;top:58px;font-size:16px;left:calc(50% - 182px);}
+    #arrange>ul>li:nth-child(3){width:328px;top:116px;font-size:16px;left:calc(50% - 164px);}
+    #arrange>ul>li:nth-child(4){width:292px;top:174px;font-size:14px;left:calc(50% - 146px);}
+    #arrange>ul>li:nth-child(5){width:256px;top:232px;font-size:14px;left:calc(50% - 128px);}
+	#arrange>ul>li:nth-child(6){width:220px;top:290px;font-size:12px;left:calc(50% - 110px);}
+	#arrange>ul>li:hover{
+		animation:abc 1s;
+	}
+	@keyframes abc{
+		0%{transform:perspective(400px) rotateX(0deg);}
+		100%{transform:perspective(400px) rotateX(360deg);}
+	}
+</style>
+</head>
+
+<body>
+	<div class="top"><img src="img/top_name.png" alt=""></div>
+	<div class="nav">
+		<ul class="nav_content">
+			<li>
+				<a href="index_07.html">
+					<div></div>
+					<p>社会化服务数据新首页</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="index_06.html">
+					<div class="nongji_jiankong"></div>
+					<p>农机监控</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="index_01.html">
+					<div class="zuoye_zhiliang"></div>
+					<p>作业质量分析</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="index_03.html">
+					<div class="xaingmu_fenxi"></div>
+					<p>项目分析</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="index_05.html">
+					<div class="zhuangbei_hezuose"></div>
+					<p>装备处合作社数据分析</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="index_04.html">
+					<div class="zhengli_fenxi"></div>
+					<p>整理分析</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="#">
+					<div class="fuwu_shuju"></div>
+					<p>服务数据分析</p>
+				</a>
+			</li>
+		</ul>
+		<div class="nav_right"><span></span></div>
+	</div>
+	<div class="content">
+		<div class="left_01">
+			<!-- 作业达标率排行榜 -->
+			<div class="zydbl_phb title_and_box">
+				<p>作业达标率排行榜</p>
+				<!-- <div id="paihang" style="width:100%;height:60%%;overflow:hidden;"></div> -->
+                <div id='arrange'>
+                    <ul>
+                        <li>
+                        	<p>排行</p>
+                        	<p>地区</p>
+                        	<p>达标作业</p>
+                        	<p>达标率</p>
+                        	<h6 class="clearfix"></h6>
+                        </li>
+                        <li id="ar_no1">
+                        	<p>1</p>
+                        	<p>太原</p>
+                        	<p>8902.6亩</p>
+                        	<p>98.54%</p>
+                        	<h6 class="clearfix"></h6>
+                        </li>
+                        <li id="ar_no2">
+                        	<p>2</p>
+                        	<p>大同</p>
+                        	<p>7902.6亩</p>
+                        	<p>96.54%</p>
+                        	<h6 class="clearfix"></h6>
+						</li>
+                        <li id="ar_no3">
+                        	<p>3</p>
+                        	<p>运城</p>
+                        	<p>6902.6亩</p>
+                        	<p>94.54%</p>
+                        	<h6 class="clearfix"></h6>
+                        </li>
+                        <li>
+                        	<p>4</p>
+                        	<p>阳泉</p>
+                        	<p>6902.6亩</p>
+                        	<p>93.54%</p>
+                        	<h6 class="clearfix"></h6>
+                        </li>
+                        <li>
+                        	<p>5</p>
+                        	<p>忻州</p>
+                        	<p>6902.6亩</p>
+                        	<p>92.98%</p>
+                        	<h6 class="clearfix"></h6>
+                        </li>
+                    </ul>
+                </div>
+			</div>
+			<!-- 作业达标率排行榜 -->
+			<!-- 地区农机平均作业量分析图 -->
+			<div class="dqnjpjzyl_fxt title_and_box">
+				<p>地区农机平均作业量分析图</p>
+				<div id="averageWork" style="width:100%;height:100%"></div>
+			</div>
+			<!-- 地区农机平均作业量分析图 -->
+		</div>
+		<div class="center_con">
+			<!-- 任务完成分析图 -->
+			<div class="renwu_fxt title_and_box">
+				<p>任务完成分析图</p>
+				<div id="finish" style="width:100%;height:100%"></div>
+			</div>
+			<!-- 任务完成分析图 -->
+			<!-- 作业面积统计图 -->
+			<div class="zymj_tjt title_and_box">
+				<p>作业面积统计图</p>
+				<div id="areaStatistics" style="width:100%;height:100%"></div>
+			</div>
+			<!-- 作业面积统计图 -->
+		</div>
+		<div class="right_bin">
+			<!-- 有效面积统计图 -->
+			<div class="youxiao_tjt title_and_box">
+				<p>有效面积统计图</p>
+				<div id="enableStatistics" style="width:100%;height:100%"></div>
+			</div>
+			<!-- 有效面积统计图 -->
+			<!-- 达标率统计图 -->
+			<div class="dbl_tjt title_and_box">
+				<p>达标率统计图</p>
+				<div id="qualifiedRate"  style="width:100%;height:100%"></div>
+			</div>
+			<!-- 达标率统计图 -->
+		</div>
+		<div class="right_ditu">
+			<select name="" id="">
+				<option value="">作业类型选择</option>
+			</select>
+			<!-- 作业效率热力图 -->
+			<div class="zyxl_rlt title_and_box">
+				<p>作业效率热力图</p>
+				<div id='zyxl_rlt'></div>
+			</div>
+			<!-- 作业效率热力图 -->
+		</div>
+		<h6 class="clearfix"></h6>
+	</div>
+</body>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/nav_an.js"></script>
+<script src="js/echarts.js"></script>
+<script src="js/echarts-liquidfill.js"></script>
+<script>
+	function createObj (str){
+		return echarts.init( document.getElementById(str) );
+	}
+
+	/*作业达标率排行榜 */
+	// var myChart1 = createObj('paihang'); 
+	/*任务完成分析图 */
+	var myChart2 = createObj('finish'); 
+	/*有效面积统计图 */
+	var myChart3 = createObj('enableStatistics');
+	/*地区农机平均作业量分析图*/
+	var myChart4 = createObj('averageWork');
+	/*作业面积统计图*/
+	var myChart5 = createObj('areaStatistics');
+	/*达标率统计图*/
+	var myChart6 = createObj('qualifiedRate');
+	
+	
+	
+
+
+/*作业达标率排行榜 */
+
+// 	myChart1.setOption({
+//     tooltip: {
+//         show : false , 
+//         trigger: 'item',
+//         // formatter: "{a} <br/>{b} : {c}%"
+//         formatter: "{a} <br/>{b} : {c}%",
+//     },
+//     color:['#00A2FF', '#FF595B', '#FF9600', '#FFEF03','#00A2FF','#00A2FF'],
+//     calculable: true,
+//     series: [
+//         {
+//             name:'漏斗图',
+//             type:'funnel',
+//             left: '10%',
+//             top: 0,
+//             //x2: 80,
+//             bottom: 60,
+//             width: '80%',
+//             height: '80%',
+//             // height: {totalHeight} - y - y2,
+//             min: 0,
+//             max: 100,
+//             minSize: '50%',
+//             //maxSize: '100%',
+//             // sort: 'descending',
+//             gap: 2,
+//             label: {
+//                 normal: {
+//                     show: true,
+//                     position: 'inside',
+//                     fontSize: 13,
+//                 },
+//                 emphasis: {
+//                     textStyle: {
+//                         fontSize: 16 ,
+//                         color : '#000' ,
+//                     }
+//                 }
+//             },
+//             labelLine: {
+//                 normal: {
+//                     length: 12,
+//                     lineStyle: {
+//                         width: 1,
+//                         type: 'solid'
+//                     }
+//                 }
+//             },
+//             itemStyle: {
+//                 normal: {
+//                     borderColor: '#fff',
+//                     borderWidth: 0
+//                 }
+//             },
+            
+//             data: [                
+                
+//                 {
+//                 	value: 120, 
+//                 	name: '排行         坐标         达标作业         达标率',
+//                 	label:{
+//                 		fontSize:15,
+//                 		fontWeight:'bold',
+//                 	},
+//                 },
+//                 {value: 100, name: 'No.1     太原     89023.32亩     98.54%',},
+//                 {value: 80, name: 'No.2    大同    7902.65亩    96.54%',},
+//                 {value: 60, name: 'No.3   运城   6902.60亩   94.54%'},
+//                 {value: 20, name: 'No.5 忻州 6902.60亩 92.98%'},
+//                 {value: 40, name: 'No.4  运城  6902.60亩  93.54%'},
+//             ]
+//         }
+//     ]
+// });
+
+
+
+/*任务完成分析图 */
+
+
+
+
+var datacity = ['太原', '大同', '朔州', '忻州', '阳泉', '吕梁', '晋中', '长治', '晋城', '临汾', '运城'];
+var data1 = [20, 30,20, 30,20, 30,20, 30,20, 30,45];//小百分比
+var data2 = [50, 30,20, 60,70, 20,40, 20,49, 20,45];//中百分比
+
+	myChart2.setOption({
+    //color: ['#0945ca', '#2190f9'],
+    /*color: [
+        rgba(18,98,213,0.1),
+        rgba(18,98,213,1)
+        //'#2190f9'
+    ],
+*/
+    
+     grid: {
+
+        top:'2%',
+        bottom: 150,
+    },
+    xAxis: {
+        data: ['太原', '大同', '朔州', '忻州', '阳泉', '吕梁', '晋中', '长治', '晋城', '临汾', '运城'],
+        axisLine: {show:false,},
+        axisTick: {show:false,},
+        axisLabel: {
+        	   textStyle: {
+                 color: '#29FFFF',
+            	},
+        },
+        data: datacity,
+
+    },
+    yAxis: {
+    
+            type: 'value',  
+            axisLabel: {  
+                  show: true,  
+                  interval: 'auto',  
+                  formatter: '{value} %'  
+                },  
+            show: false
+    },
+    series: [
+                    {
+                            type: 'bar', 
+                            stack: 'sum',
+                            barWidth: '15',
+                            data: data1,
+                            itemStyle:{
+                              normal: {
+                                    borderWidth:0,
+                                    borderColor:'#18CEE2',
+                                    barBorderRadius: 4,
+                                },
+                              
+                            },
+                            color:new echarts.graphic.LinearGradient(
+                            0, 0, 0, 0.5,
+                            [
+                                {
+                                    offset: 0, 
+                                    color: '#043bc9'
+                                },
+                                {
+                                    offset: 1, 
+                                    color: '#2293fb'
+                                }
+                            ]
+                        ), 
+                    },{
+                            name:'a',
+                            tooltip:{
+                               show:false 
+                            },
+                            type: 'pictorialBar',
+                            itemStyle: {
+                                 normal: {
+                                    color: new echarts.graphic.LinearGradient(
+                                        0, 0, 0, 0.1,
+                                        [
+                                            {
+                                                offset: 0, 
+                                                color: '#23DAF7'
+                                            },
+                                            {
+                                                offset: 1, 
+                                                color: '#23DAF7'
+                                            }
+                                        ]
+                                    ), 
+                                    borderWidth:1,
+                                    borderColor:'#18CEE2'
+                                }
+                            },
+                            symbol: 'circle',
+                            symbolSize: ['16', '8'],
+                            symbolPosition: 'end',
+                            data:data1,
+                            z:3
+                    },{
+                            type: 'bar',
+                            barWidth: '15',
+                            stack: 'sum',
+                            data: data2,
+                            label: {
+                                /*normal: {
+                                    show: true,
+                                    position: 'bottom',
+                                },*/
+                                show: true,  
+                                position: 'top',  
+                                formatter: '{c}%',
+                               // position: 'bottom',
+                                color:'white'
+                                },
+                            itemStyle:{
+                                normal: {
+                                      borderWidth:0,
+                                      borderColor:'#18CEE2',
+                                      barBorderRadius: 5.5
+                                  },
+                                 emphasis: {
+                                      barBorderRadius: 13,
+                                      shadowBlur: 18,
+                                      shadowColor: 'rgba(218,170, 58, 0.7)'
+                                }
+                            },
+                            color:new echarts.graphic.LinearGradient(
+                            0, 0, 0, 0.8,
+                            [
+                                {
+                                    offset: 0, 
+                                    color: 'rgba(24,206,226,1)'
+                                },
+                                {
+                                    offset: 1, 
+                                    color: 'rgba(4,59,201,.1)'
+                                }
+                            ]
+                        ), 
+                    },{
+                            name:'b',
+                            tooltip:{
+                               show:false 
+                            },
+                            type: 'pictorialBar',
+                            itemStyle: {
+                                 normal: {
+                                    color: new echarts.graphic.LinearGradient(
+                                        0, 0, 1, 1,
+                                        [
+                                            {
+                                                offset: 0, 
+                                                color: '#043bc9'
+                                            },
+                                            {
+                                                offset: 1, 
+                                                color: '#043bc9'
+                                            }
+                                        ]
+                                    ), 
+                                    borderWidth:0,
+                                    borderColor:'#043bc9'
+                                }
+                            },
+                            symbol: 'circle',
+                            symbolSize: ['15', '7'],
+                            symbolPosition: 'start',
+                            //symbolPosition: 'top',
+                            position:'top',
+                            data:data2,
+                            z:3
+                        }
+        
+        ],
+});
+
+
+
+/*有效面积统计图 */
+  myChart3.setOption({
+    tooltip: {
+        trigger: 'item',
+        formatter: "{a} <br/>{b}<br />({d}%)"
+    },
+    series: {
+        name: '',
+        type: 'pie',
+        radius: ['0%', '50%'],
+        center: ['24%', '50%'],
+        clockwise: false,
+        top: 10,
+        data: [
+                {   value:8468, 
+                    name:'                 有效面积：8468亩',
+                    label: {
+                    align: 'right',
+                    normal: {
+                        textStyle: {
+                            color: '#000',
+                            fontSize: 14,
+                        },
+                        position:'inside',
+                    },
+                        
+            }
+                },
+                {
+                    value:1982, 
+                    name:'重叠面积'+'\n'+'1982亩',
+
+                },
+                {value:980, name:'漏耕面积'+'\n'+'980亩'}
+
+        ],
+        label: {
+        	show : true ,
+        },
+        itemStyle: {
+            normal: {
+                borderWidth: 0,
+                borderColor: '#ffffff',
+            },
+            emphasis: {
+                borderWidth: 0,
+                shadowBlur: 10,
+                shadowOffsetX: 0,
+                shadowColor: 'rgba(0, 0, 0, 0.5)'
+            }
+        }
+    },
+    color: [
+        '#00acee',
+        '#fed501',
+        '#00f7ff',
+        '#a7e7ff',
+        '#c8efff'
+    ],
+});
+/*地区农机平均作业量分析图*/
+
+myChart4.setOption({
+	tooltip : {
+        show : false ,
+        trigger: 'axis' ,
+        formatter : function (datas){
+        	datas = datas[0];
+        	return datas.name + '<br />' + datas.data;
+        },
+        textStyle : {
+        	align : 'center'
+        }
+    },
+	grid:{
+		left: '0%',
+		top: '4%' ,
+		width : '90% ' ,
+		height : '60%' ,
+ 		containLabel: true,
+	},
+    xAxis: {
+        data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月','8月', '9月', '10月', '11月', '12月'],
+        axisLabel: {
+            textStyle: {
+                color: '#02e7e5',
+            },
+        },
+        axisTick : {show : false},
+        splitLine : {show : false} ,
+        splitArea : {show : false },
+     
+    },
+    yAxis: {
+    	type:'value',
+    	interval:2500,
+    	axisLabel: {
+            textStyle: {
+                color: '#fff',
+            },
+        }, 
+        axisTick : {show : false},
+        splitLine : {show : false} ,
+        splitArea : {show : false }
+    },
+    series: [{
+        type: 'bar',
+        barWidth:'40%',
+        data:[8405, 7380, 8320, 9001, 9350, 6820, 4980,6201,7896,7621,7498,5000],
+        color: ['#2aa3fe'],
+        label: {
+            normal: {
+                show:false,
+                position: 'insideTop',
+                textStyle:{
+                   color:'#fff',
+                },
+            },
+               
+                
+        },
+               
+    },
+    {
+        type: 'line',
+        data:[8405, 7380, 8320, 9001, 9350, 6820, 4980,6201,7896,7621,7498,5000],
+        symbolSize: 5,  //设置折现圆点的大小
+        color: ['#1cfafd'],
+        label : {
+            show : true ,
+            color : '#fff'
+        }
+    }]
+});
+
+  /*作业面积统计图*/
+
+  var xData = function() {
+    var data = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+    return data;
+}();
+myChart5.setOption({
+    tooltip : {
+        trigger: 'axis'
+    },
+    legend: {
+        right: '10%',
+        top:0,
+        textStyle:{
+            color:'#FFFFFF'
+        },
+        data:['有效面积','达标面积']
+    },
+     grid: {
+		left: '1%',
+        top:'10%',
+        containLabel: true,
+       	width : '90%' ,
+       	height : '60%'
+    },
+    color:['#129cff','#f6ff00'],
+    // toolbox: {
+    //     show : true,
+    //     feature : {
+    //         mark : {show: true},
+    //         dataView : {show: true, readOnly: false},
+    //         magicType : {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+    //         restore : {show: true},
+    //         saveAsImage : {show: true}
+    //     }
+    // },
+    
+    calculable : true,
+    xAxis : [
+        {
+            type : 'category',
+            boundaryGap : false,
+         axisLabel: {
+            formatter: '{value}',
+            //  rotate:25,
+            textStyle: {
+                fontSize: 12,
+                color: '#fff'
+            }
+        },
+            data : xData
+        }
+    ],
+    yAxis : {
+            
+            type : 'value',
+            axisLine: {
+                lineStyle: {
+                    color: '#fff'
+                }
+            },
+        }
+    ,
+    series : [
+        {
+            name:'达标面积',
+            type:'line',
+            areaStyle: {
+                normal: {type: 'default',
+                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                        offset: 0,
+                        color: '#129cff'
+                    }, {
+                        offset: 1,
+                       color: '#129cff'
+                    }], false)
+                }
+            },
+            smooth:true,
+            itemStyle: {normal: {areaStyle: {type: 'default'}}},
+            data:[1324,1498,1468,1424,1224,1524,1924,2124,2024,1924,1824,1624]
+        },
+        {
+            name:'有效面积',
+            type:'line',
+            areaStyle: {
+                normal: {type: 'default',
+                    color: new echarts.graphic.LinearGradient(255, 239, 3, 1, [{
+                        offset: 0,
+                        
+                        color: 'rgba(255,239,3, 1)'
+                    }, {
+                        offset: 1,
+                        
+                         color:'rgba(255,239,3, 1)'
+                    }], false)
+                }
+            },
+            smooth:true,
+            itemStyle: {
+                normal: {areaStyle: {type: 'default'}}    
+            },
+            data:[1010,1170,1190,1110,950,1210,1610,1810,1710,1610,1510,1210]
+        },
+    ]
+});
+
+/*达标率统计图*/
+
+var rotateAngle = (500) / 2 / (500 + 5000) * 360 + 180;
+var data = [500,5000];
+var rich = {
+    man: {
+        align: 'center',
+        padding: [20, 0, 0, 0],
+    },
+    woman: {
+        align: 'center',
+        padding: [20, 0, 0, 0],
+
+    },
+    yellow: {
+        color: "#ffc72b",
+        fontSize: 34,
+        padding: [5, 4],
+
+    },
+    blue: {
+        color: '#49dff0',
+        fontSize: 16,
+        align: 'center'
+    },
+    hr: {
+        borderColor: '#0b5263',
+        width: '100%',
+        borderWidth: 1,
+        height: 0,
+    }
+}
+   myChart6.setOption({
+    color: [ '#129cff','#ffce00'],
+    legend: {
+        show : false ,
+        x: 'center',
+        top: '90%',
+        textStyle: {
+            color: '#fff',
+        },
+        data: ['达标', '不达标']
+    },
+    series: [{
+        name: '主题配色下载占比',
+        type: 'pie',
+        legendHoverLink : false , 
+        radius: ['50%', '90%'],
+        avoidLabelOverlap: false,
+        itemStyle:{ normal: {
+            label: {
+                show: false
+            },
+            labelLine: {
+                show: false
+            },
+            shadowBlur: 40,
+            shadowColor: 'rgba(40, 40, 40,0.3)',
+        }},
+        label: {
+            normal: {
+                show: false,
+                position: 'center'
+            },
+            emphasis: {
+                show: true,
+                formatter: function(param) {
+                      return param.name + '\n' + param.value + '%';
+                },
+                textStyle: {
+                    fontSize: '18'
+                }
+            }
+        },
+        startAngle : 180 ,
+        labelLine: {
+            normal: {
+                show: true
+            }
+        },
+        data: [{
+            value: 85,
+            name: '达标率'
+        }, {
+            value: 15,
+            name: '不达标率'
+        }]
+    }]
+
+});
+
+
+/** 作业热效率图 **/
+
+var myChart = echarts.init(document.getElementById('zyxl_rlt'));
+function randomData() {
+    return Math.round(Math.random() * 10000);
+}
+function showProvince() {
+    var name = 'hn';
+    // myChart.showLoading();
+      var geoJson = {
+      "type": "FeatureCollection",
+      "features": [{
+        "id": "140100",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": ["@@AEEAAEAGFSHGFIDG@ECICGKKDIZU@KMUKIKGACCCSCKBUOE@OFGCEAKAQBECAKOCCI@ECKCCMC@GGEKCM@CGAKAEKEGAKBGCmWKMIAIACECOKGG@ECAIDE@CGIOOACDE@AI@GKCCACFG@G@MCECAKHG@GCCIFG@MDCHADAHGNAbJFABABKAQFMFCHIXQNGF@DGDC`QBCLDHBNADAJ@JCBABMPOHAJAL@BQG@ECGGIC[D]BICMKEENEDALQIAEKKAGAAWEEYAIFCFMNMFE@IGAKCEKIEAIMICeLMA_GKDCDKBG@aMS@EDEHOBMDEJEBC@CGE@IGAGHI@EACIEYKKIKOIGEIQQGG@CBCPKBE@GMCIMAAJO@SNQ@IHKFK@GG@MNWNEBM@SGGCEI@SEEGCEIKCODK@AADO[ACEAMCCKEGGEM@GR[@EMMMGSMMCCC@EHGDGHEBC@WDEFA@CGISIAWCQKA]AOEAEAILIBA@G@GCECASCAA@GAIMC@A@IFIHCNCDA@KACKEYCQBIAOGAKDWAYFATCHB@CDADMLQFM@GCiLKBIDIZCCGEGEA[AYGEEAADOCEsLKHYDE@CEAAOBSGU@CAAEBa@QCEAAGAK@MCGAMBGICCOACDMPUDI@GMAACSCCO@ODCDCBG@SEIDCBGPAFDRcDICQBACEOBICGCEGCSBEGI@AFWN@BBJADaHWR@DTH\\BDB@NADCDQ@IBCJDJ@FE@WB@DC@O@BLBFPLVT@HAVAFCBOAgGO@Q@SHEHGVEXEFEDQDEBGTKJGBGNGJYLAD@XCP@HFFFPGBABDBBDABOBKFAHGFgHKHELC@KCCB]dA@SEIBGDU@gKKAS@KFOPCHMEgBKC_MO@GFIRENEFG@]GADDPEJMNGL@DEJBJAJKHCD@LDLEFIFMBOEIEGAWD[@WBaCOFCF@JCJEHIHIFGBMFCFCBS@SHABAHBJCBKDKJONALDRCDG@OBMDOAKHMBaIIQGE_BWMI@GHGBC@MGODK@SGaBQEIIGAA@GHCPCP@RADGDQDIFVHRLPDJHBDAFIP@HFLIREBSHEDEHENKLCLAV@DEDCF@\\EHGFABGDCDGLCLAJBJFHNROLGLBFLLAJBDbHHDFFBVXJRJRDpBNBVBPDd\\PHRF^PVBJFPPfbDLEPBFNF`DLHJAJGNBJAHDFNHAHFHBNADBAF@BF@FAHBHBB@EJDFJLHBDBBFFBH@^CN@HD@DCDKDABDLDDF@^IHAFGIeFIJEN@LFDFVCdaP@PEJBHCXSH@JBFLPHJAPFHDTBLJHBF@DIHCTCjQF@NJF@HERED@JG\\FRCJELKHAFCDILGFGJCJFDFhFQNBJGHGFCCXBBJDH@JERAJFDDRDHFHRHVFHDL@LCLIDG@EF@LE^EHOJQPILKR@LZJ~NL@BDAFGFI@ULCFAF@HRPZNJPDCXALETCVHLBHGJCRAFAHIVQHMJINC^@ZORAFBHJJD^LJ@LCFEDSLKHUFANANKPDH@ZKJ@NPXFDB@fBBBBJITIDEAGBALAHCBEAEBCFCLABCAKKOJMJGDCJAXCH@PHRCNEP@DBNJNHLNFFFD@HCNC@GN@BDBF@hEHCJCRIHBHAHB@JBBT@LDBATAPGFBHHF@BAHAJ@XF^DlJZXBRFDBFNP`^NHPFVBPFTBTLPAPFTJLJFDTBXDNHLRF@NRJFDABC@OFIHCJ@FDNCNFHD@DFDDFHFFDDD@HDDJDFBFRFHZJFBDDLDTCFFRFDD@FETCDBDD@HFXFTD^BdGFADE"],
+          "encodeOffsets": [
+            [115862, 39334]
+          ]
+        },
+        "properties": {
+          "cp": [112.549248, 37.857014],
+          "name": "太原市",
+          "childNum": 1
+        }
+      }, {
+        "id": "140200",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": ["@@EABCEIBECCBALCL@HAHBDCAEDKBEIKMI@ABIASCKGGDGBCGGICBOKICEFMAA@CFGHCRD@GDG@CPEFABABMEEOICG@CPSBMXiJY@EDEJEHAH@dHF@HCDBLGJ@HGPFFAF@DG@IH@BCDAJ@RFNHFHdJPJHBH@JELMDIPKHCTCL@JDPH`CVGJE@QGY_i_UsqgQiIeMUCg@eJMAMOE[OSCiDKDWDKASYESA[CESEQBUDWAYE]QC[HABDF@LM@EBEHGACBEAGBEEEC[EUKJWB@FWDAFQ@QHUHKLILOBQMOGK@WMGOAC@AAMAKCWOKAQP@JBP@DY\\@HEJSJ[HMDSACAGYJMAGFa@CEEE]IOWSGEOGMAcBKCKK@MHKRERLH@TCDEPCdENE^CLEL@DDLADCJBHCJGAYAK@OJMDSZuD@JJFBV@JCNGJIDAH@H@RDPASGRDJJHFRBJDLRBGHDLI@CA@@ED@DDDC@CE@BCD@DG@CACGBCEMEUKEECGBGDEFCD@BA@AHED@BEHBDABIFKDB@BCD@DFHTBP@RJ\\DJDHHLAHEAIBGCEHAJDDBNDHAFCJBDANHJDPEZ@bHH@D@TBDDJEPBJUC@BMAIRY@AEC@CCCQCCCAEHGFGBUFEBGBADBBEH@CGBGJ@DBDMMUE}ABeCWDONWHG\\kLGN@LBRA`FNA\\ILKBGDCBMBEBA@CBCBGHKDMVBHCBB@FDBDHrTNGFIGQCIBEACKIDKCI@OEEMEOUEEBC@IBICC@MCACE@AAACAM@OKEBUE@IFIAEBGCEKeEIQQ[aCOAWDK@OBKBMEODAFALEAGIE@CGCEC@EAC@EAACBGCIDCAGEBAAGSAAEC@A@AMGG@ADCDI@GECGEBCEEBEAGDKDADKLCBEKKCAEISECERIAABCVIJAJBDBDCH@JGHDLABCLGDGCIEGBGBAAICGGCAEAAA@IFIDKACC@EAABECQSBC@@CCAC@CDOE}LQQawCMHCDEFOAEBC@EBEAEIICE@AACBAAEA@ACCCACEGEICCEAC@EAQDMCECCCEDMDEFGAGFICGE]AQCEBMBK@CCOIO@KAEBOKYMQGMCQBQNIFUDWGQGSCcBKTCP@LGPYLBHKBBBC@GGG@ABA@ABGBOnE^CJOB[GoUKkKKU@cHIDEZK\\AN@ZKZKEHDJBDfbP@NDRAJGFIDMJIHI\\UROJML[VIL@VDHDN@FCFKDM@GUFaB]DMDWJMPELGPQPEF_J]FMAQCSCOBcJQL]J}M]KKDKVGJEBQEETIJULoVcXSZCTBNHTGRmlUHKRIXIH[FY@CFAJBLBLCJOP]bOLOHOR@JVTANMN@JFHNNCHD@JHFBCHBBPPBFAJKLBBBB@BEFEFON]PYRaNEDKPGPO\\BFFHV@DBHNH@jlPF`A`RxNILc^KPGFMNGDMAEFKXSB]AGBMNihIBcDMNULgHYFUDMBMEIG[KIIKI_Q_UQEeIe@HcFaBI@_G_BkAWEI@O@YPG@ECEE@KHK@EEEDA@GDCFANCFAPUFICEKOAGIAQHKHAAASEOUCCASSOCM@KCSEGKBMGIIEOE}AOGKKAMHIWCu@aB[CA_CGICoLOHgNQECOEIGEMGkKGFCJCFIF]LAZFzCP_JIDINGT@HRhFXBZEbG`APJNX\\JPJdDPFLDPF\\HJFLJ^APGFEDE\\QFCDEJAPABEDADEHBB@HVH@DCDGBGFKCKFMBIFAJED@FTF@BCDAHCFMBCJFJKPDHHBBBGDAJFFLHVBR@\\BJNANIL[VIRBPLPLFN@HB@PCF@HLARQRGZQFELERMTILKXINMBB`WLA`B^H~^^LfJXHJDHHLVTtLVJ\\HRFTFPBHHN@LBXDHLFª^XLxPbDvRhDZFfBN°^|LnDtRHBJCBCBIBGJKTIJILQDEJQJ_DIDEFMLOPMF@HATFV@fETA^BdHdBN¤JLnNZTLRLJfZp^VTVNjPHNBLDFJJRH|TZPHLFRRZbHP@P`_n_JI\\kJEPAVF`NpddTZX@HFFDFADB@F@BARHRDRBP@`CHIJ@zPTDZFVTHHHJBN@XITSPWLMNKRAHTVBFJLDJDRTf@VDPQzDLRTDBPJRFNBLBHAXDL@NFHMLKbiPMNQDOFKFGbQNSDK@CJGFI@COIFKH@FEDEFCBGXIT@HDJDH@\\ULGFEDEBCEQGK@ADI"],
+          "encodeOffsets": [
+            [117022, 41541]
+          ]
+        },
+        "properties": {
+          "cp": [113.295259, 40.09031],
+          "name": "大同市",
+          "childNum": 1
+        }
+      }, {
+        "id": "140300",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": ["@@BWBIDK@KDMZUTQ@MIIKKi]KKQSI[AKGOCODONUNKVMJQCqQsCY@SZWRMJ]JINGLCV@xLV@LANCNIX]JELCPAPDLBLFFDDBD@DEDICMAEBCLENDHBNG@CCCME@GCAOGBALEHCLFDBFCJBT@bCpMT@PHXFLADCBCEGGE@CHEDE@EE@KFCBAIBICQIMKYFEFCL@DA|wDEDKCA@CFGHAXIFEAGGGDGAIHEDE@KIS@GFGCKCASAAAPKFGFAXDFCHANGPSFMPSFMNgPQPCNGJKFIF[N]DSABKFKFILGNAbBRCHKBIAKLIXMNIDKBICIEKWO[G_SGICKAQ@QFCGiAIGEOAODOJsZoRUFS@WA[SKKw]EWE_MIDEZCHEDOBGDKBWBeCSCGEAEBIEEaAEEGEOAcDOFWVIDOBsIcBUAwFKLCJOP]AkFIVOR]RELMTCN@^AFGH_VIJcpIXIJaVCFEPALFZEHIFeRKHIFEJCPAJBLFZJ\\Ln@TKRGDOHS@KAMBKJCLCHAfCHGJSFM@EDCXOZ@LFFPHBDKZEDIF]FSAICYOIQAGOWSGoBKBGFIJKHGJEJIJQCaSMKAMCCY@KDGCK@C@APGAMDGBOPANABIDI@CBMBGAKCAD_RCDCHE@MHWRGJEDENBRALABEBYIM@GBGHCBGBCD@NEHDJHDH@LGDBDF@N@HEHBDDDHLJ@@BCFBDPPHJ@DCFBJFDH@LHFTBBJBJBLNnXHDLAHBLFBFBLDHN@LDHF@HNDDDDL@FDJPDBLFDRALBFBHDPEF@VPLATDDDBDLHLJNV@LYVCJLLFLBJENKPER@DDHFDHNJBVED@JDVBLA^@HDDFdLPHpVdHNHFFLZHH`PNDbPTdN^RpRNBJ@pUTCb@^JVJNDd@RDP@"],
+          "encodeOffsets": [
+            [116281, 39446]
+          ]
+        },
+        "properties": {
+          "cp": [113.583285, 37.861188],
+          "name": "阳泉市",
+          "childNum": 1
+        }
+      }, {
+        "id": "140400",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": ["@@AKKMqJYHQEOKIKKSMQDOTC\\HPFR@BOK__[SYCOHKPKN@`GvCRKBMGaCKHGTCTBNGPSVYBM@KACIKEAC@QFE@QGCCEAGHCBCC@IDAHAHBHGH@BA@CCACDACBC@I@A@CGK@QCC@KCAIAAE@CBANHHBL@DAJITCDABMBQFKNGp@XELERKLITQVMVExBJQLaNQHODQ@OCS@MAMLSDMIMKMAICAQACAGIFIB[HSBIAEKAAEEAE@AACG@EBGDE@ICGSMSGIACCAC@ECEDCB@NLDBPANCHK@EFKMDCCCAEF@@CEGCBCVQBC@AAACAoKOD@EAASDEA@AJKHE\\EBAJAAEFKB@BBNDH@FABCBANABCGG@ABABC@IFBDCD@D@AGG@EEA@AFA@CEOCGBSAAB@D@BC@CEA@EB@FC@IAI@EC@ANGDCDGDAFBDGBOI@@ADEH@HG@UJMBI@GEEBCJC@C@CCEUEMGMMAOTIrEHIGG[EJIJGJMAGAEOKMAUHgHKAIGAYFMPCAMFMFYBSB[KQWFSHILKNYCKIGQGMDILKBaOMAWFW@KBmZONKHQFUCU@OBKFKDGFKDiHSAICGGWgMK_CQBaHMLGHAHBRDHM\\MJGDWHO@QCKCcQYQQEODKD]fQNGBKAcGQBGRKGeKaOGKCIGAOFe`QDSD@MDMJIROPODQHIJENGHQA_QQAKBIHoKYCi@iDSFGFGL@LLVBHATCNEFGBS@SDWLQDI@MAOIMEK@WJMFyJUHMJUZOFuSMFGN]`GRAHUTUHKJQBcOWA»_SOeDEJBR@JCLKNEJHRHJNHdPVJfRZNHHBHBTCNGPG`BHHJBbAXG\\AXDZLNLfAVE@IA_]GCGAHEFwLIFBDERBLFJFDBD@BC@QIGHCFML@DJDBBBFABGBGFBVCNCHEDEBwBkDCOFITINMDSDMF]PQLWZKJMJQJASPSdO`AFEJOnKjKXOHYHQHGJm^ILO\\KbEDIFOBI@UHIFEHMJCKPUTA`EPKNWDI@CTFf@`RPDJAFOPIVOAAB@LJXAFGDAD@\\HPfPFHAJDN@HCHLJLTHVELELFHNHP@^MV@^FNRBDIJMJGJLTNHFHDP@JQP]`ELBNZDRAfB^FTLRGH@HPRJH@THLTLHLDR@^BVDLCJELeHEXMJAdAPELIFIPK`MPKNQFCJAJBFDLPFHJDJBP@\\GfAJCdWbATDLFXXLDNLHBPCNILENCRBRD^NLNFNGZQJ_@SFGNF\\CNIXORWNAJFLDTCbCRMHSFQ@OFIHCLBDXCD@NFFAHBPBLDHFFDH@RELBL@DEAICG@EDAFATBHCDEFWBCD@X@TENA^INAHFDHHFLNJNRF\\B@VHFLBJATINM\\QRAPCTBRENKVUJOAkNC\\DHCDEFMVODGDUJINER@TDPBPEJATYJGJEdCNMDOEUEICMVU@K@QAKKUAKHKZONU`G^FFBLL`VNPRNjPFVEjANDj@PCPKLC^BDJFFdCZDTGFGB@D@BFGVDH@\\BDD@HCHGHAFDBDBLB@DIJiHAHBTGJ@PDF^@HTCDK@KDCHADB@FBB\\PHJD@BEFEF@DBBLNNHALBLRDNLLJDJBPGNWZad]TUTIGGBCNI@ACUIKIUVCNDLKJITIhGVIPKJGLG\\]TGNANGJGLKJaHQTaPUJGVG"],
+          "encodeOffsets": [
+            [116269, 37627]
+          ]
+        },
+        "properties": {
+          "cp": [113.113556, 36.191112],
+          "name": "长治市",
+          "childNum": 1
+        }
+      }, {
+        "id": "140500",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": ["@@EG@GDCHABCEG@E@APBJGHADAAEU@EAMCCE@EFCF@LFBOJM@IEUGIKUBMHQTaBIEMMG@EBAVEVKPQBEIGBKBCFCBI@iAAKAKDgA[DEFAFANOACDAFADEREBOGAQLSBQFKBECCKAEACSGIBKAAGCI@EMMKSOMOCO@KDGEOIOTS@ECG]@KJSEMCOAMGGBSGIACBKLMCGFCBYQU@ECCCGQEEKKEIAAGAQ@ECGMECmBCDIPMDaSAC@C^AZIDG@GQCELEHEA@IEGGCCK@IJIFIACAAIBYLMDUAEBAD@DCDQAQRCBI@CFC@GBOCGCSEKDY@CAFA@CAIBKAGCA@CFEAAGBC@BCAGJC@AECDA@AEEABADOFKG@FEDAAAADECCDADA@ABAACBAEAFEDCFHBBBACCF@@AACC@AECAEC@ADA@@GAABIEACDCCCAACHC@BEAQA@CBE@AEACDCAKBOC@C@OC@CFI@AAECCI@KEG@CDYLI@KEIBUFOPEBGHKCMF_LUCOESDC@MHI@AEIEHQACMICCBkAIBAD@BEFK@I@AGMICEBKBKHC@KCQGGCWACE@GFG@CGUGGGEAC_MIBQDQCCEa@UHABAJABGCQFM@]FGAAACKOIMMQAIE@GDEAEACIGGOEGMGWBEAMDQJK@GAKEISESE@M^BPJJAFQ@EBWR@HAFS@CFQHCDIBE\\ADGBE@CAGWC@CPDPABABC@ICIKIECEBI@CBCJCXCHUCCeK_FgCQ@ICAAAMQBSJQLE@SAQCGCC@UNMDIFCAIIKFKFGBG@IGCAXWBUFK@IE]]QGQBcCK@IDSCSDG@YGI@A@AFDFDFVhDLEDI@CAQQECkAWEMEcFKBCB@DFFBDGNEB[@SDcP_DmJUGKCAACBCBABCD@BJB@DUDUHMBWEQBODETNDJRDLATILOJABAFDN@BEF]JYDEFAFBPFLHHFfMLQH]DOLURS^CRAbQfGPEDKXETJP\\XEjHjKLM@IHC~K`BJXPJLBjJH\\DXF\\R``RLHNJ`EJQRERFN\\RTJLNCTGPGJQRINCPDJFDDJC\\DXFJNFjevW[jEfAfBdJRP@PGV]bE@GDCDEJEFMB[OGPE`EDKBCBARFJJEJAT@RFP@B@FJJFPE`SLAJ@dMP@dLXBVCVGZC`AXJPBbCfE\\B`Rb`hV`R^`NTPFFFXGXApKVTP¼`XBdPRALIVGVSBGHQ^_HMNEvTPEVYNIVGzINEXIL@NFPJNBJ@RCXKTCT@HAFEDMBSAGKU@KHKHETEjCj@ZDpLJGLARB`RRBHGFMJIRGPCPOJQNINC@TCRCf_PEHBDJHLbPfLLHHQRAdHLBHARM^eLCPCRFZRdRLDRDP@XGHCNIN[ESBMHGNKREPARA`DNLXhHHJDTBjGLCHELCLEPAV@VDRELGPMnYLA"],
+          "encodeOffsets": [
+            [116312, 36686]
+          ]
+        },
+        "properties": {
+          "cp": [112.851274, 35.497553],
+          "name": "晋城市",
+          "childNum": 1
+        }
+      }, {
+        "id": "140600",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": ["@@@GDE@OGAM@KEKOAOJQ\\UJKBMIM[AQ@UAKGEEBIHCAAGACGLOEIDINADEBGDC@ASE@EFCBIJENALELDHEHADC@CUG@GAAFGBCFCBABOFIDCREF[FCHEBOI]EKGIE[COEKCOIcIOW[IMBOH_FaAYEWQg@GHSJMJC`IDOEyBY^KJEDEDIHElLNHHFFJDPRFhMPGpKJDDHB`\\DbAv@XDGJBNLLPH~BPFJFHJANHLTFLDN@PDTTDBVDFPBTBBLGRGJBBHLPDFEJOVEBMDEBCD@HCBFF@FGL@LFFFDH@ZOP@J@XFlB`A`HJ@bAdEGf@fJRF`V`RLJJJ\\LJHNFNAVCZEhGVKNMdCJAjgNMHA^BTALWFENBHCNMHELOd]JKwM_Q_BOEikG@GMCAS@EAAEAEDELUHOFGJIdOZQbQDEHEFEFE@AAAAALKBIAEQQDGEAIGC@DGMMEG@INMBMUS@IPQPGPK^aPODIAKAKBIDEZ@\\EJGJWLQVGnkHQGSAMDSTYdWpUVKJIFSUAEGEKBa@GAC_[WKKWAMEKIKGOSGeDI@G@OGcCGG@MBMEAG@iXICGO]MKGGSECKBWNKLK@SCoFWAQBeCYFK@OAYKiYMCKB¡XKHWHMHSNBJHTBHKDAFeZaBKCEIE@GCaAIAEEAEBIACOMEGIACC@ISGiKoS]GmCeKIEOQAKGOIKKWWOEO@MGMMIiCeGIUAQEKIKECQ@MLEHMPKDI@UGKAQGGAOFO@@C@@JEJEFGA_GKOKEAQMWKWI]CWLEAWOIKAIFMGYEGWGWBOAMDGF]CG@MXDNCJIDUAIDGHGPCNKJQBSFS@YCMEsOGWGKBQNQDSBOCaKQAKD_V_LE@CEEAQBEACI@GDKAIQEIAKDEDEJAFBDBBRFHDDDBLCFGDM@eCG@GBCF@HHR@NCD@HNL@DC@IAAB@HAJCHWLKCG@EBE@MGICIAEDADBDLR@HCTCDQFMFBNBFADUN@FFbMZIJQDYLSFaBYCOCMIM]GEGCOFOVENGJENUNIBGNRFNJBDADUJEJCNJNIHGDWFIDGJCHCJ@HHJAF_^ABHRDNAJELEBKDAF@NQRET@NC@C@C@CEEACBIDULMNQFM@MGEAGBCFKBCHEJEPGPMTAF@DDRJHHD^J\\BTFrAhBPFNRuvGF_P[VERCTEHIHD@LXAJMF@FJHFNILMLENBDBD\\TFHHDJBJFHLVhINALDRDLAZ@HFFBNCLCVBRDJLDDDFBLHBFJH\\RLNNVRR@BNJFPDRDFB\\HFHTFFLFLDRRFJJ\\JNLXFFHFVZJJLXPNFHDF@LDNFDFHBNj`HRP@DBBFADLJ@TABABFFBPHFHHRJ@HRP@HLFFJBFFHBDJFHD@DCD@DCBDFEBDJEJ@D@BH@HRAJJFFBFFLBJHNHH@NFBBDHBBVHLPPJENMJXTBJHNFHDLCDN@PDH@JCX@HBNHNJLHVFNF\\XZLLDJPCRKDGFCREXKZQ^GL@ZChINIH@jQTAfM"],
+          "encodeOffsets": [
+            [115328, 41203]
+          ]
+        },
+        "properties": {
+          "cp": [112.433387, 39.331261],
+          "name": "朔州市",
+          "childNum": 1
+        }
+      }, {
+        "id": "140700",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": ["@@L@LDLCZ@DDBNNLbTRDJIFIHILGJIHELApATHPXBHJRZPJDTB^EJEFCLYACOGEE@KPYDWFCN@TEHIDGBeDGDKLINALBT@PGHCLQ@SKmI[EYAKBIDOFIJELGfQJEFGEYBKFODEbUJIJWdoJI`UHGBE@]DMNSFK^QPQJUlE^BPODILKxEVBdAtJPAJCXUPEdCPBHFFFbBFFAJBFHFHBbD\\BXCHCPAFCDGFYJC`NXFFx^LL\\TXBT@VEpQtYPIPCPBHFBJHjTARRP^DLAXIJEHIjIXCPGPMH]COEMG[[aCK@KPeCIEKIMosQ[kyokQiBOEeAMCKQUOEQ@[QSSSoE]BQEMOMQCkSWOKMCKB[GaGQGGGMAM@]_[YIIIas@]IOW@OCQMUEM@YGKML{BQGOIIEMEMAIHMNKPEX@DI@YGIUWGQNSZMHKGMQMEKCM]MCIJQHUHIL@FDDA@KIGAI\\oDYEOIIEAG@EDIBACAGJICKE@@HIJMACCCMEEIAIBCF@FEBIB@LBNANEHE@KCIDCBEHOCKEIKCMOQKICUDMP[CIIGEQJQDOOEQ@QC]OYScUUISBOJ[@[GKCKOaLIHW`SjIbKLIHMHMBSH[^KHIHOLUJgHSJIJKLMCUDJVJLDV@BMJADHHSJSVc^YbMXOHIAICKKCMKQKAGBMMAKCAE@EFAFC@GI[OAA@ECAGBCD@LCLSD@GE]OCI@SHGAGBIjCJA@AKACECGBGHGDC@AC@[CGHUAEC@A@EHSHYCcDEECI]AKDOLODi@MCiBUFOEiQMMO_UKKEA]E_HMVYPGLBLLVBL@^UVDNFJFVCPMNcDSNSZYHOASCQ@MFIJCVCHUPENCFGD[CMDBlIPUVMLQFSAODQB[RMNSJIBKAGE@U[AQEIMKMGECGGEG@cLMBSFW@C@ADEXCFGDSAEBCB@FFL@FADEBSAQFG@ECGEKCOAGAEBMEC@WDACDKJGPER@TENGDQDaCSEKBIXMPQJWDME[HMTE`@RIHYEMKM]MQCQAMDKFMJODGAMKKCWWKESCaBcXIDeB[HO@IAICEGKOECIAIBEDMROL_NOLEJKJOFcBIBWNGFKfIFKDUC]AQ@KCKGKSSGG@QIGOG@QHSK]EeAQBYCAMFK^_RO@ICOEGMGKSHINIJIACMQQCKAU@]NO@MGEGFKFKGUKSKIDG@GCMBIEGeOGO@[BCHCBEIW@KBAPBJUPOBECIQO@_EeDSAGKGOCQJMJUNKJ[LODMBMCUD{CaHBGAECEYGG@CBDJJH@FCFQBMIOJWEQEWEgROJGDGAKESCcCSIUCMJQPQFSQSGCIBSL]^]TMNePo`QJKNgnIRE\\HLNBDHGJGFADI@@GIAEJGFI@CCAKAECCC@ABADBREBEHERE@EA@GMi]MMAMB[J[R[^MHCTBLANDNL@ANDJH@HDDADCB@`BLFBDDPLPpJDBBLDBZPPBZARDRH\\TPRFBPBRLBDCB[PM@GGC@EBKHG@EDANBVAJCBGDEHKJEHGFM@KTORzPJADACG@MFINGHAHDHFLAHCdWNEXCfODC@MBCJCLAJBBBDZHJFH\\@BBHPD@PGF@DBDFBHCLBJLLTB\\BRDb@DJFHRHTJPVJVHPHDLHFLAJGRIN@RFATPJNDJFTbFBBTHFFLLJNJTFHLJdDhJNDLNRFPEXAhBHDHRJDJEHAF@NEFCBUD@LBFNBN@BED@\\BBB@DHB@BDRDHD@BCBKB@D@DNDBL@DADGZB@FIN@DDFH@FIDKDAN@HDDHBBXFBDAPDPRLNNDHDDPBRBTGBAAOHIHE^CDCDMAQBGVGJGDARL@FLLDJDDNFDJNLBFFHHFRHRLLL@DAFFDVJFDDH@JDHHDRXBJVPPPFNARBZJLXTVNrLR@HFBBFBFTJ@FHTAHDDFDHAJHTRAJDdCCQBEHODAJCTFH@DADCHCXADFDTBBHNJ@VCNODCPBDDHJNAHBNDL@HBBBDF@RAbBFDBV@THPABBDFF@ZCLGtKDFCPBBFFZHVBLBFHDHYDCJAJKLDj@HENKRCNCB@DGASDEBBZCXBLPHJBRAZDLFBD@LCBMDGDEJ@J@BNDBJ@HBBTDDBDF@H@HABKJBJBFPF^BLBDRBXTJHJ@DEBCF@XADGFCHGH@FDDNDTNNHNN@FQ\\@HFNHHLFDDBNDF\\BCPBBL@PCLDFJHDFF@TFJHDTHN@FAXMNMH@@HELGL@JMR@TIPBBJNND@HAFOLAD@DHHRRFJJHLPLJZLJFBD@FGJBHJHF@DHD@FAFINCPAFGFCT@bNH@LADCLC`HNBfKJDJNFBLJDFBLJHF@NENMDEJEZBFFBXHBLBFLJBKRCBMFFFNLJD^A\\CJDHHFDH@"],
+          "encodeOffsets": [
+            [115781, 38970]
+          ]
+        },
+        "properties": {
+          "cp": [112.736465, 37.696495],
+          "name": "晋中市",
+          "childNum": 1
+        }
+      }, {
+        "id": "140800",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": ["@@T]VQPK^CRGNKEeGGEKAKBIFEZC^IFE@ACMBEBAPIJKBSCKIQMCFS@CACEGBAXKFERgBGAUDG@EECUIQOUCKGCE@GBGVYVcHOAGKKBELA@CUAIBGNU@EAOBOAGQWGAGFMABBCJCFKDIFCFAD@FABCBI@EACCEAaHWCEDQRMFODkBCACEEGKIIDQLCBIASOEAgNECKKEEE@CDYCQEMMIMAUFE@EC@KCCKI[DKAICEE@ICCkAEBGAMIO@C@OScAGCAE@APMFGDG@MDGDG@EGE[OG@MBOCMOKIIQEBEA@E@MGWCCEAM@WMCGC[AKCGGE@CCCMGGGGAKFCD@FIDKBM@OCKAIEOMMAAGIKIAU@MEI@KBG@YRCBWDAAEGACECQEGBE@KGKKQEGBCAGDSDGBM@MDIFEJCBIBIASOKEMASGWMICOF[RMFE@KEEGSiECQCI@EBCDILGFKBQBWAIDSRGDG@ICMKKKMSMWIeCCGE«I_I]KcQsICI@CDW\\MLUJS@KAEGAEDS@_IY[o_gYKE@]JK@KEIIKIKEGA[PUNILiPSBWCECAIIKOKSEGGGOEUEEEAIBMLE@KKIW[IK@YLGHmROBGAaG_UGMCODULi\\YP]NOBMAKC_cOMIEQAQDyVaJWDDUDMHSLSRSZO`M^ETDZFVNZLh@`EVIZevETHrdpN^BL@FCFKF@D@PBFHPBD@FEHADBJDLBFDDJBPJP^NTZXXZT\\JTH^H`H^Pfh¾Jf\\ðLdJPJR\\ZRVztHPràFLJH^LHLNHNFPF\\RzHTv¢\\~BDRLJ@HInABQDCDAHB^AFCDMHAJGLAJFR@NCP@NH@FD\\NDFHDBDF@FL@FD@F@DDHLDFHZPFTDVATINMFQVBVGDICGWKIO@QJInRrHTFJ@PIJMPGNA`AZGHBT@NENANBHAJAVKfGRK`YNCNBZX`JPJJPBLCDCVAXD^DLC`V`LJPDP[@YHWPQDK@SDOFGN@PFRBZAXBHFF@HNBPZ`N\\V`RXVN^BfQ\\_HMHYHERGJGHSBI@gNWbMbKNETYFKHILANBLFHNb^PHnJTAJEDSAUFEFCHI@QIBiLQ@KAECEAOACEDIJKHSACCCSGAAHEBCAGGEE@GFOFKGA[AAAGB[P[PQDGEIICIKDGpeLAJA\\FZLFJFHXHLAJGHDTFDHFDX@ZJLJB@@GBEVK\\JJAH@HCLpP\\@`EnMZUF@XJAXDTJLHHJNBP@RBVDRDJLLBLMZN@FLBHDJAFECO@EDAZBdFTBREZYVORSPGVCMZHbEP@AEIGQEKKEICU@IDEJIDEPAR@HEZCJBF@FAFEJ@HCJBDADA@@AC@ABAAI@AIAAABMSOCGACC@KLEBKCCDeIAICCBG@AIGCE@KDGSACGAKFI@GFIAICCG@CCBECCIBCACEAGMAACDIR@DAD@LJFBF@FMHAFE@IFGBGAYRAHKzG^@vHRAPFTT^f"],
+          "encodeOffsets": [
+            [114662, 36282]
+          ]
+        },
+        "properties": {
+          "cp": [111.003957, 35.022778],
+          "name": "运城市",
+          "childNum": 1
+        }
+      }, {
+        "id": "140900",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": ["@@JGFGDSFQ\\U`OHEvuMQOEgAqBSE[A]IGCIGCQ@CBENSHOFOJQLADEBALBNHN@RENMVKJCDAFBDFD@D@D@@MFSRQ@MBELCFAFKBICMGQBA`]BEGI@GDIDGHIJCXEHCJGIMDMFIVIBCACMIQEHMJAVMFMHIFMPUPEHDHFN^NJPDZDbATEZKRCJINYEa@EVMBCAEAMNEREDCDS@GKQACBCFCJBJDNHF@FAH@LDXKDGBI@GBAJBD@@CMK@GDC@MGQ@GDEHAH@fDN@HCDEAKCCGCQECEBEFIFCLCJBRFBJCL@HDJFBRAFBDFF@`K`ULCRBbLPDTARCRMLAXHPHtNFZDT@TERALIDMHOHGJCVBJCDICMNWH@^DHENCPBXAXHFHHZENBJJLXPFBXK^DXJXLRNFBPLHLB`EHIFIF@@@DP@PEHBRHLBVHJ@LCNOFGNKR@FDJLFLBRJVfHjDNJHN@NFPXPLXJLHPBLPRJFfLnD^HpTjLTH@JDDJBFHPNBDAJBFFFJBbBHDF@FJLDbAfYBELCAGGSAITMNGXGLG¢WLANDjZZLPBL@ZEfDRAXBpETDL@LKXMLAFDHTLH^NHPJDjWH@FBAN@NHHdDPHH@J@fCTHHPJLFLBNLXXL`\\BD@HAbHRDBVBRFFAHILULC^L~N^IRKdIPATDRDNB^E`IFEROHOFKNOXINCEVE HN@LCDE@ECMCG@UJK\\UNKPIVQJ[JGNIJCHEBICQ@MOeaACCIFGLLY@YBML[FYYMKMISIMEOS@mJSEEMAMKMOG[SUQ_SomgAGBMEOaCUJsF]BM@wNOPKDKFILKNIRGVEPAj[DUGO[OGKAQ@QHS@USCWD]JMIYmEOIeGGQGc@MLSJQBMGCIAKF_@gGOOGUEoCiD]HQAUKEOKmBQHKEQEKMKMIIEcKIQAM@cEQEGWBQCc@MCUI]Ia@SDoVI@MAoQ]QcMSaOMC_OGGKYEEMGcGoUOGcKCEGC]@KBUAICC@UFIAEGGJEBcH]ASCWEGEC@ACDCFS@ECCQEEESDKCCCEAYIEGEQEAICCC@GCCECGECEEC@CGCMEMDECI@GDEJ@PADCBIEMQE@KQMGWCSAECKISIOEOBSKSAOEUAOEMG_]MOAEECAQYWkI]CWEI@GBABE@GGEAOHSBABKCS@AA@IGAGBGAQJIDGDgFE@CA@AHMD@DM@GECEEKMMGMICAO@MFQDOGG@WDIBCDIHINLPBLADKBEDADBFAFGDKBABBHCFSJIJAAAA@eCAWEMOI@YLG@OCMLMBEBGVKLCTEFKDI@]KICGIEAQBYP]@MDIJGNURGJEBQBIDGHKAUGSDKFWBCDIOYMQO@GBEDEVKJ@HEBEACK@}MYI@KLQJKROPIFGF]@KFEH@JCDK@KCKEGGUGQGEQCCCIEQBIFG@ICAADWEDGHIHMARgECEIEIDEHKHCJEDGBKLIFQD[EIHC@QFGFE@MIE@iRSDGDCJE@GAKISAGCOEIBOGEKIAG@WTGDIAOFO@cbUDCEKEM@IFEJJfEHGB]JE@CCCKBALCDC@CGCM@]DG@EAYPEVCFSFWRCLANARDZCRDDXBfLH@RGVDHDPJADBZADYJGFEPDLHNKXDPOLOBIFKLKDED@DBJHJ@FGHCH@DCDENBDTNFF@JEDAFAFDD@FKLKFaZKL}nKLBHBHJFTNNFND`PCVKZWlUZIB]NSAEEQaIMQOOGcKWCeOeIIIQG_U]UMGOCIBWJIJOPKBGAKKCI@KDA@YEUWTIJeX[\\GNEX@XCJBJEDIFKBD]AUDMNGB[LCJDRCFO@WGgCYGQ@UBEDGHa|CNBR@LAHCFcLGHCLAP@TIjKRCHQJ_BKKCMG_WOC_SE_WWMSEQIY@IBGFSXINEDUB_CSFGHADBJDJNL@D@H@LCFON\\bFLHHAJEHIJALBDFFLFPBLHJPJT@LP\\RPHJBH@HAFY\\CJBBFDLFPLHLBLALELCNB\\ALAHQ\\IZCDSJCBELDLbjZLbXVH^D\\@\\FRDJF^XNHnfLTDLBPCPBFBDXJHHLXDNHP@HEHIHEF@HVj\\`PhTTCLTLHNDL@DGJCHBLFRNRFNHFLDHFHLFD@DK@_@KAM@_LSNKPEJ@DDFZRBJGHEDG@WIEEAIAACAGAEBEDCFBHHZ@JGLCBI@WCUAKFAHBHRR^lDDbJPNJFLANEN@XDNFFBDAPGdCFBTBJDJB^ELGH@FBFD\\DbCXB^JNLFNDPBVAJ@JRX`ZpRF@H@JBFDJJ@FFR@FGPMLAF@FHPNXDN@VBHJT@FCJQTAF@FBDHFL@FAFCLUHCD@FBDHB\\ADMDO@IDIN@LRA^HlV^J^DT@rSV@F@FEJKDChDNCXMVEN@LPFBZDLER@^MNEPAZMHCRUNIbEXKVE\\@LID@H@RLNDLLLFB@FDJJB@DFRHNB\\MN@NATMBFJHHBFCNJF@VED@BDH@JGHC"],
+          "encodeOffsets": [
+            [114617, 40563]
+          ]
+        },
+        "properties": {
+          "cp": [112.733538, 38.41769],
+          "name": "忻州市",
+          "childNum": 1
+        }
+      }, {
+        "id": "141000",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": ["@@NG\\]\\Q\\INANB^NNj@HFBF@FQFGFAAQBCBAD@DDBFBLDDJ@HEFIJB@HJ@BCHEHICGMAGKF[JQhmLMRIp_fONM^S^]TKJAHDRTETORIRDNVTJdDTDLFHBHCPIhQXFRFXFPINJRADE@EIGCIDAH@ZHDFBFAHbG|DVCNDNAPC\\KLIVMNIRIPDLHBHJ@XCLMFOB_VSLODNIFGJEVGJ@PAJEFCLaP[JKn]HIRGZGPGLWLiPmFIBE^yFITOBRINILIXYRK^ONETCNCJMJSPEDlCxAFAFCDGDMAUHEHABAAEAAIC@CNKDEHGRJD@@AACECEIAKFQACJExKFEGHBHD`^JBF@BUKeKMCYBWH[BWAaGIAGH_HODMASAGGGYMeQUI[KUKGIGQFILMDK@IAQFIfCLUBoHWEWEESO_M]_QgUa__Q[AeFaDOAWI_BYDUHUDWAcKO@cNI@KB_TOFIEEIA@O@QES@IBIFEIBQDALAFCF_HO\\PNAFEFIDCHCF@^aHU@OQOcIeAeBiF\%uXifMEEICWD[CIECCIDOJMRQHIHODSKMSI[QEMFQRQFII_GMQK__[QWE[CIGAiIKWOAIL_D}JGN@LKGiFi[WIOFSLWFCHOReBaDQ@Q]eSSOEQBuG]@yHGLQBBZAHEH@JEFGBENE@EAKIC@CBQ@CH@BBDNBBHDFDBJADDAFDDH@DDBJEJ@HEJBLDHTBCH@LDFJH@BAHDDBJfJDCLDFALKD@BDDHTPANBBJB@BBJAB@BBDCBCBIAGDI@EFEBE@IAYDGFQ@OBCFIJCF@JDVFJLLRFJHBFO@aFYGNUDOHQTUPYZQFSAcEYACB@FDPEFIBGCKA@EYMNAKKKCICQAU@QAOIMGGIKCSBWOEMCYVmN_F[@oOKGDG@IB[IULAF@HA@KIYIW@ECCGSEGCIHKBWGEGEIYK[EIBKBofCHJLJDFJCHORO\\A\\BHBBB\\LHPEHEF@HFBHADGFBBTHDDBDGTILCJDFPBFBFDLBR@jKJA@RGJEDEFBVCTIFSBmIOGa]GMKEMAKBGJELSZMFaLaNMX@hAJGTIHQHGFGZGN[`OJUH]AUMQWU_M[Y_AOGME@GEWAYBQAOEM@EHCP@TCLORGX@ZO\\OCKIU_D_CKC]BWDUDCAKIOOI_IYWMAMD_ZQLeHULIBGBMAMBMFS@GAYH_BMBOHINOJI@SEqGmQIJ@RJPXLDHCJUHUAERMNSJUBSCOEGYCEGKCCE@C@@EEKE@ACGCCE[MECG@Cb@T@HCFQXAF@FBHHHDJ@PAJENGNOJEHCF@HANB^BT@DCDMDIAOEE@UDID@D@DDFDV@FCRDLDNAFCFMNADENAJDHHFJDDDD\\EHGDOFGDITAFLRBHGPCNAXIVKPENIJKT@DFPATSVCFI^GZ@TEhFVP^DJ@J@HKPAH@HDJbhFJFR@HCPBVADMTADBLHJDF@DEJKJIRAH@HDJLPDHATBPPPTb@LBJH\\@J@HCFYTGR@JDFFHdZJLDJBHAPBVCRB`ALCFSVAFBPFPJNBDCJCBOF_TcdKPcGJGH_NOJIHCHAH@HDHNHF@L@FCFELOFENCFBFBDJ@HERAJBHDH^`BLEHEBMAKIGMGEIAKDAD@D@DDFTNJJBHCJKLGFMDMBeBEBABCLDDLBVEJDJLRdH\\@H@FGFOBEBABAFDFNDHFHNB\\AHGFWLMB[@GBGDCBEH@DDFFD\\@LBFBNLDPHANCJGLOD@F@HDHFFBDAJEJBDANMDIJ@HDRFTAHAJID@T@NCTCFKDEDCDADD@FAF@DXJD@BAHKHAHBFGB@\\HRBBHNHR@PCRAPJDJ@FNRAN@`FPJJJHFDN@RCP@^DLDN@LGDGDOFSONEFEPiPONGPAJBHAVILA^BJD^HfPdFDVFD^FZHHLLL^EhOPBLDLHFH@BKT@PDFDBHAJCFE@OHK@AEGGAAA@A@EBA^DBDAJF@BBDBBBCF@JZ@@B@BFDBFHADB@JTAzFDGFE@ELEFG@CACKAEC@AACAGAODEACOGACCMASCCAQHAHEVMDGPGH@DFF@F@NGB@LJNDNHLAJAN@F@HED@NBJDHHF@BAAEHCBCEGBKCEBGFC@CFCNKLKFYFOBWHsRMR@LNRTJBbARDFC@IDGEICIBAZAHDLCP@DBLFFGLC@FHB@B@HCL@FLFB@BCHEFAfHBF@BIDABJLD@JCDBBFCFADDHVHHF^X`L"],
+          "encodeOffsets": [
+            [114089, 37688]
+          ]
+        },
+        "properties": {
+          "cp": [111.517973, 36.08415],
+          "name": "临汾市",
+          "childNum": 1
+        }
+      }, {
+        "id": "141100",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": ["@@AECAGAIKCEFIA@GAGAEBE@@ABECAMBGAGEGBEMGCIBMAIHIBKG_CMEAEFQCIeaOOIEUA]OQEOGc[OCUAMAoAQCQIWIAUEEGCaGACBIKKAEHKPKMQEGAIBIDKHKDCHCBAHEFG@[DEFC@CBUDKLKFMFGFCTGFAJQEK@GJOBEACIGOCQKUGJERCHCBC@QDODOHGB@HBJJRFbATHL@PCNHD@HAHGJ@XN`AHFJRbJNALGPBNCPAH@DCCQBKPMLILCDAAIBGBATGT@DADENEHAJEJGFGDI@IDEPEbDXA\\@XCHBJFPFNAJEFECK@KDCLGBIAIFI@CHKNMFICOBC^HH@FEFMJQHEP@`NLDhANFDGPOLET@LBhLV@HCJATFB@^cDALDD@FKLGhGHEBGLEPABAACCABAHAEOEE@GDO@WBCZKHIHMHALIHSFARCFCFEFWHUFGTGR@P@hHPBDABEBU@GUSOKAEAKP@D@@CXAF@@ECIDIJAR@DCBC@MCA[ASG@CXQbGBCAI@AXMBEEQ@AEAAAGEQ@qKUMWSIKAYBQEMOOUOAIQWGCCG@ICGECUIECBE@CKKQKQGGEEGAEMKCIMECCCIKK@EQKCBIHUHAHBRCNCD]DGFGJBPABSHQAOACCCGMMQKCOBOACWEAACGGCM@CBCLEJG@CE@CJM@EYACHCBK@CACMC@A@ALADC@CGCQ@AGA@CAA[AC@AFM@MAAE@KVCDAFE@MBEFGCIQICGAGBgFWEOMQCKIMCgIcGKSEMIKIEKGEASEASaIEMCOIBSQEM@QJIHKBGECKOGUGUIOSIQGEGCIa@QC[ASAKKAIDKAGCECAE@OHC@GOAA[@EGGICYAAIAKBIDAD@NCDePWDMFcXGDKBGEGCGBMHEJ@NDHCBIByOPQLSN@HEFGLIFGHCDABIAUBMFCH@LGFAD@HHN@\\ODAACQKOAEAOQ[SQGQCYBOAYOCAAKCAoIKOCOACKE_AA@CDCBGCG@CIBMK@CMBMAKDSgO]WGEUGCGBCDEAECAIDC@IKBAJC@AAEeGEBGFADA@KE@EDK@G@AGA@CAAIDEHKECAO@KDGCYBABDJFJCH@JEDQCaBIAQSKMQ@QNGtAXEPEZKLMLED@DEDAHDFALFHADGDBFABE@GGICMAC@GFE@M@IBKBMGMCKIA@MHE@E@CEG@OHCHUNGFE@ABBRDDBTDNBDPHBDCFBPBHBD@BFDLBBD@DEHKF@FEFCHyESB@ICAGBAEEC@A@AY@@IDEAACAAAE@BIAC]CAB@F@BBBHBFH@BGL@PEFIDGBCACE@OLS@AEGKGKCOAgP]FKKGKYG]EECCUcEeO]GIC]AKBUJGBIAOBMHOPOjEFMFPETCPCHKHM@KC]CO@QDM@ECIGIIEO@_BMMQ@ECIOIQBODQ@MGAGQA[GA@EHGAGBGLABC@WI@CBE@ECCCBCDIRCBOBMDS@C@IJGBSBQEGCI@CJMNCBIAIFCBEAGEGCE@C@KPIHMDGBALDVHdDJJNDJBN@FENKTGNGJEFcLKJIPAJBFFDFD\\BLALAHC\\ULCR@NFDFBHADEFEBgDMHAFBHHHRFLB\\ALBJDNLT^VTFJPTRLhRFFHJDFCbBNDFHHpbZXPP~b^P^VRFNBRDLDFHFfAFBJDDF@H@JUXCJ@FBF`PJNDLBHCHIFYHODM@_DUFMLGNAVBRBNP^FbDJHFLDHBrBPDxFJDdBJBHDDDHTHNBF@HCPDdLTLNBHCZBDRJLHHLJJBHAHelGJ@HBZCTAFEHELAFBJDHDDPBR@HDJFHPAHYTQRKFQDkFKFiRKJEN@LHLRJNPRBLGJg^UJUFZ]VINA\\QfW\\GDADBHEFCHIHepKbMTKHMFMJ]DYH]RGDKHGLCJ@LBJRXDF@FCHKTEDSHGJEV@L@HDPJT@L@LCNKV@PBJflBJALSbCNAR@ZBTBNHPHJNLRDhELBNHDFDVAV@NLlAZBTHPNNNFTBEZBRFPJNTRZdbJHLDfDXFHDHHDHBFANFVHNTVJ^H^FJLHTHdANCHAJGVKJ@JBjVHDFF@FGVAJDfGP@P@BTLF@JAR@LBJJDH@JDJ@NAJCL@RBDRRDLAJQ@WHCDENBDAFY^AH@PLNDJL`DHZNJHDFBFAFEJCN@NDJFHLJJHLBLJNTPMDE@K@G@CMKCIAIBCHGTE`DVAFCJMTWHEJAZ@RJTFXN`XTF`PD`XNHLDL`ARIDGLQJi@SBODKHGdKDEBG@KAQDMb{HGFCVAR@ZHhDXHP@DECQDI\\KHANMVC^BCLAJEFCAIDI@WFWHM\\[fWJIXSFV@ZCB@LDJLLHBLAPOJIXIJAPDNH^V`VRHJJfJfPXDdLPHRPJNRbFFTB^MJAVYXkLYDU_OMCMESMIEAGAGLK~mLKbYLELK@ECCBEBEFC@IEESMACFMDC@CDGHG@EGIAI@CFCLCLKJEPAPKCOLWGMCKFOHEZIBCAYBCOIGCUCQHG@eKWACCDQCYD_DKXQTEDEFUHC"],
+          "encodeOffsets": [
+            [114502, 39132]
+          ]
+        },
+        "properties": {
+          "cp": [111.134335, 37.524366],
+          "name": "吕梁市",
+          "childNum": 1
+        }
+      }],
+      "UTF8Encoding": true
+    };
+   
+
+        // myChart.hideLoading();
+
+        echarts.registerMap(name, geoJson);
+
+        myChart.setOption(option = {
+           
+            tooltip: {
+                trigger: 'item'
+            },
+            
+            visualMap: {
+                min: 0,
+                max: 100,
+                left: 'right',
+                top: 'bottom',
+                text: ['高', '低'], // 文本，默认为数值文本
+                calculable: true,
+                 inRange:{
+                color: ['#99CEF6', '#FDD961', '#EA7806'] 
+                }
+            },
+            
+            series: [{
+                type: 'map',
+                mapType: name,
+                label: {
+                    normal: {
+                        show: true
+                    },
+                    emphasis: {
+                        textStyle: {
+                            color: 'black'
+                        }
+                    }
+                },
+                itemStyle: {
+
+                    normal: {
+                        borderColor: '#389BB7',
+                        areaColor: '#fff',
+                    },
+                    emphasis: {
+                        areaColor: '#abcdef',
+                        borderWidth: 0
+                    }
+                },
+                animation: false,
+                
+            data:[
+                {
+                  name: '太原市', 
+                  value: 100,
+                },
+                {name: '大同市', value: 10},
+                {name: '阳泉市', value: 20},
+                {name: '长治市', value: 30},
+                {name: '朔州市', value: 40},
+                {name: '晋中市', value: 41},
+                {name: '运城市', value: 15},
+                {name: '晋城市', value: 25},
+                {name: '临汾市', value: 35},
+                {name: '吕梁市', value: 35},
+                {name: '忻州市', value: 35}
+            ]
+                    
+            }],
+            
+        });
+}
+
+var currentIdx = 0;
+
+showProvince();
+</script>
+
+<script>
+    $(document).ready(function(){
+      // enableStatistics_w  
+        $("#enableStatistics").find('div').css({
+            'overflow':'visible',
+            'width' : '120%'
+        });
+        // $("#enableStatistics").find('canvas').width('100%');
+    })
+</script>
+
+
+
+
+<script>
+    $(document).ready(function(){
+		for(var a = 1;a < 4;a++){
+			$("#ar_no" + a + "").find("p").eq(0).html("<img style='width:30px;heght:30px;margin:0 auto' src='img/no_0" + a + ".png' />")
+		}
+        
+    })
+</script>
+
+</html>

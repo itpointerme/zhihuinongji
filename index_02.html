@@ -1,0 +1,231 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>山西省智慧农机</title>
+<link rel="stylesheet" href="css/tong.css">
+<style>
+	/*-- 内容区 --*/
+	.content{position:fixed;left:0;top:10%;height:calc(90% - 60px);width:calc(100% - 60px);z-index:999;padding:30px;}
+	/*-- 内容区 --*/
+	/*-- 标头及图形限制 --*/
+	.title_and_box02>p{line-height:40px;width:140px;font-size:24px;color:#21fbfd;
+		text-align:center;margin:0 auto 40px;
+		box-shadow:0 0 10px 0 rgba(33,251,253,.2) inset;
+		border:1px solid #31467d;
+		background-color:rgba(4,22,42,.2);
+	}
+	/*.title_and_box02>div{height:calc(100% - 82px);;overflow:auto;}*/
+	.title_and_box02>div{height:calc(100% - 82px);overflow:auto;}
+	/*-- 标头及图形限制 --*/
+	
+	
+	/*-- 左侧内容 --*/
+	.left_box{float:left;width:calc(75% - 30px);padding-right:30px;height:calc(100%);}
+	
+	.left_box_top{position:relative;height:calc(45% - 30px);margin-bottom:30px;}
+	/*农机数据*/
+	.nj_shuju{float:left;height:100%;width:calc(50% - 30px);margin-right:30px;}
+	.nj_shuju>p{margin-bottom: 20px}
+	.nj_shuju #data{width: 100%;height:calc(100% - 10px);}
+
+	/*手*/
+	.shou_tubg{float:left;height:calc(100% - 50px);width:50%;margin-top:50px;}
+	.shou_tubg #handed{width: 100%;height: 100%;background: url('img/c_2.png') no-repeat;background-size: 100% 100%;}
+	.shou_tubg #handed>ul{width: 100%;height: 100%;}
+	#handed>ul>li{width: 33.33333333333333333333333333333333333333333333333%;height: 50%;float: left;}
+	#handed>ul>li:nth-child(4){width: 40%;}
+	#handed>ul>li:nth-child(6){width: 26%;}
+	#handed>ul>li>p{color: #94e9ff;font-size: 16px;}
+	#handed>ul>li>p:nth-child(2){font-size: 12px;}
+	#handed>ul>li>p>span{color: #ECD90C;}
+	
+	.left_box_bottom{height:55%;}
+	.gl_bianhuatu{height:100%;float:left;width:calc(60% - 30px);margin-right:30px;}/*各类主要农机数量/增长率三年变化图*/
+	.gl_bianhuatu>p{color:#21fbfd;text-align:center;line-height:50px;margin-bottom:50px;font-size:24px;}
+	.gl_bianhuatu>div{height:calc(100% - 100px);}
+	.jixie_mianjibili{height:calc(100% - 20px);float:left;width:40%;padding-top:20px;}/*机械深施化肥/秸秆还田占机耕面积比例*/
+	.jixie_mianjibili>ul{height:100%;}
+	.jixie_mianjibili>ul>li{float:left;width:calc(50% - 10px);margin-bottom:20px;height:calc(50% - 10px);}
+	.jixie_mianjibili>ul>li:nth-of-type(2n+1){margin-right:20px;}
+	.jixie_mianjibili>ul>li:nth-of-type(n+3){margin-bottom:0;}
+	.jixie_mianjibili>ul>li>p{color:#1efcff;line-height:30px;margin-bottom:30px;font-size:18px;}
+	.jixie_mianjibili>ul>li>div{height:calc(100% - 60px);}
+	.jixie_mianjibili>ul .jixie_mianjibili_title{border:1px #0314ba solid;color:#1efeff;padding:15px;font-size:25px;line-height:40px;}
+	/*-- 左侧内容 --*/
+	/*-- 右侧内容 --*/
+	.right_box{float:left;width:25%;height:100%;}
+	.right_box>div{height:calc(33.3333% - 20px);margin-bottom:30px;}
+	.right_box>div:last-of-type{margin-bottom:0;}
+	/*-- 右侧内容 --*/
+</style>
+</head>
+
+<body>
+	<div class="top"><img src="img/top_name.png" alt=""></div>
+	<div class="nav">
+		<ul class="nav_content">
+			<li>
+				<a href="index_07.html">
+					<div></div>
+					<p>社会化服务数据新首页</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="index_06.html">
+					<div class="nongji_jiankong"></div>
+					<p>农机监控</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="index_01.html">
+					<div class="zuoye_zhiliang"></div>
+					<p>作业质量分析</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="index_03.html">
+					<div class="xaingmu_fenxi"></div>
+					<p>项目分析</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="index_05.html">
+					<div class="zhuangbei_hezuose"></div>
+					<p>装备处合作社数据分析</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="index_04.html">
+					<div class="zhengli_fenxi"></div>
+					<p>整理分析</p>
+				</a>
+			</li>
+			<li></li>
+			<li>
+				<a href="#">
+					<div class="fuwu_shuju"></div>
+					<p>服务数据分析</p>
+				</a>
+			</li>
+		</ul>
+		<div class="nav_right"><span></span></div>
+	</div>
+	<div class="content">
+		<div class="left_box">
+			<div class="left_box_top">
+				<!-- 农机数据 -->
+				<div class="nj_shuju title_and_box02">
+					<p>农机数据</p>
+					<div id='data'></div>
+				</div>
+				<!-- 农机数据 -->
+				<!-- 手 -->
+				<div class="shou_tubg">
+					<div id='handed'>
+						 <ul>
+							<li>
+								<p style="text-align: right;margin-top:24px;margin-right: 14px;">社会化服务</p>
+								<p style="text-align: right;margin-top: 4px;margin-right: 4px;">设备数：<span>159663</span>台</p>
+							</li>
+							<li>
+								<p style="text-align: right;margin-top:28px;margin-right:22px;">装备处数据</p>
+								<p style="text-align: right;margin-top: 4px;margin-right: 14;">设备数：<span>159663</span>台</p>
+							</li>
+							<li>
+								<p style="text-align: right;margin-top:32px;margin-right:74px;">作业数据</p>
+								<p style="text-align: right;margin-right:40px;margin-top: 4px;">设备数：<span>159663</span>台</p>
+							</li>
+							<li>
+								<p style="text-align: right;margin-top:60px;margin-right:34px;">合作社/维修点数据</p>
+								<p style="text-align: right;margin-right:46px;margin-top: 4px;">设备数：<span>159663</span>台</p>
+							</li>
+							<li>
+								<p style="text-align: right;margin-top:56px;margin-right:72px;">终端数据</p>
+								<p style="text-align: right;margin-right:34px;margin-top: 2px;">设备数：<span>159663</span>台</p>
+							</li>
+							<li>
+								<p style="text-align: right;margin-top:64px;margin-right:48px;">项目进度</p>
+								<p style="text-align: right;margin-right:18px;margin-top: 2px;">设备数：<span>159663</span>台</p>
+							</li>
+							<h6 class="clearfix"></h6>
+						</ul> 
+					</div>
+				</div>
+				<!-- 手 -->
+				<h6 class="clearfix"></h6>
+			</div>
+			<div class="left_box_bottom">
+				<!-- 各类主要农机数量/增长率三年变化图 -->
+				<div class="gl_bianhuatu">
+					<p>各类主要农机数量/增长率三年变化图</p>
+					<div style=""></div>
+				</div>
+				<!-- 各类主要农机数量/增长率三年变化图 -->
+				<!-- 机械深施化肥/秸秆还田占机耕面积比例 -->
+				<div class="jixie_mianjibili">
+					 <ul>
+					 	<li>
+					 		<p class="jixie_mianjibili_title">机械深施化肥/秸秆还田占机耕面积比例</p>
+					 	</li>
+					 	<li>
+					 		<p>2014</p>
+					 		<div id='shifei_one'></div>
+					 	</li>
+					 	<li>
+					 		<p>2016</p>
+					 		<div id='shifei_two'></div>
+					 	</li>
+					 	<li>
+					 		<p>2015</p>
+					 		<div id='shifei_three'></div>
+					 	</li>
+					 	<h6 class="clearfix"></h6>
+					 </ul>
+				</div>
+				<!-- 机械深施化肥/秸秆还田占机耕面积比例 -->
+				<h6 class="clearfix"></h6>
+			</div>
+		</div>
+		<div class="right_box">
+			<div class=" title_and_box02">
+				<p>收获面积</p>
+				<div id='getPie'></div>
+			</div>
+			<div class=" title_and_box02">
+				<p>播种面积</p>
+				<div id="bzPie"></div>
+			</div>
+			<div class=" title_and_box02">
+				<p>机耕面积</p>
+				<div id="jgPie"></div>
+			</div>
+		</div>
+		<h6 class="clearfix"></h6>
+	</div>
+</body>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/nav_an.js"></script>
+<script src="js/echarts.js"></script>
+<!--  --------------------收获面积--------------------------------  -->
+<script src="js/02/getarea.js"></script>
+<!--  --------------------播种面积--------------------------------  -->
+<script src="js/02/postarea.js"></script>
+<!--  --------------------机耕面积--------------------------------  -->
+<script src="js/02/jgarea.js"></script>
+<!--  --------------------机械深施化肥2014-------------------------  -->
+<script src="js/02/huafei2014.js"></script>
+<!--  --------------------机械深施化肥2015-------------------------  -->
+<!-- 机械深施化肥2015-->
+<script src="js/02/huafei2015.js"></script>
+<!--  --------------------机械深施化肥2016-------------------------  -->
+<!-- 机械深施化肥2016-->
+<script src="js/02/huafei2016.js"></script>
+<!--  --------------------农机数据--------------------------------  -->
+<script src="js/02/data.js"></script>
+</html>
